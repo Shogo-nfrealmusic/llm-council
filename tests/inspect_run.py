@@ -96,6 +96,8 @@ def main():
     if adv:
         models = {c["input"].get("model", "(inherit)") for c in adv}
         check(len(models) >= 2, f"advisors spread over >= 2 models {sorted(models)}")
+    bg = [c["input"].get("description") for c in allcalls if c["input"].get("run_in_background") is not False]
+    check(not bg, f"every subagent call passes run_in_background: false (one turn) {bg if bg else ''}")
     report["agent_types"] = sorted({c["input"].get("subagent_type") or "" for c in allcalls})
 
     redteam = [c for c in allcalls if kind(c) == "red-team"]

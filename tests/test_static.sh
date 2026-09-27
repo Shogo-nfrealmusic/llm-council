@@ -35,5 +35,7 @@ grep -q -- '--quick' "$SK" && grep -q -- '--no-notes' "$SK" && ok "flags documen
 models="$(grep -o '`\(opus\|sonnet\|haiku\)`' "$SK" | sort -u | wc -l | tr -d ' ')"
 [ "$models" -ge 2 ] && ok "SKILL.md spreads advisors over >= 2 models" || bad "SKILL.md spreads advisors over >= 2 models ($models)"
 
+grep -q 'run_in_background: false' "$SK" && ok "subagents run in the foreground (one turn keeps pre-approvals)" || bad "subagents run in the foreground (one turn keeps pre-approvals)"
+
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]

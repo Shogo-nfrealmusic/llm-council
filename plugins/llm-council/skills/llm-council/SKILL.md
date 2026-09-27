@@ -39,6 +39,8 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
 3. **Language.** `LANG` = the language the question is written in (if mixed, the language of most of its sentences). Everything you print is in `LANG`, except the `== ... ==` section lines, the tokens `GO`, `NO-GO`, `CHANGE`, `CHANGE IT`, and file paths. Japanese wording for every fixed line is given below; for other languages, translate the English.
 
+4. **One turn, foreground only.** Pass `run_in_background: false` on **every** Agent call and wait for the results in this same turn. Never end your turn, schedule a wakeup, or poll while the council is running: the pre-approved scripts and the clerk model of this skill last only for the current turn, so a run split across turns stops at a permission prompt.
+
 ## Stage 0 — Neutral brief (you write this yourself)
 
 Rewrite the question as a **decision brief** a stranger could judge without knowing what the user wants to hear. Write it in `LANG`.
