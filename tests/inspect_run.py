@@ -136,6 +136,8 @@ def main():
     check("### PACKET FILE:" in results, "anonymize.sh ran and wrote a packet file")
 
     alltext = "\n".join(texts)
+    report["visible_messages"] = len(texts)
+    check(len(texts) == 2, f"exactly 2 visible messages (BRIEF, final report) — got {len(texts)}")
     pos = [alltext.find(h) for h in ("== BRIEF ==", "== ADVISORS ==", "== PEER REVIEW", "== CHAIRMAN ==")]
     check(all(p >= 0 for p in pos) and pos == sorted(pos), f"visible output has BRIEF, ADVISORS, PEER REVIEW, CHAIRMAN in order {pos}")
 

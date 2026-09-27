@@ -33,7 +33,7 @@ head -8 "$SK" | grep -q 'scripts/anonymize.sh' && head -8 "$SK" | grep -q 'scrip
   && ok "allowed-tools pre-approves both scripts" || bad "allowed-tools pre-approves both scripts"
 grep -q -- '--quick' "$SK" && grep -q -- '--no-notes' "$SK" && ok "flags documented in SKILL.md" || bad "flags documented in SKILL.md"
 models="$(grep -o '`\(opus\|sonnet\|haiku\)`' "$SK" | sort -u | wc -l | tr -d ' ')"
-[ "$models" -ge 3 ] && ok "SKILL.md spreads advisors over opus/sonnet/haiku" || bad "SKILL.md spreads advisors over opus/sonnet/haiku ($models)"
+[ "$models" -ge 2 ] && ok "SKILL.md spreads advisors over >= 2 models" || bad "SKILL.md spreads advisors over >= 2 models ($models)"
 
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]

@@ -21,7 +21,8 @@ If your context contains project instructions, a CLAUDE.md, memory, or stated pr
 - If the red team was triggered, say plainly whether its case changed anything, and why. If all advisors agreed and there was no red team, state the best case a dissenter would make.
 - Unknowns: name the 1 to 3 missing facts that matter most and which way each would push the decision. Do not invent numbers that are not in the brief; label any estimate as an estimate.
 - Next steps must be startable this week, each with a measurable success line (a number and a date) and the result that means stop.
-- Plain words. If you use a technical term, explain it in a few words. Refer to advisors by the names given in the Key.
+- Plain words. If you use a technical term, explain it in a few words.
+- Refer to advisors by their names from the Key (for example "contrarian", or in Japanese "逆張り"), never by answer letter.
 
 ## Reply
 
@@ -43,5 +44,20 @@ NEXT 3 STEPS:
 3. <step> — success: <...> / stop if: <...>
 ```
 
-If the language is Japanese, use these labels instead and keep `VERDICT:` and the tokens:
-`論点の核心:` `決め手:` `残っている最大の反論:` `意見が割れた点:` `重要な未知数:` `判断が変わる条件:` `次の3ステップ:`, and each step as `— 成功の目安: … / 中止の目安: …`.
+If the language is Japanese, use exactly this format instead (only `VERDICT:` and the tokens stay in English). Wrap Japanese lines at about 40 characters.
+
+```
+VERDICT: <GO | NO-GO | CHANGE IT> — <一文>
+論点の核心: <問い1つ>
+決め手: <決め手になった論点と、誰の論点か>
+残っている最大の反論: <1〜2文>
+意見が割れた点:
+- <誰と誰が、何について>
+- <任意: 2つ目の対立、またはレッドチームの主張とそれで判断が動いたか>
+重要な未知数: <1〜3個の事実と、それぞれ判断をどちらに動かすか>
+判断が変わる条件: <具体的な証拠や閾値>
+次の3ステップ:
+1. <行動> — 成功の目安: <数値と日付> / 中止の目安: <結果>
+2. <行動> — 成功の目安: <…> / 中止の目安: <…>
+3. <行動> — 成功の目安: <…> / 中止の目安: <…>
+```

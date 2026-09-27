@@ -28,12 +28,12 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
    | | standard (default) | quick |
    |---|---|---|
-   | advisors | contrarian `opus`, first-principles `sonnet`, expansionist `sonnet`, outsider `haiku`, executor `sonnet` | contrarian `sonnet`, first-principles `sonnet`, executor `haiku` |
+   | advisors | contrarian `opus`, first-principles `sonnet`, expansionist `opus`, outsider `sonnet`, executor `sonnet` | contrarian `sonnet`, first-principles `opus`, executor `sonnet` |
    | red team (only if unanimous) | `opus` | `sonnet` |
    | reviewers | 3, `sonnet` | 1, `sonnet` |
    | chairman | no `model` (session model) | `sonnet` |
 
-   Advisors are spread across models on purpose: different models share fewer blind spots.
+   Advisors are spread across models on purpose: different models share fewer blind spots. (Haiku is not used: as a subagent under an Opus session it took 35–73 s per answer, against about 8 s for Sonnet or Opus.)
 
 3. **Language.** `LANG` = the language the question is written in (if mixed, the language of most of its sentences). Everything you print is in `LANG`, except the `== ... ==` section lines, the tokens `GO`, `NO-GO`, `CHANGE`, `CHANGE IT`, and file paths. Japanese wording for every fixed line is given below; for other languages, translate the English.
 
@@ -53,10 +53,10 @@ Print it, then continue without waiting:
 == BRIEF ==
 <brief>
 Removed framing: "<phrase>", "<phrase>"      (or: none)
-Mode: standard — 5 advisors on opus/sonnet/haiku, 3 reviewers
+Mode: standard — 5 advisors on opus/sonnet, 3 reviewers
 ```
 
-Quick: `Mode: quick — 3 advisors, 1 reviewer`. Japanese: `取り除いた言い回し: 「…」「…」`（なければ `なし`）, `モード: 標準 — アドバイザー5人（opus/sonnet/haiku）・レビュアー3人`, quick `モード: クイック — アドバイザー3人・レビュアー1人`.
+Quick: `Mode: quick — 3 advisors, 1 reviewer`. Japanese: `取り除いた言い回し: 「…」「…」`（なければ `なし`）, `モード: 標準 — アドバイザー5人（opus/sonnet）・レビュアー3人`, quick `モード: クイック — アドバイザー3人・レビュアー1人`.
 
 From here on, **no subagent sees the user's original wording** — only the brief text (never the Removed framing or Mode lines).
 
@@ -211,7 +211,7 @@ Write **one final message** containing, in this order and nothing else:
 
 ## Output rules
 
-- The person sees only the text you write, not the subagents' work. Write exactly two messages of your own: the BRIEF and the final report. A run is **incomplete** unless the final report has ADVISORS, PEER REVIEW and CHAIRMAN.
+- The person sees only the text you write, not the subagents' work. Write exactly two messages of your own: the BRIEF and the final report. Print nothing in between (no progress notes such as "all agreed, spawning red team"). A run is **incomplete** unless the final report has ADVISORS, PEER REVIEW and CHAIRMAN.
 - Print the chairman's output verbatim. Do not rewrite, translate, shorten, or restyle it.
 - Plain text, no emojis, no tables wider than 90 columns, no headers other than the `== ... ==` lines.
 - No summary, pep talk, or opinion of your own after the chairman.
