@@ -40,7 +40,7 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
 4. **One turn, foreground only.** Pass `run_in_background: false` on **every** Agent call and wait for the results in this same turn. Never end your turn, schedule a wakeup, or poll while the council is running: the pre-approved scripts last only for the current turn, so a run split across turns stops at a permission prompt.
 
-5. **Silence.** You write exactly two messages with text: the BRIEF and the final report. Every other message contains tool calls only, with no text at all: no progress notes ("deliberating...", "審議中です"), no counts, no plans. The person already sees the subagents working.
+5. **Silence.** You write exactly two messages with text: the BRIEF and the final report. Every other message contains tool calls only, with no text at all: no progress notes ("deliberating...", "審議中です"), no counts, no plans. The person already sees the subagents working. If you want to note something for yourself (for example "4 CHANGE, 1 NO-GO, so no red team"), put it in the `description` of your next tool call, never in message text.
 
 ## Stage 0 — Neutral brief (you write this yourself)
 
