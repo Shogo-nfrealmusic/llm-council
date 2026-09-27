@@ -23,7 +23,7 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
 ## Setup (decide silently, print nothing yet)
 
-1. **Council agents.** The members are four subagent types shipped with this plugin: `council-advisor`, `council-red-team`, `council-reviewer`, `council-chairman`. Use them with the plugin prefix (`llm-council:council-advisor` ...) if that is how they appear in your list of available agents, else without it. They start without the user's CLAUDE.md and hold their own instructions, so your prompts to them carry only data. If they are not available, do not improvise with other agent types: say `The council agents are not installed. See the README (Install).` and stop.
+1. **Council agents.** The members are five subagent types shipped with this plugin: `council-advisor`, `council-red-team`, `council-reviewer`, `council-chairman`, and `council-chairman-quick` for quick mode. Use them with the plugin prefix (`llm-council:council-advisor` ...) if that is how they appear in your list of available agents, else without it. They start without the user's CLAUDE.md and hold their own instructions, so your prompts to them carry only data. If they are not available, do not improvise with other agent types: say `The council agents are not installed. See the README (Install).` and stop.
 
 2. **Flags.** A leading `--quick` means quick mode; a leading `--no-notes` means do not save notes. Remove the flags from the question. Default: standard mode, notes saved.
 
@@ -32,7 +32,7 @@ If the input is empty, ask the user for the decision they want pressure-tested a
    | advisors | contrarian `opus`, first-principles `sonnet`, expansionist `opus`, outsider `sonnet`, executor `sonnet` | contrarian `sonnet`, first-principles `opus`, executor `sonnet`, all with `Length: short` |
    | red team | `opus`, only if all advisors gave the same token | none |
    | reviewers | 3, `sonnet` | 1, `sonnet` |
-   | chairman | `opus` | `sonnet` |
+   | chairman | `council-chairman`, `opus` | `council-chairman-quick` (same instructions, low effort), `sonnet` |
 
    Advisors are spread across models on purpose: different models share fewer blind spots.
 
@@ -127,7 +127,7 @@ Start this stage only after the unanimity check is done and the red team (if any
 
 ## Stage 3 — Chairman
 
-Spawn **one** `council-chairman` (model from the table) with (quick mode adds the line `Length: short`):
+Spawn **one** chairman (agent and model from the table) with (quick mode adds the line `Length: short`):
 
 ```
 Language: <QLANG>

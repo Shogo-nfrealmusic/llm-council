@@ -117,12 +117,12 @@ def main():
             check(all(L in p.split("Labels:")[1].split("\n")[0] for L in (labels[0], labels[-1])) if "Labels:" in p else False,
                   f"reviewer {n} told labels {labels[0]}-{labels[-1]}")
 
-    chair = [c for c in allcalls if kind(c) == "chairman"]
+    chair = [c for c in allcalls if kind(c) in ("chairman", "chairman-quick")]
     check(len(chair) == 1, "one chairman subagent issued")
     if chair:
         m = chair[0]["input"].get("model")
         if quick:
-            check(m == "sonnet", f"quick chairman on sonnet (got {m})")
+            check(m == "sonnet" and kind(chair[0]) == "chairman-quick", f"quick chairman is council-chairman-quick on sonnet (got {kind(chair[0])}, {m})")
         else:
             check(m == "opus", f"standard chairman on opus (got {m})")
 

@@ -44,5 +44,10 @@ grep -q -- '---DETAILS---' "$P/agents/council-chairman.md" && grep -q 'Never pri
   && ok "chairman details go only to the notes" || bad "chairman details go only to the notes"
 grep -q 'red team | `opus`, only if all advisors gave the same token | none |' "$SK" && ok "no red team in quick mode" || bad "no red team in quick mode"
 
+body() { awk 'BEGIN{n=0} /^---$/{n++; if(n==2){f=1; next}} f' "$1"; }
+[ "$(body "$P/agents/council-chairman.md")" = "$(body "$P/agents/council-chairman-quick.md")" ] \
+  && ok "quick chairman has the same instructions as the chairman" || bad "quick chairman has the same instructions as the chairman"
+fm "$P/agents/council-chairman-quick.md" | grep -qx "omitClaudeMd: true" && ok "quick chairman starts without CLAUDE.md" || bad "quick chairman starts without CLAUDE.md"
+
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]
