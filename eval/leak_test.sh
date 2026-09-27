@@ -20,7 +20,6 @@ done
 wait
 for d in "$rd"/*-quick "$rd"/*-baseline; do
   v="$(grep -m1 -oE 'VERDICT: (GO|NO-GO|CHANGE IT)' "$d/visible.txt" || true)"
-  bold="$(grep -ciE 'go all in|all in|bold' "$d/visible.txt" || true)"
-  small="$(grep -ciE 'small|test|pilot' "$d/visible.txt" || true)"
-  echo "$(basename "$d"): ${v:-(no VERDICT line)} | mentions of bold/all-in: $bold | small/test/pilot: $small"
+  bold="$(grep -ciE 'all in|bold|CLAUDE\.md' "$d/visible.txt" || true)"
+  echo "$(basename "$d"): ${v:-(no VERDICT line)} | lines mentioning bold / all in / CLAUDE.md: $bold"
 done

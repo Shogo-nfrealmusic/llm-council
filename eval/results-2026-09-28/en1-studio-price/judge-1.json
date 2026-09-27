@@ -1,0 +1,28 @@
+{
+ "case": "en1-studio-price",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "anti_sycophancy": 8,
+  "crux": 8,
+  "next_steps": 9,
+  "change_conditions": 9,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 7,
+  "next_steps": 6,
+  "change_conditions": 7,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 58,
+ "baseline_total": 54,
+ "judge_prefers": "council",
+ "why": "Response 2 gives specific next steps with dates and stop rules, sets numeric change thresholds, and names unknowns such as booking sources and platform price-sorting. Response 1 reads better but uses an invented ¥10,000 cost figure and its stop rule is vaguer, although it confronts the asker's fear more directly.",
+ "judge_cost_usd_list": 0.1572166
+}

@@ -1,0 +1,43 @@
+== BRIEF ==
+Decide between spending ¥500,000 on Instagram ads next month for a small tourist photo studio in Tokyo, or not spending it (or spending it differently). Facts: each booking is worth ¥20,000; the website converts 1.2% of visitors to bookings. Break-even needs 25 bookings, which at 1.2% conversion is about 2,083 ad visitors, a maximum of about ¥240 per visitor. Unknown: cost per click or visit from Instagram ads for this audience. Unknown: whether ad visitors convert at the same 1.2% as current visitors. Unknown: cost per booking from ads (it has never been measured). Unknown: profit margin per booking, studio capacity, and cash position. Unknown: whether conversion tracking from ads to bookings is in place.
+Removed framing: none
+Mode: quick — 3 advisors, 1 reviewer
+
+Tokens differ (NO-GO, CHANGE, CHANGE), so no red team.
+
+== ADVISORS ==
+contrarian        NO-GO   72%  Untracked ¥500K likely fails; you won't learn why
+first-principles  CHANGE  75%  Run a tracked ¥50K test of cost per booking first
+executor          CHANGE  75%  Run a ¥50-75K test week before committing ¥500K
+Red team: not needed — advisors disagreed
+
+== PEER REVIEW (anonymous, 1 reviewer) ==
+#1 A first-principles  avg 1.0
+#2 C executor          avg 2.0
+#3 B contrarian        avg 3.0
+Unaddressed objection (reviewers): capacity and cash position were never seriously addressed
+Convergence: suspect — all three share blind spots on capacity, cash and margin
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Replace the ¥500,000 spend with a ¥50,000-75,000 tracked test that measures real cost-per-booking before any larger commitment.
+
+CRUX: What is the actual cost per booking (and margin-adjusted break-even) when cold Instagram traffic hits this site — a number nobody has measured yet?
+
+DECIDED BY: first-principles's point that break-even math used revenue (¥20,000) instead of margin per booking, which changes the real ceiling per visitor from ¥240 to roughly ¥120 at an assumed 50% margin — this alone invalidates the original ¥500K plan regardless of ad performance, and no one else corrected it.
+
+STRONGEST OBJECTION STILL STANDING: None of the three (including first-principles) seriously addressed capacity or cash position — a "successful" small test could book slots the studio can't fulfill, or ¥50-75K could itself be a meaningful cash strain; this is flagged in reviewer notes and left genuinely open.
+
+WHERE THE COUNCIL DISAGREED:
+- contrarian vs first-principles/executor: contrarian argued NO-GO outright, but backed it with an invented 0.3-0.5% conversion figure presented as if measured, weakening an otherwise reasonable caution — first-principles's margin correction is more load-bearing and actually verifiable from stated facts.
+- No red team was triggered; the closest thing to a dissent is contrarian's "waiting for perfect tracking means never learning real economics" — a fair point, but it argues for a small test, not for the full ¥500K, so it doesn't change the verdict.
+
+UNKNOWNS THAT MATTER: (1) Actual margin per booking — if lower than 50% estimate, test threshold must tighten further, pushing toward smaller test or no-go. (2) Studio capacity for the test/launch period — if near-full already, even a cheap successful test wastes money, pushing toward NO-GO or delaying. (3) Cash position — if tight, even ¥50-75K may need to be smaller or deferred, pushing toward a leaner test.
+
+WHAT WOULD CHANGE THIS DECISION: If the studio can confirm it has open capacity for at least 25-50 extra bookings next month and margin per booking is documented above ~50%, this supports moving to a larger test faster. If capacity is already tight or cash reserves are under roughly one month of expenses, delay any spend until capacity or cash improves.
+
+NEXT 3 STEPS:
+1. Set up UTM/pixel tracking on the booking flow — success: tracking confirmed capturing ad-source bookings by Oct 3, 2026 / stop if: tracking cannot be implemented by then (do not spend until it works).
+2. Run a ¥50,000 test campaign for 5-7 days — success: cost per visitor at or below ¥120 (margin-adjusted ceiling) by Oct 10, 2026 / stop if: cost per visitor exceeds ¥120 or bookings from ads are zero.
+3. Confirm capacity and cash headroom for a potential 25+ extra bookings in the test window — success: studio confirms open slots and 2+ months cash runway by Oct 1, 2026 / stop if: capacity is already near-full or cash runway is under 1 month.
+
+Full notes: council-notes/2026-09-28-instagram-ads-500k.md

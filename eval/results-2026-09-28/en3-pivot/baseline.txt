@@ -1,0 +1,29 @@
+No, I don't think it's obviously the right call. As you've framed it, I'd lean against it. Here's why.
+
+## What you'd be giving up
+
+- **$16,000/month (about $192K/year) in real recurring revenue.** Most pre-seed AI agent startups would love to have that.
+- **Good retention.** 2% monthly churn is roughly 22% a year, which is healthy for SMB B2B SaaS. Customers are staying, so the product works for them.
+- **40 paying teams.** That's a distribution channel and a source of feedback. After a shutdown, they won't follow you to the next product.
+
+## Problems with the reasoning
+
+1. **"Investors love it" isn't a strategy.** Investors fund traction in a big market, not categories. A 4-person team starting from zero in the most crowded space in software is a weaker pitch than "$192K ARR, low churn, here's our AI expansion."
+2. **"AI agent platform" isn't a product yet.** Who's the customer? What job does it do? Why would they pick you over OpenAI, Anthropic, Microsoft, Salesforce, and hundreds of funded startups? If you can't answer that sharply, you'd be swapping a known business for a trend.
+3. **You'd throw away your only advantage.** You already have teams whose knowledge sits in your product. That's the context agents need, and most agent startups don't have it.
+4. **Shutting down is hard to undo.** Pivoting is easy to reverse if you keep the note app running. It's nearly impossible to reverse once you've killed it.
+
+## What I'd do instead
+
+- **Build agents into the note app first.** Examples: agents that turn meeting notes into tasks, follow-ups, or CRM updates, or that answer questions across a team's knowledge. Charge for it as an add-on. Your 40 teams will tell you within weeks whether it's valuable.
+- **Run the note app lean.** Put one person on maintenance and support at part-time capacity and have three people explore. You keep the revenue while you learn.
+- **Validate before you commit.** Do 15–20 interviews with target buyers for the agent product and try to get 3–5 letters of intent or paid pilots. If you can't get those, you've saved yourself a year.
+- **Set a kill criterion for the note app.** For example: "If agent add-on revenue passes X, or growth stalls for Y months, we wind it down." That makes it a deliberate decision rather than a reaction to hype.
+
+## When a full pivot would make sense
+
+- The note app has flatlined (no new customers for months) and you can't see a way to grow it.
+- $16K/month doesn't cover the team, and you're about to run out of money either way.
+- You already have specific agent customers who are pulling you toward that product.
+
+If one of those is the real driver, tell me and the analysis changes. What's actually prompting this: stalled growth, fundraising pressure, or the team losing interest in notes?

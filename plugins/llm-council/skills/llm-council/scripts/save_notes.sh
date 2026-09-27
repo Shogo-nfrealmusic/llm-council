@@ -18,17 +18,26 @@ if [ "${1:-}" = "--discard" ]; then discard=1; shift; set -- "" "${1:-}"; fi
 slug_in="${1:-}"
 work="${2:-}"
 
+# Only ever delete a run folder that anonymize.sh created: <...>/.llm-council-work/run.*
+# No "..", no "//", no symlinks anywhere in the last two steps.
+safe_work() {
+  w="$1"
+  [ -n "$w" ] || return 1
+  case "$w" in *..*|*//*) return 1 ;; esac
+  [ -d "$w" ] && [ ! -L "$w" ] || return 1
+  parent="$(dirname -- "$w")"
+  [ ! -L "$parent" ] || return 1
+  case "$(basename -- "$w")" in run.*) ;; *) return 1 ;; esac
+  [ "$(basename -- "$parent")" = ".llm-council-work" ] || return 1
+  return 0
+}
+
 cleanup() {
-  # Only ever delete a run folder that anonymize.sh created.
-  case "$work" in
-    */.llm-council-work/run.*)
-      if [ -d "$work" ]; then
-        rm -rf -- "$work"
-        parent="$(dirname -- "$work")"
-        if [ "$(ls -A "$parent" 2>/dev/null)" = ".gitignore" ]; then rm -rf -- "$parent"; fi
-      fi
-      ;;
-  esac
+  if safe_work "$work"; then
+    rm -rf -- "$work"
+    parent="$(dirname -- "$work")"
+    if [ "$(ls -A "$parent" 2>/dev/null)" = ".gitignore" ]; then rm -rf -- "$parent"; fi
+  fi
   return 0
 }
 
@@ -55,7 +64,7 @@ k=2
 while [ -e "$path" ]; do path="$base-$k.md"; k=$((k + 1)); done
 
 render_answers() {
-  if [ -n "$work" ] && [ -f "$work/packet.md" ]; then
+  if safe_work "$work" && [ -f "$work/packet.md" ]; then
     awk '
       /^=== ANSWER [A-F] ===$/ { printf "\n### Answer %s\n\n", $3; next }
       { print }

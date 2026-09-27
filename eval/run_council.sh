@@ -3,7 +3,7 @@
 # usage: eval/run_council.sh <outdir> <council|quick|baseline> "<question>" [extra claude args...]
 # The scratch folder has no CLAUDE.md unless the caller puts one there (see leak test).
 set -u
-out="$1"; kind="$2"; q="$3"; shift 3
+out="$(mkdir -p "$1" && cd "$1" && pwd)"; kind="$2"; q="$3"; shift 3
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 mkdir -p "$out/work"
 cd "$out/work"

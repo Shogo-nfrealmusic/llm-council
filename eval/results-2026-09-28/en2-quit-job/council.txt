@@ -1,0 +1,48 @@
+== BRIEF ==
+Decide whether to quit a $95k/year salaried job next Friday to work full-time on a side-project SaaS, or choose another option (keep the job, delay, go part-time). Facts: the SaaS earns $1,200 MRR and has grown 15% per month for the last 4 months. Savings: $8,000. Rent: $1,500/month. Planned quit date: next Friday.
+Claim (untested): working full-time will sustain or increase the 15% monthly growth.
+Unknown: other monthly expenses, health insurance, business costs and churn, whether the job or a similar one could be regained, dependents or partner income, where growth comes from.
+Removed framing: "This is my moment", "everyone says go for it", "Right?"
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Don't quit Friday; keep the job and quit only when MRR covers your full
+monthly costs or savings reach 9 months of spending.
+CRUX: Do more founder hours actually produce more growth, or does growth come from a
+channel that hours don't move?
+DECIDED BY: first-principles: a part-time test costs little and can be undone, but quitting
+on an untested belief with $8k (5.3 months of rent alone) cannot be undone. Expansionist
+added the key fact: the 15% came while you worked part-time. So the facts do not support the
+claim that full-time work keeps or raises 15% growth. The question stays open.
+STRONGEST OBJECTION STILL STANDING: Early momentum can fade. If the job is what limits growth,
+every month of delay costs growth you can't get back.
+WHERE THE COUNCIL DISAGREED:
+- outsider (don't do it at all) vs contrarian, first-principles and expansionist (quit later on a set trigger)
+- No red team. A dissenter's best case: the job can be regained, so quitting's downside is months, not ruin.
+UNKNOWNS THAT MATTER: full monthly spending (higher pushes toward staying longer); where growth
+comes from (hour-driven favors quitting sooner); whether you could get the job back (yes lowers the risk).
+WHAT WOULD CHANGE THIS DECISION: 8 weeks of extra hours with growth clearly above 15% a month,
+plus MRR on track to cover your spending.
+NEXT 3 STEPS:
+1. Add up full monthly spending, including insurance and business costs — success: total by Oct 2 /
+stop if: savings cover under 3 months, then drop quit plans for now.
+2. Find the source of each new customer from the last 4 months — success: 80% of new MRR traced by
+Oct 9 / stop if: one channel that hours don't move, then keep the job and spend salary on that channel.
+3. Ask for a 4-day week and track hours against new MRR for 8 weeks — success: growth above 15% a month
+by Nov 27 / stop if: no rise, then the claim fails and you stay employed.
+
+```
+== ADVISORS ==
+contrarian        CHANGE  82%  Keep job until MRR covers costs or 9-12mo runway
+first-principles  CHANGE  72%  Delay; test part-time if hours drive growth
+expansionist      CHANGE  75%  Keep job as seed funding; quit when MRR covers
+outsider          NO-GO   78%  $1,200 MRR vs $8k savings is not a business yet
+executor          CHANGE  68%  Delay 2-3 weeks; get real burn and growth source
+Red team: not needed — advisors disagreed
+
+== PEER REVIEW (anonymous, 3 reviewers) ==
+Ranking: first-principles 1.0 > contrarian 2.0 > executor 3.0 > expansionist 4.0
+         > outsider 5.0
+Unaddressed objection: No answer weighs how much the job itself limits growth; 15% came part-time.
+```
+
+Full notes: council-notes/2026-09-28-quit-job-saas.md

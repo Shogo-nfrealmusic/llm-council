@@ -1,0 +1,28 @@
+{
+ "case": "en1-studio-price",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "anti_sycophancy": 8,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 9,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 6
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 7,
+  "next_steps": 5,
+  "change_conditions": 5,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 8
+ },
+ "council_total": 60,
+ "baseline_total": 50,
+ "judge_prefers": "council",
+ "why": "Response 1 names a sharp crux and gives dated next steps with numeric stop rules and clear reversal thresholds. It also lists the unknowns that matter, including booking sources. Response 2 is warmer and addresses the asker's fear more directly, but its trial plan and revert conditions are vague, it builds an illustrative argument on an assumed ¥10,000 cost per shoot, and it ends with an unrelated note about a file it couldn't read.",
+ "judge_cost_usd_list": 0.0547478
+}

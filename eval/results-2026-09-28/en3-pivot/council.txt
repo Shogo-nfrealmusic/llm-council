@@ -1,0 +1,45 @@
+== BRIEF ==
+Decide whether to shut down a B2B note-taking app next month and move the whole 4-person team to building an AI agent platform, or not do that. Facts: 40 paying teams at $400/month (about $16,000 MRR, $192,000 ARR), 2% monthly churn. The plan is to shut down next month. Claim (untested): investors want to fund AI agent platforms. Claim (untested): an AI agent platform is a better opportunity for this team than the note app. Unknown: cash, burn and runway; revenue growth rate; customer contract terms; which agent product it would be and for which customer; team skills relevant to agents; whether any investor has committed money.
+Removed framing: "AI agents are the hottest thing right now", "investors love them", "This is obviously the right call, isn't it?"
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Keep the note app running with one person, test one agent product
+on current customers, and decide on the shutdown by Nov 9.
+CRUX: Will any customer pay for a specific agent product, and will any investor commit
+money, before the $16k/month (MRR) income is switched off?
+DECIDED BY: The contrarian's ordering point: the shutdown date is fixed before the
+product, the buyer or the money exists. Both claims are unsupported by the facts given.
+No investor has committed, and no agent product is defined.
+STRONGEST OBJECTION STILL STANDING: Splitting four people's focus may sink both efforts.
+If cash is short and the app can never raise money, waiting burns scarce time.
+WHERE THE COUNCIL DISAGREED:
+- Outsider said NO-GO outright; the others said CHANGE IT. The practical advice matched.
+- No red team ran. A dissenter's best case: in a hot AI market a clean, fast break beats
+  hedging, and a half-run app just drains attention.
+UNKNOWNS THAT MATTER: Runway (under 3 months pushes toward a fast decision). Any
+committed investor money (pushes toward the pivot). Customer contract terms (long
+contracts push toward selling the app, not closing it).
+WHAT WOULD CHANGE THIS DECISION: 3 or more paid pilots plus a written investor offer means
+pivot fully. Selling the app beats shutting it down.
+NEXT 3 STEPS:
+1. Work out cash, burn and runway — success: written figures by Oct 2 / stop if: runway
+   is under 3 months; then decide everything within 1 week.
+2. Pitch one agent built on customers' notes to 10 of the 40 teams — success: 3 paid
+   pilots by Oct 26 / stop if: 0 pilots.
+3. Ask 8 investors for a specific amount — success: 1 written offer by Nov 9 / stop if:
+   none; keep the app as the main business.
+
+== ADVISORS ==
+contrarian        CHANGE  75%  Keep app on minimal effort; validate agent first
+first-principles  CHANGE  78%  Don't kill $192K ARR on untested claims
+expansionist      CHANGE  72%  Keep app; sell agents to its 40 customers first
+outsider          NO-GO   80%  Killing $192k ARR for investor mood isn't a plan
+executor          CHANGE  78%  Run a 2-week parallel test before any shutdown
+Red team: not needed — advisors disagreed
+
+== PEER REVIEW (anonymous, 3 reviewers) ==
+Ranking: outsider 1.3 > first-principles 2.3 > contrarian 3.0 > expansionist 4.0
+  > executor 4.3
+Unaddressed objection: No one weighs the case where runway is short and delay itself is the costly error.
+
+Full notes: council-notes/2026-09-28-notes-app-to-ai-agent-pivot.md

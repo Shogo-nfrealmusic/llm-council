@@ -48,13 +48,26 @@ Reply with ONLY a JSON object, no prose before or after, in this shape:
 """
 
 
-def ask(prompt, workdir):
-    r = subprocess.run(["claude", "-p", prompt, "--tools", "", "--output-format", "json"],
-                       cwd=workdir, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=600)
-    out = json.loads(r.stdout)
-    text = out.get("result", "")
-    m = re.search(r"\{.*\}", text, re.S)
-    return json.loads(m.group(0)), out.get("total_cost_usd")
+def valid(res):
+    keys = [k for k, _ in CRITERIA]
+    return (isinstance(res, dict) and res.get("better") in (1, 2)
+            and all(isinstance(res.get(r), dict) and all(isinstance(res[r].get(k), (int, float)) and 0 <= res[r][k] <= 10 for k in keys)
+                    for r in ("response_1", "response_2")))
+
+
+def ask(prompt, workdir, tries=3):
+    for _ in range(tries):
+        r = subprocess.run(["claude", "-p", prompt, "--tools", "", "--output-format", "json"],
+                           cwd=workdir, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=600)
+        try:
+            out = json.loads(r.stdout)
+            m = re.search(r"\{.*\}", out.get("result", ""), re.S)
+            res = json.loads(m.group(0))
+        except (ValueError, AttributeError):
+            continue
+        if valid(res):
+            return res, out.get("total_cost_usd")
+    raise RuntimeError("judge did not return valid scores")
 
 
 def main():

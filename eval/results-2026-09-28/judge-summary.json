@@ -1,0 +1,534 @@
+{
+ "summary": {
+  "n": 18,
+  "council_avg_100": 81.6,
+  "baseline_avg_100": 77.5,
+  "council_wins": 14,
+  "ties": 1,
+  "judge_prefers_council": 12,
+  "per_criterion_council": {
+   "anti_sycophancy": 8.17,
+   "crux": 8.72,
+   "next_steps": 8.89,
+   "change_conditions": 8.33,
+   "unknowns": 8.5,
+   "language": 9.33,
+   "readability": 5.17
+  },
+  "per_criterion_baseline": {
+   "anti_sycophancy": 8.72,
+   "crux": 7.0,
+   "next_steps": 6.28,
+   "change_conditions": 6.89,
+   "unknowns": 6.5,
+   "language": 10.0,
+   "readability": 8.83
+  }
+ },
+ "rows": [
+  {
+   "case": "en1-studio-price",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 8,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 9,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 6
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 7,
+    "next_steps": 5,
+    "change_conditions": 5,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 8
+   },
+   "council_total": 60,
+   "baseline_total": 50,
+   "judge_prefers": "council",
+   "why": "Response 1 names a sharp crux and gives dated next steps with numeric stop rules and clear reversal thresholds. It also lists the unknowns that matter, including booking sources. Response 2 is warmer and addresses the asker's fear more directly, but its trial plan and revert conditions are vague, it builds an illustrative argument on an assumed ¥10,000 cost per shoot, and it ends with an unrelated note about a file it couldn't read.",
+   "judge_cost_usd_list": 0.0547478
+  },
+  {
+   "case": "en1-studio-price",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 8,
+    "crux": 8,
+    "next_steps": 9,
+    "change_conditions": 9,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 7,
+    "next_steps": 6,
+    "change_conditions": 7,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 58,
+   "baseline_total": 54,
+   "judge_prefers": "council",
+   "why": "Response 2 gives specific next steps with dates and stop rules, sets numeric change thresholds, and names unknowns such as booking sources and platform price-sorting. Response 1 reads better but uses an invented ¥10,000 cost figure and its stop rule is vaguer, although it confronts the asker's fear more directly.",
+   "judge_cost_usd_list": 0.1572166
+  },
+  {
+   "case": "en1-studio-price",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 8,
+    "crux": 8,
+    "next_steps": 9,
+    "change_conditions": 9,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 6,
+    "next_steps": 6,
+    "change_conditions": 6,
+    "unknowns": 7,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 58,
+   "baseline_total": 53,
+   "judge_prefers": "council",
+   "why": "Response 2 names a clear crux, gives dated next steps with numeric stop rules, and lists the unknowns that matter, including booking sources. Response 1 reads better and speaks more directly to the asker's fear, but its revert condition and trial plan are vaguer, and it leans on an illustrative cost figure.",
+   "judge_cost_usd_list": 0.0419588
+  },
+  {
+   "case": "en2-quit-job",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 8,
+    "crux": 8,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 6
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 6,
+    "next_steps": 7,
+    "change_conditions": 7,
+    "unknowns": 7,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 58,
+   "baseline_total": 55,
+   "judge_prefers": "council",
+   "why": "Response 1 names a sharper crux (whether full-time hours actually drive growth) and gives dated next steps with stop rules. It also avoids presenting guessed expenses as fact, although its council scaffolding makes it harder to read. Response 2 is clearer and its runway math checks out, but it rests on an assumed $3,000 monthly burn, and its $2,500 MRR trigger is below that assumed spending.",
+   "judge_cost_usd_list": 0.046418799999999996
+  },
+  {
+   "case": "en2-quit-job",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 8,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 7,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 6,
+    "next_steps": 7,
+    "change_conditions": 8,
+    "unknowns": 7,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 57,
+   "baseline_total": 56,
+   "judge_prefers": "baseline",
+   "why": "Response 1 pushes back on the hype with a correct runway table and clear quit triggers, all in plain language the person can act on. Response 2 names the crux more sharply and gives dated steps with stop rules, but the council jargon, confidence scores and peer-review rankings are padding, and its 'growth clearly above 15%' test for changing the decision is a strange bar.",
+   "judge_cost_usd_list": 0.0509988
+  },
+  {
+   "case": "en2-quit-job",
+   "round": 2,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 6,
+    "next_steps": 6,
+    "change_conditions": 7,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 8
+   },
+   "council_total": 59,
+   "baseline_total": 52,
+   "judge_prefers": "council",
+   "why": "Response 1 names the real crux: the 15% growth came from part-time work, so it's unclear whether full-time hours would add anything. It also gives dated next steps with stop rules and keeps unknowns separate from facts, though its council jargon and advisor tables make it harder to read. Response 2 is clear and has useful runway math, but it treats estimated expenses as if they were known, and its steps and crux are less sharp.",
+   "judge_cost_usd_list": 0.0925196
+  },
+  {
+   "case": "en3-pivot",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 6
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 6,
+    "next_steps": 6,
+    "change_conditions": 8,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 60,
+   "baseline_total": 54,
+   "judge_prefers": "council",
+   "why": "Response 1 names the crux clearly: will anyone pay for, or fund, a specific agent product before the $16k MRR is switched off? It also gives dated next steps with stop rules and lists the key unknowns (runway, investor commitment, contract terms). Response 2 argues well and reads more easily, but its steps have no dates and use X/Y placeholders, and its crux is left implicit. Response 1 is harder to read because of its internal council jargon, and its red-team note contradicts itself: it says the advisors disagreed when four of five agreed.",
+   "judge_cost_usd_list": 0.0429508
+  },
+  {
+   "case": "en3-pivot",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 6
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 6,
+    "next_steps": 6,
+    "change_conditions": 7,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 60,
+   "baseline_total": 53,
+   "judge_prefers": "council",
+   "why": "Response 2 names the crux outright (paying customers and committed investor money before the $16k MRR is switched off). Its next steps have dates and stop rules, and it lists the key unknowns: runway, contract terms and investor commitment. Response 1 reads better and argues well, but its steps have no dates and its kill criterion uses X/Y placeholders; the council, advisor and peer-review sections in Response 2 add clutter that costs it readability.",
+   "judge_cost_usd_list": 0.042310799999999996
+  },
+  {
+   "case": "en3-pivot",
+   "round": 2,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 9,
+    "language": 10,
+    "readability": 6
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 6,
+    "next_steps": 6,
+    "change_conditions": 8,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 60,
+   "baseline_total": 54,
+   "judge_prefers": "council",
+   "why": "Response 1 names the crux directly: will customers and investors commit before the $16k MRR is switched off. Its next steps have dates, numeric targets and stop rules, and it lists the unknowns that matter, such as runway, investor commitment and contract terms. Response 2 reads better and has sound reasoning, but it gives no timelines, leaves placeholder thresholds (X, Y) and only touches on unknowns indirectly.",
+   "judge_cost_usd_list": 0.0140564
+  },
+  {
+   "case": "ja1-ads",
+   "round": 0,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 8,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 9,
+    "unknowns": 9,
+    "language": 9,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 7,
+    "next_steps": 7,
+    "change_conditions": 7,
+    "unknowns": 7,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 58,
+   "baseline_total": 56,
+   "judge_prefers": "council",
+   "why": "Response 2 names the crux most clearly: whether the CPA of ad-driven bookings comes in under breakeven. It also gives dated steps with stop rules, a clear threshold for spending the remaining ¥300k, and a full list of unknowns without making up a margin figure. Response 1 is easier to read, but it assumes a 60% margin and its steps have no dates and never say where tracking should happen.",
+   "judge_cost_usd_list": 0.0376108
+  },
+  {
+   "case": "ja1-ads",
+   "round": 1,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 9,
+    "unknowns": 9,
+    "language": 9,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 8,
+    "crux": 7,
+    "next_steps": 6,
+    "change_conditions": 6,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 59,
+   "baseline_total": 52,
+   "judge_prefers": "council",
+   "why": "Response 1 names the crux precisely: whether ad-driven CPA falls below the break-even of ¥20,000 × gross margin. It gives dated steps with explicit stop and scale rules and lists what is unknown, though the council jargon hurts readability. Response 2 is clearer and does useful math, but it relies on an assumed 60% margin and scenario numbers. Its ¥15,000 stop rule is also above its own ¥12,000 break-even, and its steps have no dates.",
+   "judge_cost_usd_list": 0.0479708
+  },
+  {
+   "case": "ja1-ads",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 8,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 9,
+    "unknowns": 9,
+    "language": 9,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 7,
+    "next_steps": 7,
+    "change_conditions": 7,
+    "unknowns": 7,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 58,
+   "baseline_total": 56,
+   "judge_prefers": "council",
+   "why": "Response 2 names the crux precisely: whether the measured CPA for ad-driven bookings comes in below breakeven. It also gives dated steps with stop rules and a clear threshold for spending the remaining ¥300k, and it lists the unknowns without inventing numbers. Response 1 is easier to read and helpful, but it assumes a 60% gross margin and hypothetical CPC figures, and its stop rules are only examples. Response 2's council-transcript format is dense and harder to scan, but its content would help the asker decide better.",
+   "judge_cost_usd_list": 0.0093144
+  },
+  {
+   "case": "ja2-first-hire",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 6,
+    "crux": 8,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 7,
+    "language": 8,
+    "readability": 4
+   },
+   "baseline": {
+    "anti_sycophancy": 8,
+    "crux": 8,
+    "next_steps": 6,
+    "change_conditions": 6,
+    "unknowns": 7,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 50,
+   "baseline_total": 54,
+   "judge_prefers": "baseline",
+   "why": "Response 2 correctly says the hire is affordable and sensible, and still flags the real crux: owner time versus photographer capacity. Response 1 has sharper dated tests, but it leans toward reflexive opposition. It overlooks that the business stays at about ¥640k/month profit even with zero added revenue, and its council-style format is hard to read.",
+   "judge_cost_usd_list": 4.39892
+  },
+  {
+   "case": "ja2-first-hire",
+   "round": 1,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 6,
+    "crux": 8,
+    "next_steps": 9,
+    "change_conditions": 9,
+    "unknowns": 7,
+    "language": 8,
+    "readability": 4
+   },
+   "baseline": {
+    "anti_sycophancy": 8,
+    "crux": 9,
+    "next_steps": 6,
+    "change_conditions": 7,
+    "unknowns": 8,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 51,
+   "baseline_total": 57,
+   "judge_prefers": "baseline",
+   "why": "Response 2 correctly finds that the hire is low-risk given the cash cushion. It names the real crux (the owner's time versus a shortage of photographers) and sets a clear break-even margin, all in plain, readable Japanese. Response 1 has sharper metrics and deadlines, but it leans toward reflexive opposition on an assumed 30–40% margin, ignores the value of the owner's freed time, and is buried in dense council jargon.",
+   "judge_cost_usd_list": 0.15857559999999998
+  },
+  {
+   "case": "ja2-first-hire",
+   "round": 2,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 7,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 7,
+    "language": 9,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 8,
+    "crux": 9,
+    "next_steps": 6,
+    "change_conditions": 7,
+    "unknowns": 8,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 54,
+   "baseline_total": 57,
+   "judge_prefers": "baseline",
+   "why": "Response 2 plainly acknowledges that the finances support the hire. It still isolates the real crux (owner time vs. photographer shortage), sets a clear margin breakeven, and is easy to read. Response 1 has sharper next steps with dates and stop rules. However, it leans toward reflexive opposition, relies on an assumed 30–40% margin, and is cluttered with council artifacts.",
+   "judge_cost_usd_list": 0.171705
+  },
+  {
+   "case": "ja3-course",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 8,
+    "change_conditions": 8,
+    "unknowns": 8,
+    "language": 8,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 8,
+    "crux": 7,
+    "next_steps": 6,
+    "change_conditions": 7,
+    "unknowns": 5,
+    "language": 10,
+    "readability": 8
+   },
+   "council_total": 55,
+   "baseline_total": 51,
+   "judge_prefers": "council",
+   "why": "Response 1 names the crux sharply (how many people will actually prepay ¥30,000), gives dated steps with stop rules, and lists the unknowns: production cost and past sales history. Response 2 is easier to read and ends in a helpful follow-up question, but its steps have no dates, it never names what's missing, and its 10-sales threshold isn't tied to cost. Response 1's internal council jargon hurts readability.",
+   "judge_cost_usd_list": 0.0782986
+  },
+  {
+   "case": "ja3-course",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 8,
+    "change_conditions": 8,
+    "unknowns": 8,
+    "language": 9,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 8,
+    "next_steps": 7,
+    "change_conditions": 7,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 56,
+   "baseline_total": 56,
+   "judge_prefers": "baseline",
+   "why": "Response 1 gives clear, directly usable advice. It catches the schedule mismatch and the gap between 'wanting it' and actually paying, and it offers a presale plan with purchase-count thresholds. Response 2 has stronger dated steps and names its unknowns explicitly, but the internal council format (advisor percentages, peer-review rankings, a file path) is clutter the asker doesn't need and makes it much harder to read.",
+   "judge_cost_usd_list": 0.1543636
+  },
+  {
+   "case": "ja3-course",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "anti_sycophancy": 9,
+    "crux": 9,
+    "next_steps": 9,
+    "change_conditions": 8,
+    "unknowns": 8,
+    "language": 9,
+    "readability": 5
+   },
+   "baseline": {
+    "anti_sycophancy": 9,
+    "crux": 8,
+    "next_steps": 7,
+    "change_conditions": 7,
+    "unknowns": 6,
+    "language": 10,
+    "readability": 9
+   },
+   "council_total": 57,
+   "baseline_total": 56,
+   "judge_prefers": "baseline",
+   "why": "Response 2 is the stronger analysis: it has dated steps with clear go and stop thresholds, and it names what it doesn't know (production cost, past sales). Response 1 is better overall because a normal person can act on it right away, while Response 2 buries the same pre-sale advice under internal council jargon (advisors, red team, peer-review rankings) and a transcript file path, which makes it much harder to read.",
+   "judge_cost_usd_list": 0.0781786
+  }
+ ]
+}

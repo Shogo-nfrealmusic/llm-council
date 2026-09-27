@@ -1,0 +1,28 @@
+{
+ "case": "en1-studio-price",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "anti_sycophancy": 8,
+  "crux": 8,
+  "next_steps": 9,
+  "change_conditions": 9,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 6,
+  "next_steps": 6,
+  "change_conditions": 6,
+  "unknowns": 7,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 58,
+ "baseline_total": 53,
+ "judge_prefers": "council",
+ "why": "Response 2 names a clear crux, gives dated next steps with numeric stop rules, and lists the unknowns that matter, including booking sources. Response 1 reads better and speaks more directly to the asker's fear, but its revert condition and trial plan are vaguer, and it leans on an illustrative cost figure.",
+ "judge_cost_usd_list": 0.0419588
+}

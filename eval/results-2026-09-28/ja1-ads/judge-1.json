@@ -1,0 +1,28 @@
+{
+ "case": "ja1-ads",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "anti_sycophancy": 9,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 9,
+  "unknowns": 9,
+  "language": 9,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 8,
+  "crux": 7,
+  "next_steps": 6,
+  "change_conditions": 6,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 59,
+ "baseline_total": 52,
+ "judge_prefers": "council",
+ "why": "Response 1 names the crux precisely: whether ad-driven CPA falls below the break-even of ¥20,000 × gross margin. It gives dated steps with explicit stop and scale rules and lists what is unknown, though the council jargon hurts readability. Response 2 is clearer and does useful math, but it relies on an assumed 60% margin and scenario numbers. Its ¥15,000 stop rule is also above its own ¥12,000 break-even, and its steps have no dates.",
+ "judge_cost_usd_list": 0.0479708
+}

@@ -170,7 +170,8 @@ def main():
 
     last = alltext.strip().splitlines()[-1] if alltext.strip() else ""
     if no_notes:
-        check(not any("save_notes.sh" in b for b in bash_calls), "no notes saved with --no-notes")
+        saves = [b for b in bash_calls if "save_notes.sh" in b]
+        check(bool(saves) and all("--discard" in b for b in saves), "with --no-notes, only save_notes.sh --discard ran")
     else:
         check(any("save_notes.sh" in b for b in bash_calls), "save_notes.sh ran")
         m = re.search(r"(council-notes/\S+\.md)", last)

@@ -48,6 +48,11 @@ Name an executor for the estate before signing.
 Outsiders to the industry rarely read the fine print.
 A contrarian bet on price only works with runway.
 Reasoning from first principles, cost per shoot is fixed.
+Serve as the executor of the estate.
+Take the outsider view on pricing.
+A contrarian take is useful here.
+Outsider: nobody reads the terms.
+この業界は部外者です。
 === ROLE: first-principles ===
 x
 === ROLE: expansionist ===
@@ -57,7 +62,8 @@ x
 === ROLE: executor ===
 x'
 opk="$(printf '%s\n' "$ORD" | bash "$SCRIPT" 5 | packet_of)"
-for phrase in "Name an executor for the estate" "Outsiders to the industry" "A contrarian bet on price" "from first principles, cost"; do
+for phrase in "Name an executor for the estate" "Outsiders to the industry" "A contrarian bet on price" "from first principles, cost" \
+    "Serve as the executor of the estate" "Take the outsider view" "A contrarian take is useful" "Outsider: nobody reads" "この業界は部外者です"; do
   printf '%s\n' "$opk" | grep -qF "$phrase" && ok "ordinary phrase kept: $phrase" || bad "ordinary phrase kept: $phrase"
 done
 

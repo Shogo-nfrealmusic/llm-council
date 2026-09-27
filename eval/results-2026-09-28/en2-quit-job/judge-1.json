@@ -1,0 +1,28 @@
+{
+ "case": "en2-quit-job",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "anti_sycophancy": 8,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 7,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 6,
+  "next_steps": 7,
+  "change_conditions": 8,
+  "unknowns": 7,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 57,
+ "baseline_total": 56,
+ "judge_prefers": "baseline",
+ "why": "Response 1 pushes back on the hype with a correct runway table and clear quit triggers, all in plain language the person can act on. Response 2 names the crux more sharply and gives dated steps with stop rules, but the council jargon, confidence scores and peer-review rankings are padding, and its 'growth clearly above 15%' test for changing the decision is a strange bar.",
+ "judge_cost_usd_list": 0.0509988
+}

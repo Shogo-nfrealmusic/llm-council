@@ -1,0 +1,28 @@
+{
+ "case": "ja1-ads",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "anti_sycophancy": 8,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 9,
+  "unknowns": 9,
+  "language": 9,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 7,
+  "next_steps": 7,
+  "change_conditions": 7,
+  "unknowns": 7,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 58,
+ "baseline_total": 56,
+ "judge_prefers": "council",
+ "why": "Response 2 names the crux precisely: whether the measured CPA for ad-driven bookings comes in below breakeven. It also gives dated steps with stop rules and a clear threshold for spending the remaining ¥300k, and it lists the unknowns without inventing numbers. Response 1 is easier to read and helpful, but it assumes a 60% gross margin and hypothetical CPC figures, and its stop rules are only examples. Response 2's council-transcript format is dense and harder to scan, but its content would help the asker decide better.",
+ "judge_cost_usd_list": 0.0093144
+}

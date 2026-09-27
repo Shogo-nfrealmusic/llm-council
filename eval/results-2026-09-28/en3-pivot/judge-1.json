@@ -1,0 +1,28 @@
+{
+ "case": "en3-pivot",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "anti_sycophancy": 9,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 8,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 6
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 6,
+  "next_steps": 6,
+  "change_conditions": 7,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 60,
+ "baseline_total": 53,
+ "judge_prefers": "council",
+ "why": "Response 2 names the crux outright (paying customers and committed investor money before the $16k MRR is switched off). Its next steps have dates and stop rules, and it lists the key unknowns: runway, contract terms and investor commitment. Response 1 reads better and argues well, but its steps have no dates and its kill criterion uses X/Y placeholders; the council, advisor and peer-review sections in Response 2 add clutter that costs it readability.",
+ "judge_cost_usd_list": 0.042310799999999996
+}

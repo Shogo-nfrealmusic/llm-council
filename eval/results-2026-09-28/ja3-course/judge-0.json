@@ -1,0 +1,28 @@
+{
+ "case": "ja3-course",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "anti_sycophancy": 9,
+  "crux": 9,
+  "next_steps": 8,
+  "change_conditions": 8,
+  "unknowns": 8,
+  "language": 8,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 8,
+  "crux": 7,
+  "next_steps": 6,
+  "change_conditions": 7,
+  "unknowns": 5,
+  "language": 10,
+  "readability": 8
+ },
+ "council_total": 55,
+ "baseline_total": 51,
+ "judge_prefers": "council",
+ "why": "Response 1 names the crux sharply (how many people will actually prepay ¥30,000), gives dated steps with stop rules, and lists the unknowns: production cost and past sales history. Response 2 is easier to read and ends in a helpful follow-up question, but its steps have no dates, it never names what's missing, and its 10-sales threshold isn't tied to cost. Response 1's internal council jargon hurts readability.",
+ "judge_cost_usd_list": 0.0782986
+}

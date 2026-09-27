@@ -1,0 +1,28 @@
+{
+ "case": "en3-pivot",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "anti_sycophancy": 9,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 8,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 6
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 6,
+  "next_steps": 6,
+  "change_conditions": 8,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 60,
+ "baseline_total": 54,
+ "judge_prefers": "council",
+ "why": "Response 1 names the crux directly: will customers and investors commit before the $16k MRR is switched off. Its next steps have dates, numeric targets and stop rules, and it lists the unknowns that matter, such as runway, investor commitment and contract terms. Response 2 reads better and has sound reasoning, but it gives no timelines, leaves placeholder thresholds (X, Y) and only touches on unknowns indirectly.",
+ "judge_cost_usd_list": 0.0140564
+}

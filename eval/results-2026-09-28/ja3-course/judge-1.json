@@ -1,0 +1,28 @@
+{
+ "case": "ja3-course",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "anti_sycophancy": 9,
+  "crux": 9,
+  "next_steps": 8,
+  "change_conditions": 8,
+  "unknowns": 8,
+  "language": 9,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 8,
+  "next_steps": 7,
+  "change_conditions": 7,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 56,
+ "baseline_total": 56,
+ "judge_prefers": "baseline",
+ "why": "Response 1 gives clear, directly usable advice. It catches the schedule mismatch and the gap between 'wanting it' and actually paying, and it offers a presale plan with purchase-count thresholds. Response 2 has stronger dated steps and names its unknowns explicitly, but the internal council format (advisor percentages, peer-review rankings, a file path) is clutter the asker doesn't need and makes it much harder to read.",
+ "judge_cost_usd_list": 0.1543636
+}

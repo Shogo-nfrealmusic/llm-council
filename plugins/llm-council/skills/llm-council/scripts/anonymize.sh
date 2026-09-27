@@ -73,12 +73,20 @@ labels=(A B C D E F)
 mask() {
   perl -CSD -Mutf8 -pe '
     my $P = qr/(?:contrarian|first[- ]principles?|expansionist|outsider|executor|red[- ]team(?:er)?)/i;
-    s/\b(as\s+(?:(?:the|a|an|your|my|our)\s+)?)$P\b/${1}[advisor]/gi;
-    s/\b$P(?=\s+(?:here|speaking|view|lens|angle|perspective|take|hat|seat|mode|role)\b)/[advisor]/gi;
+    # "As the contrarian, I ..." / "Speaking as an outsider, ..." (needs a comma or "I" after it)
+    s/\b(as\s+(?:(?:the|a|an|your|my|our)\s+)?)$P(?=\s*[,，、]|\s+I\b)/${1}[advisor]/gi;
+    # "Executor here:", "Outsider speaking", "First-principles view:" (label form, with a colon)
+    s/\b$P(?=\s+(?:here|speaking)\b)/[advisor]/gi;
+    s/\b$P(?=\s+(?:view|lens|angle|perspective|take|hat|seat|mode)\s*[:：])/[advisor]/gi;
+    # "The Expansionist in me", "my role as the red team"
     s/\b((?:the|my)\s+)$P(?=\s+in\s+me\b)/${1}[advisor]/gi;
-    s/^(\s*(?:[-*]\s*)?)$P(?=\s*[:：])/${1}[advisor]/gi;
+    s/\b((?:role|job|seat|hat)\s+as\s+(?:(?:the|a|an)\s+)?)$P\b/${1}[advisor]/gi;
+    # all-caps label at line start: "OUTSIDER: ..."
+    s/^(\s*(?:[-*]\s*)?)(?:CONTRARIAN|FIRST[- ]PRINCIPLES|EXPANSIONIST|OUTSIDER|EXECUTOR|RED[- ]TEAM)(?=\s*[:：])/${1}[advisor]/g;
+    # Title-case persona used as a name: "the Contrarian"
     s/\b[Tt]he\s+(?:Contrarian|First[- ]Principles?|Expansionist|Outsider|Executor|Red[- ]Team(?:er)?)\b/the [advisor]/g;
-    s/(?:逆張り役|逆張り派|第一原理派|拡張派|部外者|実行役|レッドチーム|コントラリアン|エクスパンショニスト|アウトサイダー|エグゼキューター)(?=として|の立場|の視点|の目線|から見ると|から見て|から言えば|の私|です|だ[。、])/[advisor]/g;
+    # Japanese: "逆張り役として", "実行役の立場から", "部外者の目線で"
+    s/(?:逆張り役|逆張り派|第一原理派|拡張派|部外者|実行役|レッドチーム|コントラリアン|エクスパンショニスト|アウトサイダー|エグゼキューター)(?=として|の立場|の視点|の目線|から見ると|から見て|から言えば|の私)/[advisor]/g;
   '
 }
 

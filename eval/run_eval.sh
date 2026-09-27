@@ -20,7 +20,6 @@ run_one() {
   "$HERE/run_council.sh" "$out" "$kind" "$q" > "$out.log" 2>&1
   echo "done $id $kind $(cat "$out/meta.json" 2>/dev/null)"
 }
-export -f run_one; export rd HERE
 while IFS=$'\t' read -r id kind q; do
   while [ "$(jobs -rp | wc -l | tr -d ' ')" -ge "$par" ]; do sleep 2; done
   mkdir -p "$rd/$id"
@@ -37,7 +36,7 @@ for c in cases:
     fails = [l for l in r.stdout.splitlines() if "FAIL" in l]
     j = json.load(open(f"{out}/inspect.json"))
     m = json.load(open(f"{out}/meta.json"))
-    print(f"{c['id']:18s} inspector={'PASS' if j['ok'] else 'FAIL'} wall={m['wall_s']}s cost=${m['cost_usd_list']:.2f} "
+    print(f"{c['id']:18s} inspector={'PASS' if j['ok'] else 'FAIL'} wall={m['wall_s']}s cost=${(m['cost_usd_list'] or 0):.2f} "
           f"positions={j.get('positions')} red_team={j.get('red_team')} verdict={j.get('verdict')}")
     for l in fails: print("    " + l)
 PY

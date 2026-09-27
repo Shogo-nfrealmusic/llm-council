@@ -46,6 +46,8 @@ NEXT 3 STEPS:
 3. <step> — success: <...> / stop if: <...>
 ```
 
+For any language other than English and Japanese, translate every label except `VERDICT:` and keep the tokens.
+
 If the language is Japanese, use exactly this format instead (only `VERDICT:` and the tokens stay in English). Wrap Japanese lines at about 40 characters.
 
 ```

@@ -1,0 +1,28 @@
+{
+ "case": "en3-pivot",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "anti_sycophancy": 9,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 8,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 6
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 6,
+  "next_steps": 6,
+  "change_conditions": 8,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 60,
+ "baseline_total": 54,
+ "judge_prefers": "council",
+ "why": "Response 1 names the crux clearly: will anyone pay for, or fund, a specific agent product before the $16k MRR is switched off? It also gives dated next steps with stop rules and lists the key unknowns (runway, investor commitment, contract terms). Response 2 argues well and reads more easily, but its steps have no dates and use X/Y placeholders, and its crux is left implicit. Response 1 is harder to read because of its internal council jargon, and its red-team note contradicts itself: it says the advisors disagreed when four of five agreed.",
+ "judge_cost_usd_list": 0.0429508
+}

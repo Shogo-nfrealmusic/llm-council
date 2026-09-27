@@ -1,0 +1,28 @@
+{
+ "case": "en2-quit-job",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "anti_sycophancy": 9,
+  "crux": 9,
+  "next_steps": 9,
+  "change_conditions": 8,
+  "unknowns": 9,
+  "language": 10,
+  "readability": 5
+ },
+ "baseline": {
+  "anti_sycophancy": 9,
+  "crux": 6,
+  "next_steps": 6,
+  "change_conditions": 7,
+  "unknowns": 6,
+  "language": 10,
+  "readability": 8
+ },
+ "council_total": 59,
+ "baseline_total": 52,
+ "judge_prefers": "council",
+ "why": "Response 1 names the real crux: the 15% growth came from part-time work, so it's unclear whether full-time hours would add anything. It also gives dated next steps with stop rules and keeps unknowns separate from facts, though its council jargon and advisor tables make it harder to read. Response 2 is clear and has useful runway math, but it treats estimated expenses as if they were known, and its steps and crux are less sharp.",
+ "judge_cost_usd_list": 0.0925196
+}

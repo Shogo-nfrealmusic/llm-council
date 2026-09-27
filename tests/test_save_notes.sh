@@ -52,6 +52,15 @@ out10="$(bash "$SCRIPT" --discard "$WORK/.llm-council-work/run.test2" < /dev/nul
 [ "$out10" = "NOTES: off" ] && [ ! -e "$WORK/.llm-council-work/run.test2" ] && ok "--discard removes work dir" || bad "--discard removes work dir ($out10)"
 ls council-notes | grep -q discard && bad "--discard writes no notes" || ok "--discard writes no notes"
 
+# A path that escapes .llm-council-work with ".." must never be deleted.
+victim="$WORK/victim"; mkdir -p "$victim" "$WORK/.llm-council-work/run.abc"; printf 'keep\n' > "$victim/data"
+bash "$SCRIPT" --discard "$WORK/.llm-council-work/run.abc/../../victim" < /dev/null >/dev/null 2>&1
+[ -f "$victim/data" ] && ok "path traversal out of the work dir is refused" || bad "path traversal out of the work dir is refused"
+ln -s "$victim" "$WORK/.llm-council-work/run.link"
+bash "$SCRIPT" --discard "$WORK/.llm-council-work/run.link" < /dev/null >/dev/null 2>&1
+[ -f "$victim/data" ] && ok "symlinked run dir is not followed" || bad "symlinked run dir is not followed"
+rm -f "$WORK/.llm-council-work/run.link"
+
 # Can be turned off.
 out7="$(printf 'x\n' | LLM_COUNCIL_NOTES=off bash "$SCRIPT" "off test")"
 [ "$out7" = "NOTES: off" ] && [ ! -e "council-notes/$TODAY-off-test.md" ] && ok "LLM_COUNCIL_NOTES=off writes nothing" || bad "LLM_COUNCIL_NOTES=off writes nothing ($out7)"

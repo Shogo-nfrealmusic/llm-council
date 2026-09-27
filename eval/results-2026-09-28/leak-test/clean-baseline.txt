@@ -1,0 +1,29 @@
+**Not all ¥500,000 at once.** Run a smaller test first. You've never measured what a booking from ads costs you, so putting in the full amount would be a guess.
+
+## What the numbers need to be
+
+**Break-even on revenue:**
+- ¥500,000 ÷ ¥20,000 = **25 bookings** just to earn the ad spend back.
+- At 1.2% conversion, that takes about **2,080 website visitors**.
+- So each ad click can cost at most **about ¥240**.
+
+**Break-even on profit** matters more. A booking costs you photographer time, editing and studio costs, so you don't keep the full ¥20,000:
+
+| Margin per booking | Bookings needed | Visitors needed | Max cost per click |
+|---|---|---|---|
+| 100% (revenue only) | 25 | 2,080 | ¥240 |
+| 60% (¥12,000) | 42 | 3,470 | ¥144 |
+| 40% (¥8,000) | 63 | 5,210 | ¥96 |
+
+**Why this is risky:**
+- **Your 1.2% is probably too high for ad visitors.** It's your average across all visitors. That includes people who found you on Google Maps, searched for you by name, or were referred by someone, and they already want to book. People who click an Instagram ad often convert at half that rate or less. At 0.6%, every limit in the table above halves.
+- **Tourists are hard to reach at the right moment.** They have to see the ad while they're planning a Tokyo trip or while they're already in Tokyo. If your targeting is loose, you pay for clicks from people who will never visit.
+
+## What I'd do instead
+
+1. **Set up tracking first.** Install the Meta Pixel with a "booking completed" event, add UTM links to the ads, and ask "How did you hear about us?" on the booking form. Without these, you won't know if the ads are working even after spending ¥500k.
+2. **Test with ¥50–100k over 2–3 weeks.** Try 2–3 creatives. Target people currently in Tokyo, plus people interested in travel to Japan from your main source countries.
+3. **Set a kill rule before you start.** For example, if the cost per booking is above your margin per booking (say ¥12,000) after about ¥50k spent, stop or change the ads.
+4. **Only scale up if the test works.** If the test shows a cost per booking clearly below your margin, raise the budget in steps and watch whether that cost holds.
+
+If you tell me your real margin per booking, I can give you exact targets. I can also look through your booking data to see how much of your traffic comes from Instagram and how well it converts compared with your other sources.

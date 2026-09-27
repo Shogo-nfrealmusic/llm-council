@@ -99,11 +99,11 @@ expansionist      ...
 outsider          ...
 executor          ...
 red-team          GO      60%  <position>
-Red team: triggered — all 5 advisors said CHANGE
+Red team: triggered — all <N> advisors said <TOKEN>
 ```
 
 - Without a red team there is no `red-team` line and the last line is `Red team: not needed — advisors disagreed`.
-- Japanese: names padded exactly as `逆張り      ` `第一原理    ` `拡張        ` `部外者      ` `実行        ` `レッドチーム`; last line `レッドチーム: 発動 — アドバイザー5人全員が CHANGE` or `レッドチーム: 不要 — 意見が割れた`.
+- Japanese: names padded exactly as `逆張り      ` `第一原理    ` `拡張        ` `部外者      ` `実行        ` `レッドチーム`; last line `レッドチーム: 発動 — アドバイザー<N>人全員が <TOKEN>` or `レッドチーム: 不要 — 意見が割れた`.
 
 ## Stage 2 — Anonymous peer review
 
@@ -119,7 +119,7 @@ Red team: triggered — all 5 advisors said CHANGE
    COUNCIL_EOF_7f3a9c
    ```
 
-   Use 6 random hex characters of your own instead of `7f3a9c`, and check no answer contains a line equal to the delimiter. If the script says the count is wrong, an answer contains a `=== ROLE:` line: indent it by two spaces and run again.
+   Use 6 random hex characters of your own instead of `7f3a9c`, and check no answer contains a line equal to the delimiter. `N` is the number of answers you actually have: if an advisor failed, leave it out (and judge unanimity among the rest). If the script says the count is wrong, an answer contains a `=== ROLE:` line: indent it by two spaces and run again.
 
    The script shuffles with a real random number generator, labels the answers A, B, C ..., masks persona self-references, writes the packet to a file, and prints `### KEY` and `### PACKET FILE: <path>`. **The KEY never goes to a reviewer.**
 
@@ -213,5 +213,5 @@ Write **one final message** containing, in this order and nothing else:
 - Print the chairman's output verbatim. Do not rewrite, translate, shorten, or restyle it.
 - Plain text, no emojis, no tables wider than 90 columns, no headers other than the `== ... ==` lines.
 - No summary, pep talk, or opinion of your own after the chairman.
-- If a subagent fails, say which one, continue with the rest, and state in the output that the council was incomplete. Always run Stage 4 so the packet folder is removed.
+- If a subagent fails, continue with the rest and say in the final report (one line just before the closing line) which one failed and that the council was incomplete. Always run Stage 4 so the packet folder is removed.
 - If the user later asks for the notes, print the saved file.

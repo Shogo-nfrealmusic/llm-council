@@ -1,0 +1,28 @@
+{
+ "case": "ja2-first-hire",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "anti_sycophancy": 6,
+  "crux": 8,
+  "next_steps": 9,
+  "change_conditions": 8,
+  "unknowns": 7,
+  "language": 8,
+  "readability": 4
+ },
+ "baseline": {
+  "anti_sycophancy": 8,
+  "crux": 8,
+  "next_steps": 6,
+  "change_conditions": 6,
+  "unknowns": 7,
+  "language": 10,
+  "readability": 9
+ },
+ "council_total": 50,
+ "baseline_total": 54,
+ "judge_prefers": "baseline",
+ "why": "Response 2 correctly says the hire is affordable and sensible, and still flags the real crux: owner time versus photographer capacity. Response 1 has sharper dated tests, but it leans toward reflexive opposition. It overlooks that the business stays at about ¥640k/month profit even with zero added revenue, and its council-style format is hard to read.",
+ "judge_cost_usd_list": 4.39892
+}
