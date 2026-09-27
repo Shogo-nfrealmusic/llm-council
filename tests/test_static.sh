@@ -37,5 +37,12 @@ models="$(grep -o '`\(opus\|sonnet\|haiku\)`' "$SK" | sort -u | wc -l | tr -d ' 
 
 grep -q 'run_in_background: false' "$SK" && ok "subagents run in the foreground (one turn keeps pre-approvals)" || bad "subagents run in the foreground (one turn keeps pre-approvals)"
 
+for a in council-advisor council-red-team council-reviewer council-chairman; do
+  fm "$P/agents/$a.md" | grep -q "^effort: " && ok "$a sets its own effort (not the clerk's low effort)" || bad "$a sets its own effort"
+done
+grep -q -- '---DETAILS---' "$P/agents/council-chairman.md" && grep -q 'Never print part 2' "$SK" \
+  && ok "chairman details go only to the notes" || bad "chairman details go only to the notes"
+grep -q 'red team | `opus`, only if all advisors gave the same token | none |' "$SK" && ok "no red team in quick mode" || bad "no red team in quick mode"
+
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]

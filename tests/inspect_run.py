@@ -7,13 +7,13 @@ Usage:
 
 Checks:
   - advisors: 3 (quick) or 5 (standard) subagent calls in ONE assistant message, on >= 2 models
-  - red team: spawned exactly when every advisor gave the same POSITION token, and shown
+  - red team: standard mode, spawned exactly when every advisor gave the same token, and shown; never in quick mode
   - reviewers: 1 (quick) or 3 (standard) in one message; no persona names, no KEY, all labels
   - chairman: standard = opus; quick = sonnet
   - no subagent prompt contains the user's original framing or the "Removed framing" line
   - every subagent is one of the plugin's council agents (they start without CLAUDE.md)
   - anonymize.sh returned a PACKET; save_notes.sh ran and the last line names the file
-  - visible output has BRIEF, CHAIRMAN, ADVISORS, PEER REVIEW in order (exactly 2 messages)
+  - visible output has BRIEF, CHAIRMAN, COUNCIL in order (exactly 2 messages); final report <= 20 lines; chairman details not printed
   - --lang ja: brief, advisors and chairman are mostly Japanese; --lang en: no Japanese
 """
 import json, re, sys
@@ -140,30 +140,40 @@ def main():
     alltext = "\n".join(texts)
     report["visible_messages"] = len(texts)
     check(len(texts) == 2, f"exactly 2 visible messages (BRIEF, final report) — got {len(texts)}")
-    pos = [alltext.find(h) for h in ("== BRIEF ==", "== CHAIRMAN ==", "== ADVISORS ==", "== PEER REVIEW")]
-    check(all(p >= 0 for p in pos) and pos == sorted(pos), f"visible output has BRIEF, CHAIRMAN, ADVISORS, PEER REVIEW in order {pos}")
+    pos = [alltext.find(h) for h in ("== BRIEF ==", "== CHAIRMAN ==", "== COUNCIL ==")]
+    check(all(p >= 0 for p in pos) and pos == sorted(pos), f"visible output has BRIEF, CHAIRMAN, COUNCIL in order {pos}")
+    final = texts[-1] if texts else ""
+    nlines = len([l for l in final.splitlines() if l.strip()])
+    report["final_lines"] = nlines
+    check(nlines <= 20, f"final report is short (<= 20 non-empty lines, got {nlines})")
+    check("---DETAILS---" not in alltext and not re.search(r"^(CRUX|論点の核心):", alltext, re.M),
+          "chairman details (part 2) are not printed")
 
-    # Positions from the visible ADVISORS block.
-    advblock = section(alltext, "== ADVISORS ==", "== PEER REVIEW")
-    rows = [l for l in advblock.splitlines()[1:] if TOKENS.search(l) and re.search(r"\d+%", l)]
-    red_rows = [l for l in rows if re.match(r"\s*(red-team|レッドチーム)\s", l)]
-    main_rows = [l for l in rows if l not in red_rows]
-    toks = [TOKENS.search(l).group(1) for l in main_rows]
+    # Positions from the visible COUNCIL block: "<persona> <TOKEN>" pairs on its first lines.
+    advblock = section(alltext, "== COUNCIL ==")
+    PNAME = r"(contrarian|first-principles|expansionist|outsider|executor|逆張り|第一原理|拡張|部外者|実行)"
+    pairs = re.findall(PNAME + r"\s*[:：]?\s*(NO-GO|GO|CHANGE)\b", advblock)
+    toks = [t for _, t in pairs]
     report["positions"] = toks
     unanimous = bool(toks) and len(set(toks)) == 1
     report["unanimous"] = unanimous
     report["red_team"] = bool(redteam)
     if adv:
-        check(len(toks) == len(adv), f"ADVISORS block shows all {len(adv)} advisors (found {len(toks)})")
-    check(bool(redteam) == unanimous, f"red team spawned iff unanimous (unanimous={unanimous}, spawned={bool(redteam)})")
+        check(len(toks) == len(adv), f"COUNCIL block shows all {len(adv)} advisors (found {len(toks)})")
+    if quick:
+        check(not redteam, "no red team in quick mode")
+    else:
+        check(bool(redteam) == unanimous, f"red team spawned iff unanimous (unanimous={unanimous}, spawned={bool(redteam)})")
+    rline = next((l for l in advblock.splitlines() if re.match(r"\s*(Red team|レッドチーム)\s*[:：]", l)), "")
+    check(bool(rline), "COUNCIL block states red-team status")
     if redteam:
-        check(len(red_rows) == 1, "red-team line shown in ADVISORS block")
-        rt_tok = TOKENS.search(red_rows[0]).group(1) if red_rows else None
+        rt = TOKENS.findall(rline)
+        rt_tok = rt[-1] if rt else None
+        report["red_team_position"] = rt_tok
         check(rt_tok is not None and bool(toks) and rt_tok != toks[0],
-              f"red team took a different position ({rt_tok} vs {toks[0] if toks else None})")
-    check(bool(re.search(r"Red team:|レッドチーム:", advblock)), "ADVISORS block states red-team status")
+              f"red team shown with a different position ({rt_tok} vs {toks[0] if toks else None})")
 
-    chairtext = section(alltext, "== CHAIRMAN ==", "== ADVISORS ==")
+    chairtext = section(alltext, "== CHAIRMAN ==", "== COUNCIL ==")
     vm = re.search(r"VERDICT:\s*(GO|NO-GO|CHANGE IT)", chairtext)
     report["verdict"] = vm.group(1) if vm else None
     check(vm is not None, f"chairman gave a verdict ({report['verdict']})")
