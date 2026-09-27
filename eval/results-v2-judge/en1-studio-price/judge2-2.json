@@ -1,0 +1,23 @@
+{
+ "case": "en1-studio-price",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 6,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 78,
+ "baseline_100": 68,
+ "judge_prefers": "council",
+ "why": "Both advisors correctly say to raise the price and to honor the old price for existing bookings. Advice 2 wins because it gives dated steps, a baseline, and a clear 17% revert threshold without inventing facts. Advice 1 invents a ~¥10,000 per-shoot cost, overstates that customers only react to surprises, and mentions an irrelevant 'experiment ledger'."
+}

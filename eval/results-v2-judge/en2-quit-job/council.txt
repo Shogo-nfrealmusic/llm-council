@@ -1,0 +1,23 @@
+== BRIEF ==
+Removed framing: "This is my moment", "everyone says go for it!", "Right?"
+Claim to test: Now is a uniquely favorable time to quit; the people around them advise quitting.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Keep the job for now; quit when net MRR covers your monthly costs.
+WHY:
+- Worst case: $8k is ~5 months of rent alone, and gross MRR $1,200 < rent $1,500.
+- "Now is unique": contradicted. At 15%/mo, MRR hits ~$3.2k in 7 months anyway.
+- "Friends say quit": not evidence (outsider). No one checked churn or margins.
+BIGGEST RISK: Growth depends on your hours and stalls while you stay employed.
+NEXT STEPS:
+1. By Oct 2, total 3 months of bank spending and pull net MRR and churn — success:
+   real monthly burn known / stop if: net MRR already covers it (then quitting is GO).
+2. Before the planned Friday, ask for a 4-day week or 8-12 week leave — success: yes,
+   in writing / stop if: refused → stay full-time and don't resign; go to step 3.
+3. Check monthly — success: net MRR ≥ burn for 2 months running (rule of thumb): quit /
+   stop if: growth under 5%/mo for 2 months (rule of thumb): keep it a side project.
+WOULD CHANGE IT: If net MRR covers your real burn, or partner income covers the gap: GO.
+
+== COUNCIL ==
+contrarian CHANGE, first-principles CHANGE, expansionist CHANGE, outsider CHANGE, executor CHANGE | red team: argued GO | top-ranked: outsider
+Full notes: council-notes/2026-09-28-quit-job-saas.md

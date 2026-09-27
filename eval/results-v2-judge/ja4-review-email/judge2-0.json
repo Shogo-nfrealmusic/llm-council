@@ -1,0 +1,23 @@
+{
+ "case": "ja4-review-email",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 9
+ },
+ "council_100": 74,
+ "baseline_100": 84,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 gives the right call and the most useful practical steps: a direct review link, sending right after photo delivery, a short English message, and naming Google's rules against incentives and review gating. Advice 2 adds a useful OTA caveat and concrete stop thresholds, but it overstates the consent and legal risk for a service-related email to existing customers and leaves out practical steps like the direct review link."
+}

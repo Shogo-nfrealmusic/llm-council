@@ -1,0 +1,23 @@
+{
+ "case": "en2-quit-job",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 9
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 80,
+ "baseline_100": 72,
+ "judge_prefers": "baseline",
+ "why": "Advice 2 is more useful: it estimates true burn including health insurance, models how long the savings last at different growth rates, and gives a fallback plan with limits if the person quits anyway. However, it presents assumed expenses as likely facts, and its figure of about $2,000 left at break-even is too high (by its own numbers, it's closer to $300). Advice 1 is tighter and more honestly scoped, but it misses insurance and taxes and treats the risks too briefly."
+}

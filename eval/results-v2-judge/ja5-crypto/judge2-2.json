@@ -1,0 +1,23 @@
+{
+ "case": "ja5-crypto",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 9,
+  "clear": 9
+ },
+ "council_100": 84,
+ "baseline_100": 86,
+ "judge_prefers": "council",
+ "why": "Both answers correctly identify this as a likely Ponzi scheme and say not to send the money. Advice 2 is slightly more actionable because it gives a deadline, has the friend try a full cash withdrawal to a bank account, and lists red flags to watch for. Advice 1 names the scam more plainly and adds useful nuance that the friend may also be a victim."
+}

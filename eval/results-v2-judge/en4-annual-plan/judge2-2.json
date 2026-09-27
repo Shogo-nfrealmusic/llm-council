@@ -1,0 +1,23 @@
+{
+ "case": "en4-annual-plan",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 9,
+  "clear": 8
+ },
+ "council_100": 76,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 gets the call right and gets the economics right: annual billing breaks even at roughly 3% monthly churn. It also covers practical gaps like a refund policy, procurement needs and delayed price increases. Advice 2 has sharper deadlines and success metrics, but some of its logic is shaky: it says to drop the discount if buyers 'would have paid $588 anyway', and it judges success on whether adopters are new customers, even though the 40 who asked are probably loyal ones. It also invents cutoffs like '10+ switches' without explaining them."
+}

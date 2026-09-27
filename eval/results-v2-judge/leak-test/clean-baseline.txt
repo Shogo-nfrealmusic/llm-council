@@ -1,0 +1,38 @@
+# Not all ¥500,000 at once. Spend ¥50,000–100,000 on a test first.
+
+You have never measured what a booking from ads costs, so a ¥500,000 month would be a guess. Here is what the campaign would need to achieve.
+
+## What you need to break even
+
+- **Revenue break-even:** ¥500,000 ÷ ¥20,000 = **25 bookings**. That means an ad cost per booking (CPA) of **¥20,000 or less**.
+- **Profit break-even:** ¥20,000 is revenue, not profit. After the photographer's time, editing and studio costs, you may keep something like 60%, or ¥12,000 per booking. In that case you need about **42 bookings** and a CPA of **¥12,000 or less**.
+
+Converting that into the price you can pay per click:
+
+| Conversion rate of ad visitors | Visitors for 25 bookings | Maximum cost per click (revenue break-even) | Maximum cost per click (60% margin) |
+|---|---|---|---|
+| 1.2% (your site average) | ~2,100 | ~¥240 | ~¥144 |
+| 0.6% (more realistic for ad traffic) | ~4,200 | ~¥120 | ~¥72 |
+| 0.3% | ~8,300 | ~¥60 | ~¥36 |
+
+Two points make this riskier than it looks:
+1. **Your 1.2% is probably too optimistic for ads.** It's a site-wide average, and it likely includes people who already found you through Google Maps, reviews or search. Those visitors are ready to book. People who tap an Instagram ad are usually just browsing and convert less, often half as well or worse.
+2. **Instagram click costs vary widely.** It depends on targeting, the quality of the ad and the season. Tourists abroad who are planning a Tokyo trip are a narrow, competitive audience. Depending on those numbers, you could earn a good return or lose most of the budget, and right now you can't tell which.
+
+## What I'd do instead
+
+1. **Set up tracking before spending anything:**
+   - Install the Meta Pixel and Conversions API on your booking confirmation page.
+   - Add UTM tags to every ad link.
+   - Add a required "How did you hear about us?" question to the booking form.
+2. **Run a test with ¥50,000–100,000 over 2–3 weeks.** Use 3–4 ad variations with your best real client photos. Short Reels usually work well for a photo studio. Target people planning Japan trips, and also people already in Tokyo.
+3. **Decide in advance when to stop or scale:**
+   - If CPA is under about ¥10,000, scale up gradually toward ¥500,000.
+   - If CPA is between ¥10,000 and ¥20,000, improve the ads or the booking page before spending more.
+   - If CPA is over ¥20,000, or you have no bookings after about ¥50,000, stop.
+4. **Allow for booking delays.** Tourists often book weeks before their trip. Count bookings that arrive up to 2–4 weeks after an ad was seen.
+5. **Check your capacity.** 25–40 extra shoots in a month only helps if you have open time slots to fill.
+
+The worst case with a test is losing ¥50,000–100,000, and you'd learn your real cost per booking either way. Putting ¥500,000 in without tracking means you could lose five times that and still not know whether the ads worked.
+
+I can draft the ad creative and targeting plan, or a tracking setup checklist for your booking site.

@@ -1,0 +1,23 @@
+{
+ "case": "ja3-course",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 82,
+ "baseline_100": 74,
+ "judge_prefers": "council",
+ "why": "Both correctly reject the 'definitely sells' framing and recommend a paid pre-sale to test demand. Advice 1 is more concrete: it gives dated steps, a go/no-go rule tied to revenue versus production cost, the 特定商取引法 disclosure requirement, and an honest caveat that a pre-sale can understate real demand. Advice 2's 10-sale threshold is arbitrary, and its steps are vaguer."
+}

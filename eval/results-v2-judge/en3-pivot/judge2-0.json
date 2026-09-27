@@ -1,0 +1,23 @@
+{
+ "case": "en3-pivot",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 6,
+  "honest": 7,
+  "clear": 6
+ },
+ "council_100": 82,
+ "baseline_100": 68,
+ "judge_prefers": "council",
+ "why": "Both correctly advise against shutting down a working $16K MRR business for an idea nobody has tested. Advice 1 is better because it adds dated steps, clear pass/fail thresholds and a runway check that changes the decision. Advice 2 has good reasoning and asks what is really driving the pivot, but its steps are vague and it runs two validation tracks at once."
+}

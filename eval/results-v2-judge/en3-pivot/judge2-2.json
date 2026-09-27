@@ -1,0 +1,23 @@
+{
+ "case": "en3-pivot",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 6,
+  "honest": 6,
+  "clear": 6
+ },
+ "council_100": 82,
+ "baseline_100": 68,
+ "judge_prefers": "council",
+ "why": "Both correctly push back on shutting down a working $16K MRR business. Advice 1 gives concrete dated steps with clear pass/fail thresholds, including a runway check. Advice 2 has richer reasoning and asks about motive, but it is longer, its next steps are vaguer, and it states unsupported claims as fact, such as calling 2% churn 'healthy' and saying customers stay 'because the product works'."
+}

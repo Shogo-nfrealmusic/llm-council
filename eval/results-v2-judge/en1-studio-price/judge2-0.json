@@ -1,0 +1,23 @@
+{
+ "case": "en1-studio-price",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 5,
+  "clear": 7
+ },
+ "council_100": 82,
+ "baseline_100": 70,
+ "judge_prefers": "council",
+ "why": "Both correctly reject 'keeping the price is safer' and protect existing bookings. Advice 1 adds dated steps with clear thresholds for when to stop. Advice 2 has good insights (queue rationing, profit leverage) but invents a ¥10,000 cost and a mysterious 'experiment ledger', and its phased weekday split is less crisp."
+}

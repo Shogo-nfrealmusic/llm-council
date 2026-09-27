@@ -1,0 +1,23 @@
+{
+ "case": "en3-pivot",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 82,
+ "baseline_100": 76,
+ "judge_prefers": "council",
+ "why": "Both push back correctly and suggest keeping the app while testing agents. Advice 2 is better because it gives dated gates with measurable pass/fail thresholds and a runway check that includes selling the app instead of shutting it down. Advice 1 explains the reasoning more fully, but its next steps are vaguer and have no dates."
+}

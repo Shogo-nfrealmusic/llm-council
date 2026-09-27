@@ -1,0 +1,20 @@
+== BRIEF ==
+Removed framing: none
+Claim to test: The website converts 1.2% of visitors, including visitors who arrive from ads.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — test with ~¥50k-100k first, not the full ¥500,000.
+理由/WHY:
+- Break-even needs 25 bookings at ¥20,000 each; that requires 1.2% conversion to hold for ad traffic, which is untested and likely optimistic (cold ad clicks convert worse than organic visitors, per contrarian).
+- Claim that site's 1.2% applies to Instagram visitors: contradicted/unsupported — no data ties ad traffic to that rate.
+- Margin, current CPC, and capacity for extra bookings are all unknown, so you can't confirm ¥500k is absorbable or even useful if the studio is already booked out.
+BIGGEST RISK: You spend ¥500k on unproven traffic, hit capacity limits, or margin is too thin to cover CPC, losing most of it with nothing learned in time to fix it.
+NEXT STEPS:
+1. Confirm booking capacity for next month — success: open slots ≥25 / stop if: already near full.
+2. Run ¥50-100k test tracking actual cost-per-booking — success: CPB well under ¥20,000 margin-adjusted / stop if: CPB near or above ¥20,000.
+3. Only then scale remaining budget — success: same CPB holds at scale / stop if: CPB rises sharply.
+WOULD CHANGE IT: Verified capacity + a real CPB test showing bookings cost well under ¥20,000 would justify going to GO.
+
+== COUNCIL ==
+contrarian CHANGE, first-principles CHANGE, executor CHANGE | red team: off (quick) | top-ranked: first-principles
+Full notes: council-notes/2026-09-28-instagram-ads-500k.md

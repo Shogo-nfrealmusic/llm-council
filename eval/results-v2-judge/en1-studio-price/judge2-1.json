@@ -1,0 +1,23 @@
+{
+ "case": "en1-studio-price",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 82,
+ "baseline_100": 72,
+ "judge_prefers": "council",
+ "why": "Both correctly say to raise the price. Advice 1 gives dated steps, a clear baseline, and a correct 17% break-even rule for reverting, and it does not invent any facts. Advice 2 makes good points about the queue already rationing demand and about weekend-only pricing, but it assumes a cost figure, mentions an 'experiment ledger' that doesn't exist, and says keeping ¥25,000 is the riskier option more firmly than the facts support."
+}

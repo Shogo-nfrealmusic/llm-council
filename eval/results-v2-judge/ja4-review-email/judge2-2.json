@@ -1,0 +1,23 @@
+{
+ "case": "ja4-review-email",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 9
+ },
+ "council_100": 80,
+ "baseline_100": 78,
+ "judge_prefers": "council",
+ "why": "Both make the right call. Advice 2 adds clear success and stop thresholds and flags a real risk for inbound tourist bookings: consent and OTA rules on contacting guests. Advice 1 gives better execution tips, such as the direct review link and avoiding incentives, but it has no stop criteria and doesn't mention consent."
+}

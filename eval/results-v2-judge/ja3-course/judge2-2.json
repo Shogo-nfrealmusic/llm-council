@@ -1,0 +1,23 @@
+{
+ "case": "ja3-course",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 76,
+ "baseline_100": 76,
+ "judge_prefers": "council",
+ "why": "Advice 1 gives specific dated steps with explicit success/stop criteria, a break-even rule, and a useful legal note (特商法), though its 5人中3人 threshold is somewhat arbitrary. Advice 2 makes the same sound call but its thresholds (10件) are also arbitrary, and it leaves the timeline and decision rules looser."
+}

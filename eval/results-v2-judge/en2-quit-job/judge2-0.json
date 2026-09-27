@@ -1,0 +1,23 @@
+{
+ "case": "en2-quit-job",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 74,
+ "baseline_100": 78,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 is better. It works out the runway correctly (MRR reaches about $3,192 by month 7), covers several ways things could go wrong, and gives limits to follow if the person quits anyway, although it assumes living costs that weren't given. Advice 2 has good pass/fail checks and makes the sharp point that growth doesn't require quitting, but it covers fewer risks, states a guess about the owner's hours as fact, and has no plan for someone who resigns regardless."
+}

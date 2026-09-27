@@ -1,0 +1,23 @@
+{
+ "case": "ja2-first-hire",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 7,
+  "actionable": 6,
+  "honest": 6,
+  "clear": 8
+ },
+ "council_100": 78,
+ "baseline_100": 68,
+ "judge_prefers": "council",
+ "why": "Advice 1 gets at the real bottleneck. This is a photographer dispatch business, so adding the arranging of outside photographers to the role could win back the refused work that an admin-only hire might not, and it gives concrete tests with clear continue-or-stop thresholds. Advice 2 has solid finances and names the same key unknown, but it opens by approving the decision in a way that flatters the asker, and its next steps are less sharp."
+}

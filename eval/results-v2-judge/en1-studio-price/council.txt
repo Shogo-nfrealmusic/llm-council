@@ -1,0 +1,29 @@
+== BRIEF ==
+Removed framing: "I'm scared", "people will hate us", "Keeping the price is the safer choice, right?"
+Claim to test: Raising to ¥30,000 would make bookings fall sharply and turn customers against the studio.
+
+Tokens differ (CHANGE present), no red team.
+
+== CHAIRMAN ==
+VERDICT: GO — Raise new bookings to ¥30,000 next month; keep ¥25,000 for anyone already booked.
+WHY:
+- Weekends are full with a 3-week waitlist. At ¥30,000 you still charge ¥2,000-8,000
+  less than all three nearest rivals. Each weekend shoot earns ¥5,000 more (contrarian).
+- Your fear of a sharp drop doesn't hold for weekends: the waitlist refills any lost slot.
+  For weekdays it is still an open question. Your weekday bookings are unknown, but
+  revenue only falls if they drop by more than about 17% (1 − 25/30).
+- Most bad reactions would come from people booked at ¥25,000 then charged ¥30,000.
+  Keeping their old price removes that risk to your 4.9-star, 400-review rating.
+BIGGEST RISK: Price-comparing tourists skip weekdays, and quiet slots go unnoticed.
+NEXT STEPS:
+1. By Sep 30, count weekday bookings for the last 2 months and scan reviews for "cheap".
+   — success: baseline written down / stop if: price is the top reason people give
+2. Oct 1, set ¥30,000 for new bookings; honor ¥25,000 for booked and waitlisted.
+   — success: weekends still full on Oct 29 / stop if: weekend slots stay empty
+3. Oct 29, compare new weekday bookings to the baseline.
+   — success: within 17% / stop if: down >17%, so drop weekdays back to ¥25,000
+WOULD CHANGE IT: Weekdays already mostly empty would make a weekend-only raise better.
+
+== COUNCIL ==
+contrarian GO, first-principles GO, expansionist CHANGE, outsider GO, executor GO | red team: not needed | top-ranked: contrarian
+Full notes: council-notes/2026-09-28-studio-price-raise.md

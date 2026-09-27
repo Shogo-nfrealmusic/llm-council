@@ -1,0 +1,23 @@
+{
+ "case": "ja5-crypto",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 9
+ },
+ "council_100": 84,
+ "baseline_100": 84,
+ "judge_prefers": "council",
+ "why": "Both answers make the right call and correctly flag this as Ponzi-like, and Advice 1 names the pattern more directly and gives more contact numbers. Advice 2 is slightly better because it gives clearer tests to check this week (whether the friend's withdrawal actually arrives, and whether the issuer is registered) and warns against putting in even a small amount."
+}

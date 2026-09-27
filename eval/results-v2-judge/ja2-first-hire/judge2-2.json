@@ -1,0 +1,23 @@
+{
+ "case": "ja2-first-hire",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 6,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 6
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 6,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 68,
+ "baseline_100": 72,
+ "judge_prefers": "baseline",
+ "why": "Advice 2 gets the math right and makes the right call on a low-risk hire: even with no new sales, profit only falls to about ¥640k a month. It also points to the real open question, whether the work being turned down is limited by the owner's time or by a shortage of photographers. Advice 1 has sharper tests and thresholds, but it changes the job into admin plus arranging outside photographers, which makes the hire harder to fill, and its downside figure is shakier."
+}

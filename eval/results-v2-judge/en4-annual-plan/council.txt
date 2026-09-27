@@ -1,0 +1,23 @@
+== BRIEF ==
+Removed framing: "I'm probably overthinking this", "should just skip it, right?", "it's a terrible idea"
+Claim to test: Offering a discount for paying annually cheapens the brand.
+
+== CHAIRMAN ==
+VERDICT: GO — build the $490/year plan and offer it to the 40 requesters this week.
+WHY:
+- Worst case is a margin leak: $98 per buyer who would have paid $588 anyway;
+  $3,920/yr for the 40 (2.2% of $176,400 revenue); they prepay $19,600 (contrarian).
+- Brand fear: contradicted. Customers asked for it; annual discounts are common SaaS.
+BIGGEST RISK: churn is low and mostly loyal long-time customers take the 17% cut.
+NEXT STEPS:
+1. Email the 40 by Oct 5 — success: 10+ switch by Oct 26 (25%, rule of thumb) /
+   stop if: under 10 — ask why before showing it to the other 260 (executor).
+2. Get monthly churn by Oct 12 — success: 3%+, where the discount pays for itself
+   (estimate) / stop if: under 3% — trim new signups to one month free.
+3. Jan 5, 2027 review — success: most adopters new or at-risk / stop if: most had
+   12+ months tenure — cut the discount for new signups (contrarian's check).
+WOULD CHANGE IT: if most of the 40 say they'd pay $588 for annual, drop the discount.
+
+== COUNCIL ==
+contrarian GO, first-principles CHANGE, expansionist GO, outsider GO, executor GO | red team: not needed | top-ranked: first-principles
+Full notes: council-notes/2026-09-28-annual-plan-490.md

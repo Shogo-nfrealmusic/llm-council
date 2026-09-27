@@ -1,0 +1,23 @@
+{
+ "case": "ja4-review-email",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 6
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 70,
+ "baseline_100": 80,
+ "judge_prefers": "baseline",
+ "why": "Advice 2 makes the right call and adds practical steps that raise the response rate: a direct review link, sending right after photo delivery, a short English message, and a before-and-after comparison. Advice 1 usefully raises email consent and sets stop thresholds. However, it assumes OTA bookings and a consent problem the asker never mentioned, and its dates and thresholds are invented and clutter the plan."
+}

@@ -1,0 +1,164 @@
+{
+ "checks": [
+  {
+   "ok": true,
+   "msg": "advisors (3 or 5) issued in a single message (parallel)"
+  },
+  {
+   "ok": true,
+   "msg": "advisors spread over >= 2 models ['opus', 'sonnet']"
+  },
+  {
+   "ok": true,
+   "msg": "every subagent call passes run_in_background: false (one turn) "
+  },
+  {
+   "ok": true,
+   "msg": "3 reviewer subagent(s) issued in a single message"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 1 prompt has no persona names "
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 1 prompt has no KEY"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 1 prompt points at the packet file"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 1 told labels A-F"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 2 prompt has no persona names "
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 2 prompt has no KEY"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 2 prompt points at the packet file"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 2 told labels A-F"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 3 prompt has no persona names "
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 3 prompt has no KEY"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 3 prompt points at the packet file"
+  },
+  {
+   "ok": true,
+   "msg": "reviewer 3 told labels A-F"
+  },
+  {
+   "ok": true,
+   "msg": "one chairman subagent issued"
+  },
+  {
+   "ok": true,
+   "msg": "standard chairman on opus (got opus)"
+  },
+  {
+   "ok": true,
+   "msg": "no subagent prompt contains the original framing '絶対売れる' "
+  },
+  {
+   "ok": true,
+   "msg": "no subagent prompt contains the 'Removed framing' line "
+  },
+  {
+   "ok": true,
+   "msg": "every subagent is a council agent (no CLAUDE.md) "
+  },
+  {
+   "ok": true,
+   "msg": "anonymize.sh ran and wrote a packet file"
+  },
+  {
+   "ok": false,
+   "msg": "exactly 2 visible messages (BRIEF, final report) — got 3"
+  },
+  {
+   "ok": true,
+   "msg": "visible output has BRIEF, CHAIRMAN, COUNCIL in order [0, 100, 658]"
+  },
+  {
+   "ok": true,
+   "msg": "final report is short (<= 24 non-empty lines, got 19)"
+  },
+  {
+   "ok": true,
+   "msg": "chairman details (part 2) are not printed"
+  },
+  {
+   "ok": true,
+   "msg": "COUNCIL block shows all 5 advisors (found 5)"
+  },
+  {
+   "ok": true,
+   "msg": "red team spawned iff unanimous (unanimous=True, spawned=True)"
+  },
+  {
+   "ok": true,
+   "msg": "COUNCIL block states red-team status"
+  },
+  {
+   "ok": true,
+   "msg": "red team shown with a different position (GO vs CHANGE)"
+  },
+  {
+   "ok": true,
+   "msg": "chairman gave a verdict (CHANGE IT)"
+  },
+  {
+   "ok": true,
+   "msg": "save_notes.sh ran"
+  },
+  {
+   "ok": true,
+   "msg": "last line names the notes file ('全記録: council-notes/2026-09-28-fitness-course-30k.md')"
+  },
+  {
+   "ok": true,
+   "msg": "visible output is Japanese (ja ratio 0.96)"
+  }
+ ],
+ "mode": "standard",
+ "agent_types": [
+  "llm-council:council-advisor",
+  "llm-council:council-chairman",
+  "llm-council:council-red-team",
+  "llm-council:council-reviewer"
+ ],
+ "visible_messages": 3,
+ "final_lines": 19,
+ "positions": [
+  "CHANGE",
+  "CHANGE",
+  "CHANGE",
+  "CHANGE",
+  "CHANGE"
+ ],
+ "unanimous": true,
+ "red_team": true,
+ "red_team_position": "GO",
+ "verdict": "CHANGE IT",
+ "notes": "council-notes/2026-09-28-fitness-course-30k.md",
+ "ja_ratio": 0.96,
+ "cost_usd_list": 1.1313111,
+ "ok": false
+}

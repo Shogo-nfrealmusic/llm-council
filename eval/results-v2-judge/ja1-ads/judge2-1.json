@@ -1,0 +1,23 @@
+{
+ "case": "ja1-ads",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 9,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 7,
+  "actionable": 6,
+  "honest": 6,
+  "clear": 6
+ },
+ "council_100": 84,
+ "baseline_100": 64,
+ "judge_prefers": "council",
+ "why": "Advice 1 puts conversion tracking first, uses one focused test cell, and ties success and stop rules to a breakeven CPA of 20,000 yen times the gross margin, which is internally consistent. Advice 2 has useful ideas such as the CPC back-calculation and splitting pre-trip from in-Japan audiences, but it presents assumptions like a 60% margin and a 50/50 gamble as if they were facts. It also spreads a small budget across roughly 8 test cells and sets a stop line of 15,000 yen, above its own breakeven CPA of 12,000 yen."
+}

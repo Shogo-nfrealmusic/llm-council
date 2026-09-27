@@ -1,0 +1,23 @@
+{
+ "case": "en2-quit-job",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 76,
+ "baseline_100": 72,
+ "judge_prefers": "baseline",
+ "why": "Advice 2 does a fuller burn and runway analysis, covers reversibility, gives stress scenarios, and includes a harm-reduction plan in case the person quits anyway. However, it presents estimated expenses (food, insurance) as if they were known facts. Advice 1 is tighter and more honest about unknowns, but its runway math is thinner and its 'stall while employed' risk is underdeveloped."
+}

@@ -1,0 +1,20 @@
+== BRIEF ==
+Removed framing: none
+Claim to test: Spending ¥500,000 on Instagram ads next month will pay back through studio bookings.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Test with ~¥100,000, tracked, before releasing the rest.
+WHY:
+- Real CPC/booking cost is never measured; ¥240/visitor break-even is untested (C, A, B agree).
+- Claim spend "will pay back" is unsupported: cold ad traffic likely converts below 1.2%, and margin (not revenue) sets true break-even (C).
+- Without tracking set up first, even a full ¥500k spend can't tell you if it worked (A).
+BIGGEST RISK: Studio may lack capacity for 25+ extra bookings next month, making this moot either way.
+NEXT STEPS:
+1. Set up ad-attribution tracking now — success: bookings tagged by source before any spend / stop if: can't be built by launch.
+2. Spend ~¥100,000 (20% of budget) as tracked test — success: cost/booking ≤¥16-18k / stop if: above that or margin unclear.
+3. Confirm next-month booking capacity — success: can service 25+ extra / stop if: fully booked already.
+WOULD CHANGE IT: Verified CPC data showing cost/booking clearly under ¥16-18k with margin confirmed, and capacity confirmed.
+
+== COUNCIL ==
+contrarian NO-GO, first-principles CHANGE, executor CHANGE | red team: off (quick) | top-ranked: first-principles
+Full notes: council-notes/2026-09-28-instagram-ads-500k.md

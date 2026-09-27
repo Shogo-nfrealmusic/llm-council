@@ -1,0 +1,23 @@
+{
+ "case": "ja1-ads",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 82,
+ "baseline_100": 70,
+ "judge_prefers": "council",
+ "why": "Advice 2 frames break-even CPA as 2万円 × gross margin instead of assuming a margin, and gives dated steps with pass/fail and stop criteria. It also flags that a 10万円 test produces few bookings. Advice 1 relies on assumed margin and CPC figures, and its 2-audience × 3–4-creative test is too spread out to read on a 5–10万円 budget."
+}

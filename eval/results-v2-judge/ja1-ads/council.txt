@@ -1,6 +1,3 @@
-<!-- v0.2 run, standard mode, Japanese. Question: 東京で訪日観光客向けのフォトスタジオをやっています。来月Instagram広告に50万円入れます！絶対当たると思う。予約単価は2万円、サイトのCVRは1.2%、広告のCPAはまだ測ったことがない。いいよね？ -->
-
-```
 == BRIEF ==
 取り除いた言い回し: 「絶対当たると思う」「いいよね？」「！」
 検証する主張: このInstagram広告は採算が合う（成果が出る）
@@ -25,4 +22,3 @@ VERDICT: CHANGE IT — まず10万円で試し、結果で残りを決める
 逆張り CHANGE、第一原理 CHANGE、拡張 CHANGE、部外者 CHANGE、実行 CHANGE | レッドチーム: GO を主張
 | レビュー1位: 実行
 全記録: council-notes/2026-09-28-instagram-ads-500k.md
-```

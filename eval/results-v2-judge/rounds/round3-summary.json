@@ -1,0 +1,802 @@
+{
+ "summary": {
+  "cases": 9,
+  "rounds": 3,
+  "council_avg_100": 72.6,
+  "baseline_avg_100": 76.7,
+  "council_higher_cases": 2,
+  "ties": 1,
+  "judgements_council_higher": 7,
+  "judgements": 27,
+  "judge_prefers_council": 6,
+  "council_correct_calls": 8,
+  "baseline_correct_calls": 8,
+  "per_criterion_council": {
+   "useful": 6.81,
+   "right_call": 7.78,
+   "actionable": 7.74,
+   "honest": 6.67,
+   "clear": 7.3
+  },
+  "per_criterion_baseline": {
+   "useful": 7.81,
+   "right_call": 8.33,
+   "actionable": 7.19,
+   "honest": 7.3,
+   "clear": 7.7
+  },
+  "raw_readability_council": 5.56,
+  "raw_readability_baseline": 7.44
+ },
+ "cases": [
+  {
+   "case": "en1-studio-price",
+   "lang": "en",
+   "right_call": [
+    "GO"
+   ],
+   "council_verdict": "GO",
+   "council_correct": true,
+   "council_class_by_normalizer": "GO",
+   "baseline_class": "CHANGE",
+   "baseline_correct": false,
+   "council_100": 84.0,
+   "baseline_100": 70.7,
+   "raw_readability_council": 5,
+   "raw_readability_baseline": 7
+  },
+  {
+   "case": "en2-quit-job",
+   "lang": "en",
+   "right_call": [
+    "CHANGE",
+    "NO-GO"
+   ],
+   "council_verdict": "CHANGE",
+   "council_correct": true,
+   "council_class_by_normalizer": "CHANGE",
+   "baseline_class": "CHANGE",
+   "baseline_correct": true,
+   "council_100": 76.0,
+   "baseline_100": 75.3,
+   "raw_readability_council": 6,
+   "raw_readability_baseline": 8
+  },
+  {
+   "case": "en3-pivot",
+   "lang": "en",
+   "right_call": [
+    "CHANGE",
+    "NO-GO"
+   ],
+   "council_verdict": "CHANGE",
+   "council_correct": true,
+   "council_class_by_normalizer": "CHANGE",
+   "baseline_class": "CHANGE",
+   "baseline_correct": true,
+   "council_100": 74.0,
+   "baseline_100": 74.7,
+   "raw_readability_council": 7,
+   "raw_readability_baseline": 7
+  },
+  {
+   "case": "ja1-ads",
+   "lang": "ja",
+   "right_call": [
+    "CHANGE"
+   ],
+   "council_verdict": "CHANGE",
+   "council_correct": true,
+   "council_class_by_normalizer": "CHANGE",
+   "baseline_class": "CHANGE",
+   "baseline_correct": true,
+   "council_100": 70.7,
+   "baseline_100": 70.7,
+   "raw_readability_council": 5,
+   "raw_readability_baseline": 8
+  },
+  {
+   "case": "ja2-first-hire",
+   "lang": "ja",
+   "right_call": [
+    "GO"
+   ],
+   "council_verdict": "CHANGE",
+   "council_correct": false,
+   "council_class_by_normalizer": "CHANGE",
+   "baseline_class": "GO",
+   "baseline_correct": true,
+   "council_100": 68.0,
+   "baseline_100": 70.0,
+   "raw_readability_council": 5,
+   "raw_readability_baseline": 8
+  },
+  {
+   "case": "ja3-course",
+   "lang": "ja",
+   "right_call": [
+    "CHANGE"
+   ],
+   "council_verdict": "CHANGE",
+   "council_correct": true,
+   "council_class_by_normalizer": "CHANGE",
+   "baseline_class": "CHANGE",
+   "baseline_correct": true,
+   "council_100": 71.3,
+   "baseline_100": 77.3,
+   "raw_readability_council": 5,
+   "raw_readability_baseline": 7
+  },
+  {
+   "case": "en4-annual-plan",
+   "lang": "en",
+   "right_call": [
+    "GO"
+   ],
+   "council_verdict": "GO",
+   "council_correct": true,
+   "council_class_by_normalizer": "GO",
+   "baseline_class": "GO",
+   "baseline_correct": true,
+   "council_100": 68.7,
+   "baseline_100": 80.7,
+   "raw_readability_council": 6,
+   "raw_readability_baseline": 7
+  },
+  {
+   "case": "ja4-review-email",
+   "lang": "ja",
+   "right_call": [
+    "GO"
+   ],
+   "council_verdict": "GO",
+   "council_correct": true,
+   "council_class_by_normalizer": "GO",
+   "baseline_class": "GO",
+   "baseline_correct": true,
+   "council_100": 67.3,
+   "baseline_100": 82.7,
+   "raw_readability_council": 6,
+   "raw_readability_baseline": 8
+  },
+  {
+   "case": "ja5-crypto",
+   "lang": "ja",
+   "right_call": [
+    "NO-GO"
+   ],
+   "council_verdict": "NO-GO",
+   "council_correct": true,
+   "council_class_by_normalizer": "NO-GO",
+   "baseline_class": "NO-GO",
+   "baseline_correct": true,
+   "council_100": 73.3,
+   "baseline_100": 88.0,
+   "raw_readability_council": 5,
+   "raw_readability_baseline": 7
+  }
+ ],
+ "rows": [
+  {
+   "case": "en1-studio-price",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 8,
+    "honest": 8,
+    "clear": 9
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 6,
+    "clear": 7
+   },
+   "council_100": 84,
+   "baseline_100": 72,
+   "judge_prefers": "council",
+   "why": "Both correctly recommend raising the price. Advice 1 makes the call cleanly with sensible stop rules and adds nothing that wasn't in the question. Advice 2 has some good ideas, like splitting weekday and weekend prices and a better rule for when to revert, but it brings in a guessed ¥10,000 cost per shoot and an odd reference to an 'inaccessible experiment ledger,' and its plan depends on weekday data the asker never gave."
+  },
+  {
+   "case": "en1-studio-price",
+   "round": 1,
+   "council_was": 1,
+   "council": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 8,
+    "honest": 8,
+    "clear": 9
+   },
+   "baseline": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 5,
+    "clear": 6
+   },
+   "council_100": 84,
+   "baseline_100": 66,
+   "judge_prefers": "council",
+   "why": "Advice 1 makes the right call to raise the price and backs it with correct break-even math, clear stop rules, and a sensible plan to honor existing bookings. Advice 2 adds useful points on weekday demand and profit margin, but it gets the break-even wrong (it says 'more than 1 in 6' when revenue starts falling after 1 in 6), assumes a ¥10,000 cost per shoot that the question never gave, and brings up an 'inaccessible experiment ledger' that has nothing to do with the question."
+  },
+  {
+   "case": "en1-studio-price",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 9,
+    "honest": 8,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 7,
+    "honest": 6,
+    "clear": 7
+   },
+   "council_100": 84,
+   "baseline_100": 74,
+   "judge_prefers": "council",
+   "why": "Both make the right call to raise the price and honor existing bookings. Advice 2 gives concrete success and stop criteria and stays within the facts given; Advice 1 invents a ¥10,000 cost figure and refers to a strange 'inaccessible experiment ledger', which makes it less calibrated."
+  },
+  {
+   "case": "en2-quit-job",
+   "round": 0,
+   "council_was": 2,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 7,
+    "clear": 8
+   },
+   "council_100": 76,
+   "baseline_100": 76,
+   "judge_prefers": "baseline",
+   "why": "Both make the right call not to quit on a fixed date. Advice 1 is more useful because it gives stress-tested runway numbers, a concrete trigger, and a fallback plan with stop-loss limits in case the person quits anyway. Advice 2 has sharper deadlines, but its analysis is thinner and it assumes the employer will say yes."
+  },
+  {
+   "case": "en2-quit-job",
+   "round": 1,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 9
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 7
+   },
+   "council_100": 78,
+   "baseline_100": 76,
+   "judge_prefers": "baseline",
+   "why": "Both correctly advise against quitting Friday, and their growth math holds up. Advice 2 adds a runway scenario for slower growth, a note that the move is reversible, and guardrails in case the person quits anyway, though its 'roughly 5 months' timeline for the combined MRR-or-savings trigger is vague."
+  },
+  {
+   "case": "en2-quit-job",
+   "round": 2,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 6,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 7,
+    "clear": 7
+   },
+   "council_100": 74,
+   "baseline_100": 74,
+   "judge_prefers": "baseline",
+   "why": "Both correctly advise against quitting Friday. Advice 2 has more complete burn math, a stress test for slower growth, and a harm-reduction plan if the person quits anyway. Advice 1 has an arithmetic slip: $95k is about $7,900 gross a month, and at 15% growth MRR gets there in about 14 months, but its trigger of MRR covering the full budget is stricter and safer. Both assume living costs the asker didn't give, but Advice 2 flags that more clearly."
+  },
+  {
+   "case": "en3-pivot",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 6,
+    "honest": 7,
+    "clear": 7
+   },
+   "council_100": 76,
+   "baseline_100": 72,
+   "judge_prefers": "council",
+   "why": "Both make the right call not to shut down the app. Advice 1's steps have deadlines and clear pass/fail thresholds, so it is easier to act on this week. Advice 2 has richer reasoning, like the data advantage and asking what is driving the pivot, but its steps have fewer measurable checkpoints, and its claim that 2% churn is 'healthy' is stated with more confidence than the facts support."
+  },
+  {
+   "case": "en3-pivot",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 6,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 7,
+    "clear": 8
+   },
+   "council_100": 72,
+   "baseline_100": 76,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 gives a fuller case: it points out that 2% monthly churn is healthy, that the agent idea is undefined, and that the teams' data is an advantage, and it offers concrete ways to build agent features into the note app. Advice 2 has sharper deadlines, but it says less about why, and its 'retains 78% of revenue' figure ignores new sales and mixes customer churn with revenue retention."
+  },
+  {
+   "case": "en3-pivot",
+   "round": 2,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 8,
+    "clear": 7
+   },
+   "council_100": 74,
+   "baseline_100": 76,
+   "judge_prefers": "baseline",
+   "why": "Both correctly advise against shutting down a $16k MRR business on investor hype alone. Advice 2 gives stronger reasoning: the 40 teams are both a distribution channel and a data advantage, and it states what would justify a full pivot. Advice 1 has more concrete dates and thresholds, but its final condition for pivoting is muddled and its validation plan is narrower."
+  },
+  {
+   "case": "ja1-ads",
+   "round": 0,
+   "council_was": 2,
+   "council": {
+    "useful": 6,
+    "right_call": 7,
+    "actionable": 8,
+    "honest": 6,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 6,
+    "clear": 8
+   },
+   "council_100": 68,
+   "baseline_100": 74,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 bases its allowable CPA and CPC on gross margin (it states the 60% margin is an assumption) and flags real risks: tracking setup, ads aimed at tourists before vs. after they arrive, and booking lag. Its main flaws are that 5–10万 split across 6–8 test cells is too thin, and its 1.5万 stop line is above its own 1.2万 allowable CPA. Advice 2 has sharper deadlines and a useful check on open booking slots, but its 2万 success CPA only covers revenue, not margin (an ad that hits it still loses money), and this conflicts with its own later rule."
+  },
+  {
+   "case": "ja1-ads",
+   "round": 1,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 6,
+    "honest": 6,
+    "clear": 7
+   },
+   "council_100": 76,
+   "baseline_100": 68,
+   "judge_prefers": "council",
+   "why": "Advice 1's break-even math is correct and taken straight from the given numbers, and it sets a 15万円 test with dates, a capacity check and stop rules. It has one flaw: it counts a 2万円 CPA as success, which only covers revenue, not profit. Advice 2 adds useful points (lower CVR from ad traffic, booking lag, tracking), but its numbers are partly invented (CPC 150円, a 50/50 chance, its own 1.5万円 stop line above its 1.2万円 allowed CPA), and it splits 5–10万円 across 6–8 test groups, which is too little per group to learn anything."
+  },
+  {
+   "case": "ja1-ads",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "useful": 6,
+    "right_call": 7,
+    "actionable": 8,
+    "honest": 6,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 6,
+    "clear": 7
+   },
+   "council_100": 68,
+   "baseline_100": 70,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 works out the break-even point from gross profit (maximum CPA of ¥12,000, maximum cost per click of about ¥144). It also flags two real risks: how to set up targeting, and whether bookings are actually being tracked. It does state some assumptions as fact, such as where the site's current traffic comes from, and its ¥15,000 stop threshold contradicts its own break-even figure. Advice 2 has a concrete schedule and a check on open booking slots, but it counts ¥20,000 in revenue per booking as break-even, so a test it calls a success could still lose money."
+  },
+  {
+   "case": "ja2-first-hire",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 6,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 6,
+    "right_call": 7,
+    "actionable": 6,
+    "honest": 6,
+    "clear": 8
+   },
+   "council_100": 70,
+   "baseline_100": 66,
+   "judge_prefers": "council",
+   "why": "Advice 1 spots the real bottleneck: an admin hire only helps if the owner's time, not shooting capacity, is what limits bookings. It also gives dated tests with clear pass/fail thresholds, though it changes the hire's role before the owner has checked this. Advice 2's financial math is sound and it names the same risk, but it opens by validating the decision and its next steps are less decisive."
+  },
+  {
+   "case": "ja2-first-hire",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "useful": 7,
+    "right_call": 6,
+    "actionable": 8,
+    "honest": 6,
+    "clear": 6
+   },
+   "baseline": {
+    "useful": 7,
+    "right_call": 7,
+    "actionable": 7,
+    "honest": 7,
+    "clear": 8
+   },
+   "council_100": 66,
+   "baseline_100": 72,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 gets the call right: the hire is financially safe and is a reasonable move. It also points out the real unknown (whether the bottleneck is the asker's time or the number of photographers) and adds a measurable check. Advice 2 has a sharp idea in the coordinator role and gives concrete dates. But it assumes a 45% gross margin and a photographer shortage as if they were facts, and it rewrites a decision the asker had already made without enough evidence, which makes it less calibrated and a bit convoluted."
+  },
+  {
+   "case": "ja2-first-hire",
+   "round": 2,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 6,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 6
+   },
+   "baseline": {
+    "useful": 7,
+    "right_call": 7,
+    "actionable": 7,
+    "honest": 7,
+    "clear": 8
+   },
+   "council_100": 68,
+   "baseline_100": 72,
+   "judge_prefers": "baseline",
+   "why": "Advice 2 rightly backs a hire the business can easily afford, correctly works out the break-even point (about 36万円 of gross profit, a 45% margin on the 80万円), and names the real unknown: is the bottleneck the owner's time or the number of photographers? Advice 1 has a sharper idea about using outside photographers, but it tells the owner to change the role before checking why the jobs are being turned down, which contradicts its own diagnose-first steps."
+  },
+  {
+   "case": "ja3-course",
+   "round": 0,
+   "council_was": 2,
+   "council": {
+    "useful": 6,
+    "right_call": 7,
+    "actionable": 7,
+    "honest": 6,
+    "clear": 6
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 8,
+    "clear": 8
+   },
+   "council_100": 64,
+   "baseline_100": 80,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 treats the 5 DMs realistically against 29,000 followers and proposes a presale to the full audience with clear thresholds and a refund promise. Advice 2 tests only about 15 people, including '関心者10人' that the asker never mentioned, leaves the 2-buyer case undefined, and names rushed production after payment as a risk while its own plan does exactly that."
+  },
+  {
+   "case": "ja3-course",
+   "round": 1,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 8,
+    "clear": 7
+   },
+   "council_100": 74,
+   "baseline_100": 76,
+   "judge_prefers": "baseline",
+   "why": "Both catch the schedule contradiction and recommend presale validation. Advice 2 answers the 'will it definitely sell' question directly, adds useful context (5 DMs out of 29k followers, unknown target audience), and uses the audience channel (Stories), though its 10-sales threshold is somewhat arbitrary. Advice 1 has tighter deadlines, but its 'interest holders 10' and fixed date read as invented specifics, and its advice to stop at 0-1 buyers is harsh given the small sample."
+  },
+  {
+   "case": "ja3-course",
+   "round": 2,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 8,
+    "clear": 7
+   },
+   "council_100": 76,
+   "baseline_100": 76,
+   "judge_prefers": "baseline",
+   "why": "Both correctly say to validate demand with paid pre-orders before building. Advice 2 tests the offer on the full 29k audience, directly answers the asker's \"絶対売れる\" assumption, and puts the 5 DMs in context; Advice 1's test covers only about 15 people and relies on an arbitrary date and threshold."
+  },
+  {
+   "case": "en4-annual-plan",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "useful": 6,
+    "right_call": 8,
+    "actionable": 7,
+    "honest": 5,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 6,
+    "honest": 8,
+    "clear": 8
+   },
+   "council_100": 68,
+   "baseline_100": 78,
+   "judge_prefers": "baseline",
+   "why": "Advice 2 gets the churn breakeven about right (~3%/month) and adds practical issues: refund policy, prices locked until renewal, and procurement needs. Advice 1 uses a wrong 1.5% threshold, suggests an arbitrary $539 price, and invents dates, though its success metrics are more concrete."
+  },
+  {
+   "case": "en4-annual-plan",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "useful": 6,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 5,
+    "clear": 8
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 7,
+    "honest": 9,
+    "clear": 8
+   },
+   "council_100": 70,
+   "baseline_100": 82,
+   "judge_prefers": "baseline",
+   "why": "Advice 1's churn break-even of about 3% per month is correct: at $490/year, annual billing only pays off if monthly customers would stay about 10 months or less. It also covers refunds and pricing lock-in. Advice 2's 1.5% threshold is wrong (at that churn, monthly customers bring in about $542 a year versus $490), its $539 price is arbitrary, and it waves off the cofounder's concern rather than addressing it."
+  },
+  {
+   "case": "en4-annual-plan",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "useful": 6,
+    "right_call": 8,
+    "actionable": 8,
+    "honest": 5,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 7,
+    "honest": 9,
+    "clear": 8
+   },
+   "council_100": 68,
+   "baseline_100": 82,
+   "judge_prefers": "baseline",
+   "why": "Advice 1's ~3% monthly churn break-even is correct: annual at $490 equals 10 months of monthly, so it wins once expected months paid in a year falls below 10, which happens at about 3.3% churn. It also names the real risks (refund policy, price increases delayed until renewal). Advice 2 has more concrete dates and success targets, but its 1.5% churn threshold is wrong, the $539 price change comes from nowhere, and saying the numbers disprove the cofounder's brand concern goes too far."
+  },
+  {
+   "case": "ja4-review-email",
+   "round": 0,
+   "council_was": 2,
+   "council": {
+    "useful": 7,
+    "right_call": 7,
+    "actionable": 7,
+    "honest": 6,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 8,
+    "honest": 8,
+    "clear": 9
+   },
+   "council_100": 68,
+   "baseline_100": 84,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 makes the right call and correctly flags the Google policy traps: no incentives, no sending only to satisfied customers, no reminders. It also gives a simple way to measure results against the four weeks before launch. Advice 2 has good ideas, like sending after delivery and tracking the rating, but it uses an unexplained date (Nov 2) and arbitrary thresholds, calls the owner's worry groundless, and its consent condition could needlessly block a low-risk, high-value step."
+  },
+  {
+   "case": "ja4-review-email",
+   "round": 1,
+   "council_was": 1,
+   "council": {
+    "useful": 7,
+    "right_call": 7,
+    "actionable": 8,
+    "honest": 6,
+    "clear": 6
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 8,
+    "honest": 8,
+    "clear": 8
+   },
+   "council_100": 68,
+   "baseline_100": 82,
+   "judge_prefers": "baseline",
+   "why": "Advice 2 makes the right call without hedging and adds practical execution tips: a direct review link, a short English message, no incentives and no reminders. Advice 1 has useful stop criteria, but it wrongly calls the asker's worry baseless, uses an odd made-up date, and makes the plan depend on a consent check it never explains."
+  },
+  {
+   "case": "ja4-review-email",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "useful": 6,
+    "right_call": 7,
+    "actionable": 7,
+    "honest": 6,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 8,
+    "honest": 7,
+    "clear": 9
+   },
+   "council_100": 66,
+   "baseline_100": 82,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 makes the right call and gives practical steps: a direct review link, English copy, sending after the photos are delivered, and no incentives, review gating or reminders. Advice 2 overweights the consent issue, which could stop a sound low-risk idea, and it uses arbitrary success and stop thresholds and a specific date as if they were grounded."
+  },
+  {
+   "case": "ja5-crypto",
+   "round": 0,
+   "council_was": 1,
+   "council": {
+    "useful": 6,
+    "right_call": 9,
+    "actionable": 6,
+    "honest": 8,
+    "clear": 5
+   },
+   "baseline": {
+    "useful": 8,
+    "right_call": 9,
+    "actionable": 8,
+    "honest": 8,
+    "clear": 8
+   },
+   "council_100": 68,
+   "baseline_100": 82,
+   "judge_prefers": "baseline",
+   "why": "Both answers correctly say not to invest. Advice 2 explains more clearly why the offer looks like a Ponzi scheme, including that guaranteeing returns may break the Investment Deposit Act (出資法) and that the friend may also be a victim. Advice 1's steps are muddled: it asks the friend whether a referral reward exists even though the question already says one does, and its conditions for turning the offer down are confusing."
+  },
+  {
+   "case": "ja5-crypto",
+   "round": 1,
+   "council_was": 2,
+   "council": {
+    "useful": 7,
+    "right_call": 9,
+    "actionable": 7,
+    "honest": 8,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 9,
+    "right_call": 10,
+    "actionable": 9,
+    "honest": 9,
+    "clear": 9
+   },
+   "council_100": 76,
+   "baseline_100": 92,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 says outright that this looks like a Ponzi scheme. It explains why the friend's early payout proves nothing, tells the person to check whether the friend actually withdrew the full principal, and gives correct hotline numbers. Advice 2 has a similar core, but its steps are muddled: it asks the friend about referral rewards that were already described, talks about 'ending' an investment the person hasn't made yet, and offers a reconsideration condition the scheme could never meet as described."
+  },
+  {
+   "case": "ja5-crypto",
+   "round": 2,
+   "council_was": 2,
+   "council": {
+    "useful": 7,
+    "right_call": 9,
+    "actionable": 7,
+    "honest": 8,
+    "clear": 7
+   },
+   "baseline": {
+    "useful": 9,
+    "right_call": 10,
+    "actionable": 8,
+    "honest": 9,
+    "clear": 9
+   },
+   "council_100": 76,
+   "baseline_100": 90,
+   "judge_prefers": "baseline",
+   "why": "Advice 1 names the scam pattern plainly and adds the legal red flag (the Investment Act, 出資法) and the point that the friend may be a victim too. Its best test is whether the friend actually withdrew the full principal, and it gives several hotlines to call. Advice 2 is sound, but some steps are muddled: it says to 'stop the investment' before any money has gone in, asks the friend about referral rewards that are already known, and leaves a reconsideration condition that weakens the clear 'do not invest' message."
+  }
+ ]
+}

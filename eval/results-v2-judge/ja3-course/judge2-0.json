@@ -1,0 +1,23 @@
+{
+ "case": "ja3-course",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 78,
+ "baseline_100": 76,
+ "judge_prefers": "council",
+ "why": "Both advisors make the same correct call: validate demand with paid pre-orders before spending two weeks on production. Advice 2 adds more that is useful: the legal disclosure (特定商取引法) the sales page will need, the admission that pre-orders can undercount demand for a course buyers can't see yet, and concrete go/stop tests tied to production cost. Its specific dates and thresholds are somewhat arbitrary, which is why it scores lower on clarity."
+}

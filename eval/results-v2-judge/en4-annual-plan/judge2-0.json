@@ -1,0 +1,23 @@
+{
+ "case": "en4-annual-plan",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 6,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 78,
+ "baseline_100": 80,
+ "judge_prefers": "baseline",
+ "why": "Both advisors make the right call. Advice 2 gives a more accurate cost analysis: the $98 discount only matters if the customer would have stayed 12 months anyway, and it breaks even at about 3% monthly churn. Advice 2 also covers practical issues Advice 1 misses, such as refund policy, annual invoicing needs, and delayed price increases. Advice 1 is more actionable, but its dated pass/fail thresholds (10 of 40 switching, cutting the discount for new signups) are arbitrary and presented with more confidence than the facts support."
+}

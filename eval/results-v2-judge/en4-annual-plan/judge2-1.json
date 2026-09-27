@@ -1,0 +1,23 @@
+{
+ "case": "en4-annual-plan",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 9,
+  "clear": 8
+ },
+ "council_100": 76,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 makes the right call, gets the churn breakeven roughly right (about 3%), and covers practical issues Advice 2 skips: refund policy and locked-in pricing. Advice 2 has sharper deadlines and thresholds, but some of its stop rules are shaky: it would drop the discount if long-tenure customers adopt it, which is exactly who you'd expect to ask for annual billing, and its 25% uptake bar is arbitrary."
+}

@@ -1,0 +1,33 @@
+**Not quite.** The traction is real, but the plan has almost no margin for error. Here's the math.
+
+**What you actually burn each month**
+
+Rent is $1,500. Food, utilities, phone and transport usually add at least $1,000. Once you leave your job you also pay for your own health insurance, maybe $300–600 in the US. Call it about **$3,000/month**. Your $1,200 MRR is before taxes, payment fees and hosting, so you're short about $1,800 a month today.
+
+**Runway if growth stays at a perfect 15% a month**
+
+| Month | MRR | Shortfall | Savings left |
+|---|---|---|---|
+| 1 | $1,380 | $1,620 | $6,380 |
+| 2 | $1,587 | $1,413 | $4,967 |
+| 3 | $1,825 | $1,175 | $3,792 |
+| 4 | $2,099 | $901 | $2,891 |
+| 5 | $2,414 | $586 | $2,305 |
+| 6 | $2,776 | $224 | $2,081 |
+| 7 | $3,192 | — | break-even |
+
+That's the **best case**, and you finish with about $2k in the bank. The risks:
+- **4 months of data is a short track record.** Growth rates usually slow as you move past early adopters.
+- **If growth stalls, you have about 4 months.** If it slows to 8%, you run out of money around month 6.
+- **Money pressure hurts decisions.** People with 3 months of cash left tend to chase short-term revenue, discount too much, or panic.
+
+**Why "everyone says go for it" isn't evidence:** Friends see the upside and the story. They won't be paying your rent in month 5.
+
+**Better options than "quit Friday, hope it works":**
+1. **Set a trigger instead of a date.** For example: quit when MRR reaches about $2,500 or you have 9–12 months of expenses saved. At 15% growth that's only about 5 months away, and your salary funds the savings meanwhile.
+2. **Ask about part-time, a 4-day week, or unpaid leave.** Leave is a free trial of full-time founding.
+3. **If you still quit Friday, set limits now.** For example: "If MRR is under $2,000 at month 4, or savings drop below $3,000, I start job hunting." Cut expenses before you go, and get health insurance sorted first.
+
+The upside for you: at $95k with SaaS experience, you can probably get hired again. So this bet can be undone, which works in your favor. But it's a much better bet from a position of strength than on a 4-month clock.
+
+What are your real monthly expenses, and is your growth coming from something repeatable (SEO, a channel) or from one-off spikes? Those two answers would change my view more than anything else.

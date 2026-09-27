@@ -1,0 +1,23 @@
+{
+ "case": "ja2-first-hire",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 7,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 6
+ },
+ "baseline": {
+  "useful": 6,
+  "right_call": 7,
+  "actionable": 6,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 72,
+ "baseline_100": 68,
+ "judge_prefers": "council",
+ "why": "Advice 2 sees the real bottleneck: the owner shoots everything in what is meant to be a photographer-dispatch business, so it proposes testing outside photographers and gives clear go/no-go thresholds. Its arbitrary dates and cutoffs, and the more complex hire it proposes, lower its clarity somewhat."
+}

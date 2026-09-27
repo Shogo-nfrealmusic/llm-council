@@ -1,0 +1,26 @@
+== BRIEF ==
+Removed framing: "hottest thing right now", "obviously the right call, isn't it?"
+Claim to test: AI agent platforms are a stronger opportunity than the current app, and investors favor them.
+
+Not unanimous (4 CHANGE, 1 NO-GO), so no red team.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Keep the app on 1 person; 3 test one agent idea for 6 weeks.
+WHY:
+- Shutdown trades a measured asset for an unmeasured one (First-principles): even with
+  no new sales, 2% churn leaves ~$12,500 of $16,000 MRR after a year (0.98^12).
+- Your claim is untested: no idea, buyer or demand signal is named, and investors fund
+  traction, not categories. 40 paying teams are traction and your cheapest pilot pool.
+BIGGEST RISK: The 1+3 split drifts into half-effort on both; hold the 6-week gate hard.
+NEXT STEPS:
+1. By Oct 2, get runway (cash / net monthly burn) — success: 3+ months (rule of thumb) /
+   stop if: under 3 months, then sell the app as a running business; don't shut it down.
+2. By Oct 9, pitch an agent built on their notes (Expansionist) to 10 of the 40 teams —
+   success: 3+ say they'd pay (Executor's 25% rule of thumb) / stop if: fewer than 3.
+3. By Nov 9, sign paid pilots — success: 3+, then decide the app's fate / stop if: 0, keep app.
+WOULD CHANGE IT: 3+ paid pilots, or a term sheet requiring a full pivot, would make it GO;
+  zero customer interest in step 2 makes the agent plan NO-GO.
+
+== COUNCIL ==
+contrarian CHANGE, first-principles CHANGE, expansionist CHANGE, outsider NO-GO, executor CHANGE | red team: not needed | top-ranked: first-principles
+Full notes: council-notes/2026-09-28-note-app-agent-pivot.md

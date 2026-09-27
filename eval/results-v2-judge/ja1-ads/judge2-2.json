@@ -1,0 +1,23 @@
+{
+ "case": "ja1-ads",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 5,
+  "clear": 7
+ },
+ "council_100": 82,
+ "baseline_100": 68,
+ "judge_prefers": "council",
+ "why": "Both correctly say to test before committing the full 500,000 yen. Advice 2 gives a dated plan with clear success, stop and scale criteria, and admits that a 100,000 yen test gives only a small sample. Advice 1's break-even math is useful, but it states assumptions as fact (where the 1.2% CVR comes from, the 'coin flip' odds) and splits a small budget across too many test cells."
+}

@@ -1,0 +1,20 @@
+== BRIEF ==
+Removed framing: "This is my moment", "everyone says go for it!", "Right?"
+Claim to test: Now is the right moment to go full-time; others support this.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Keep the job; test whether hours are the growth bottleneck first, quit only once MRR covers real costs.
+WHY:
+- $8k savings ÷ $1,500 rent alone <5 months runway (C, B); MRR $1,200 doesn't cover rent, let alone taxes/insurance — quitting now is not absorbable.
+- Growth (15%/mo, 4 months) happened part-time — evidence hours are NOT the constraint (C), so "now is the right moment" is contradicted, not supported.
+- Ask employer for reduced hours/unpaid leave for 4 weeks; if refused, this collapses to a binary quit/stay call (unaddressed by all advisors).
+BIGGEST RISK: Employer refuses reduced hours, forcing the same quit-now decision later with less runway and no better data.
+NEXT STEPS:
+1. Ask employer this week for 3-day week / short unpaid leave — success: granted by Fri; stop if: refused (recheck runway math before any quit).
+2. Track MRR growth weekly for 4 weeks under reduced hours — success: growth rate ≥15%/mo persists; stop if: growth stalls/drops.
+3. Quit only when MRR covers rent+taxes+insurance (currently $1,200 vs >$1,500+) — success: MRR hits that threshold; stop if: churn/customer concentration data shows fragility.
+WOULD CHANGE IT: If MRR reaches ~$2,000+/mo covering real costs, or employer refuses any flexibility and runway math still says no — then it's NO-GO outright, not a test.
+
+== COUNCIL ==
+contrarian NO-GO, first-principles CHANGE, executor CHANGE | red team: off (quick) | top-ranked: first-principles
+Full notes: council-notes/2026-09-28-quit-job-saas.md
