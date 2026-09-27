@@ -1,19 +1,30 @@
 #!/usr/bin/env bash
-# anonymize.sh — shuffle the five advisor answers and relabel them A–E.
+# anonymize.sh — shuffle the advisor answers and relabel them A, B, C, ...
 #
-# stdin: five blocks, each starting with a line "=== ROLE: <role> ==="
+# usage: bash anonymize.sh [EXPECTED_COUNT] < answers
+#   EXPECTED_COUNT: how many answers the caller sent (2-6, default 5).
+#                   Quick mode sends 3, standard 5, standard + red team 6.
+#
+# stdin: blocks, each starting with a line "=== ROLE: <role> ==="
 # stdout:
 #   ### KEY (private — never show to reviewers)
 #   A = <role>
 #   ...
 #   ### PACKET (send to reviewers verbatim)
 #   === ANSWER A ===
-#   <text with persona names masked>
+#   <text with persona self-references masked>
 #   ...
+#   ### ANSWERS FILE: <path>   (private copy with personas, for the notes)
 #
-# Uses bash $RANDOM (Fisher–Yates), so the order is actually random rather
-# than an LLM's idea of "shuffled". Works on the bash 3.2 that ships with macOS.
+# The order comes from bash $RANDOM (Fisher–Yates), not from an LLM's idea of
+# "shuffled". Works on the bash 3.2 that ships with macOS.
 set -eu
+
+expected="${1:-5}"
+case "$expected" in
+  2|3|4|5|6) ;;
+  *) echo "anonymize.sh: expected count must be 2-6, got '$expected'" >&2; exit 2 ;;
+esac
 
 roles=()
 bodies=()
@@ -31,7 +42,7 @@ while IFS= read -r line || [ -n "$line" ]; do
     *)
       if [ $idx -ge 0 ]; then
         # Answer text must not be able to fake a packet boundary.
-        case "$line" in "==="*) line="  ${line}" ;; esac
+        case "$line" in "==="*|"###"*) line="  ${line}" ;; esac
         bodies[$idx]="${bodies[$idx]}${line}
 "
       fi
@@ -40,36 +51,60 @@ while IFS= read -r line || [ -n "$line" ]; do
 done
 
 n=$((idx + 1))
-if [ "$n" -ne 5 ]; then
-  echo "anonymize.sh: expected 5 answers, got $n" >&2
+if [ "$n" -ne "$expected" ]; then
+  echo "anonymize.sh: expected $expected answers, got $n" >&2
   exit 1
 fi
 
-# Fisher–Yates shuffle of indices 0..4
-order=(0 1 2 3 4)
-i=4
+# Fisher–Yates shuffle of indices 0..n-1
+order=()
+k=0
+while [ $k -lt $n ]; do order[$k]=$k; k=$((k + 1)); done
+i=$((n - 1))
 while [ $i -gt 0 ]; do
   j=$((RANDOM % (i + 1)))
   t=${order[$i]}; order[$i]=${order[$j]}; order[$j]=$t
   i=$((i - 1))
 done
 
-labels=(A B C D E)
+labels=(A B C D E F)
+
+# Mask persona self-references only ("As the Contrarian, ...", "Executor here:",
+# "逆張り役として"), so ordinary words like "the executor of the estate" survive.
+mask() {
+  perl -CSD -Mutf8 -pe '
+    my $P = qr/(?:contrarian|first[- ]principles?|expansionist|outsider|executor|red[- ]team(?:er)?)/i;
+    s/\b(as\s+(?:(?:the|a|an|your|my|our)\s+)?)$P\b/${1}[advisor]/gi;
+    s/\b$P(?=\s+(?:here|speaking|view|lens|angle|perspective|take|hat|seat|mode|role)\b)/[advisor]/gi;
+    s/\b((?:the|my)\s+)$P(?=\s+in\s+me\b)/${1}[advisor]/gi;
+    s/^(\s*(?:[-*]\s*)?)$P(?=\s*[:：])/${1}[advisor]/gi;
+    s/\b[Tt]he\s+(?:Contrarian|First[- ]Principles?|Expansionist|Outsider|Executor|Red[- ]Team(?:er)?)\b/the [advisor]/g;
+    s/(?:逆張り役|逆張り派|第一原理派|拡張派|部外者|実行役|レッドチーム|コントラリアン|エクスパンショニスト|アウトサイダー|エグゼキューター)(?=として|の立場|の視点|の目線|から見ると|から見て|から言えば|の私|です|だ[。、])/[advisor]/g;
+  '
+}
 
 echo "### KEY (private — never show to reviewers)"
-for k in 0 1 2 3 4; do
+k=0
+while [ $k -lt $n ]; do
   echo "${labels[$k]} = ${roles[${order[$k]}]}"
+  k=$((k + 1))
 done
 echo
 echo "### PACKET (send to reviewers verbatim)"
-for k in 0 1 2 3 4; do
+k=0
+while [ $k -lt $n ]; do
   echo "=== ANSWER ${labels[$k]} ==="
-  # Mask persona self-references so style labels don't leak identity.
-  printf '%s' "${bodies[${order[$k]}]}" | sed -E \
-    -e 's/[Cc][Oo][Nn][Tt][Rr][Aa][Rr][Ii][Aa][Nn][Ss]?/[advisor]/g' \
-    -e 's/[Ff][Ii][Rr][Ss][Tt][- ][Pp][Rr][Ii][Nn][Cc][Ii][Pp][Ll][Ee][Ss]?/[advisor]/g' \
-    -e 's/[Ee][Xx][Pp][Aa][Nn][Ss][Ii][Oo][Nn][Ii][Ss][Tt][Ss]?/[advisor]/g' \
-    -e 's/[Oo][Uu][Tt][Ss][Ii][Dd][Ee][Rr][Ss]?/[advisor]/g' \
-    -e 's/[Ee][Xx][Ee][Cc][Uu][Tt][Oo][Rr][Ss]?/[advisor]/g'
+  printf '%s' "${bodies[${order[$k]}]}" | mask
   echo
+  k=$((k + 1))
 done
+
+# Private copy (personas included) for the saved notes. Readable by the user only.
+umask 077
+afile="$(mktemp "${TMPDIR:-/tmp}/llm-council-answers.XXXXXX")"
+k=0
+while [ $k -lt $n ]; do
+  printf '=== ROLE: %s ===\n%s' "${roles[$k]}" "${bodies[$k]}" >> "$afile"
+  k=$((k + 1))
+done
+echo "### ANSWERS FILE: $afile"
