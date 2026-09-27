@@ -145,7 +145,7 @@ def main():
     final = texts[-1] if texts else ""
     nlines = len([l for l in final.splitlines() if l.strip()])
     report["final_lines"] = nlines
-    check(nlines <= 20, f"final report is short (<= 20 non-empty lines, got {nlines})")
+    check(nlines <= 24, f"final report is short (<= 24 non-empty lines, got {nlines})")
     check("---DETAILS---" not in alltext and not re.search(r"^(CRUX|論点の核心):", alltext, re.M),
           "chairman details (part 2) are not printed")
 

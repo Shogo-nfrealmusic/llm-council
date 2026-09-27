@@ -91,7 +91,7 @@ Council positions (all <TOKEN>):
 - <each advisor's POSITION sentence, no persona names>
 ```
 
-Its answer becomes one more answer, role `red-team`. If the tokens differ, or in quick mode, there is no red team.
+Its answer becomes one more answer, role `red-team`. If the tokens differ, or in quick mode, there is no red team. Do not announce any of this; the final report shows it.
 
 ## Stage 2 — Anonymous peer review
 
@@ -142,7 +142,7 @@ Decision brief:
 <brief>
 ```
 
-The chairman replies in two parts separated by `---DETAILS---`. **Part 1** is what the person sees; **part 2** goes only into the notes. If part 1 has no `VERDICT:` line or runs over 12 lines, spawn the chairman once more with the same input plus the line `Your previous reply broke the format. Follow the Reply format exactly.`
+The chairman replies in two parts separated by `---DETAILS---`. **Part 1** is what the person sees; **part 2** goes only into the notes. If part 1 has no `VERDICT:` line or runs over 16 lines, spawn the chairman once more with the same input plus the line `Your previous reply broke the format. Follow the Reply format exactly.`
 
 ## Stage 4 — Save the notes
 
@@ -180,7 +180,7 @@ The script puts the anonymous answers in place of `@@ANSWERS@@`, writes `./counc
 
 ## Final report
 
-Write **one final message**, at most about 16 lines, containing in this order and nothing else:
+Write **one final message**, at most about 20 lines, containing in this order and nothing else:
 
 ```
 == CHAIRMAN ==
