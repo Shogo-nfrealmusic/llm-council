@@ -1,0 +1,11 @@
+{
+  "name": "llm-council",
+  "displayName": "LLM Council",
+  "version": "0.1.0",
+  "description": "Pressure-test a decision with five independent advisors, anonymous peer review, and a chairman verdict.",
+  "author": { "name": "Shogo Kikuchi", "url": "https://github.com/Shogo-nfrealmusic" },
+  "homepage": "https://github.com/Shogo-nfrealmusic/llm-council",
+  "repository": "https://github.com/Shogo-nfrealmusic/llm-council",
+  "license": "MIT",
+  "keywords": ["decision", "council", "sycophancy", "second-opinion", "subagents"]
+}
