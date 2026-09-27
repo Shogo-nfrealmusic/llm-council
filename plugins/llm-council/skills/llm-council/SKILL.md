@@ -40,7 +40,7 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
 4. **One turn, foreground only.** Pass `run_in_background: false` on **every** Agent call and wait for the results in this same turn. Never end your turn, schedule a wakeup, or poll while the council is running: the pre-approved scripts last only for the current turn, so a run split across turns stops at a permission prompt.
 
-5. **Silence.** You write exactly two messages with text: the BRIEF and the final report. Every other message contains tool calls only, with no text at all: no progress notes, no counts, no plans.
+5. **Silence.** You write exactly two messages with text: the BRIEF and the final report. Every other message contains tool calls only, with no text at all: no progress notes ("deliberating...", "審議中です"), no counts, no plans. The person already sees the subagents working.
 
 ## Stage 0 — Neutral brief (you write this yourself)
 
@@ -56,12 +56,11 @@ Print only this short version (the full brief goes to the subagents and the note
 
 ```
 == BRIEF ==
-Decision: <the decision in one line>
-Claim (untested): <the claim(s), one line>        (omit the line if there are none)
 Removed framing: "<phrase>", "<phrase>"           (or: none)
+Claim to test: <the claim(s), one line>           (omit the line if there are none)
 ```
 
-Japanese: `決めること: …`, `未検証の主張: …`, `取り除いた言い回し: 「…」「…」`（なければ `なし`）.
+Japanese: `取り除いた言い回し: 「…」「…」`（なければ `なし`）, `検証する主張: …`.
 
 From here on, **no subagent sees the user's original wording**: only the full brief (never the Removed framing line).
 
@@ -94,6 +93,8 @@ Council positions (all <TOKEN>):
 Its answer becomes one more answer, role `red-team`. If the tokens differ, or in quick mode, there is no red team. Do not announce any of this; the final report shows it.
 
 ## Stage 2 — Anonymous peer review
+
+Start this stage only after the unanimity check is done and the red team (if any) has returned: the packet must contain every answer, the red team's included.
 
 1. Build the anonymous packet. `N` = the number of answers you actually have (an advisor that failed is left out). Pass the answers exactly as returned, each under a `=== ROLE: <persona> ===` line (English ids), in a quoted heredoc:
 
@@ -187,13 +188,12 @@ Write **one final message**, at most about 20 lines, containing in this order an
 <chairman part 1, verbatim>
 
 == COUNCIL ==
-<persona TOKEN, persona TOKEN, ...>   (one line; wrap once if over 90 columns)
-Red team: <not needed — advisors disagreed | triggered (all N said TOKEN) — argued TOKEN | not used in quick mode>. Top-ranked in anonymous review: <persona>.
+<persona TOKEN, persona TOKEN, ...> | red team: <not needed | argued TOKEN | off (quick)> | top-ranked: <persona>
 Full notes: <path>
 ```
 
 - Persona ids in English runs: `contrarian`, `first-principles`, `expansionist`, `outsider`, `executor`. Japanese runs: `逆張り`, `第一原理`, `拡張`, `部外者`, `実行`, and the red team `レッドチーム`.
-- Japanese lines: `レッドチーム: 不要（意見が割れた）` / `レッドチーム: 発動（<N>人全員が <TOKEN>）— <TOKEN> を主張` / `レッドチーム: クイックモードでは使わない`, then `匿名レビューの1位: <persona>。`, and `全記録: <path>`.
+- Japanese line: `<persona TOKEN、…> | レッドチーム: <不要 | TOKEN を主張 | なし（クイック）> | レビュー1位: <persona>`, and `全記録: <path>`. The line may wrap once if it runs over 90 columns.
 - If notes were off: `Notes not saved.` (Japanese: `記録は保存していません。`).
 - If a subagent failed, add one line before the last line saying which one and that the council was incomplete.
 

@@ -164,8 +164,9 @@ def main():
         check(not redteam, "no red team in quick mode")
     else:
         check(bool(redteam) == unanimous, f"red team spawned iff unanimous (unanimous={unanimous}, spawned={bool(redteam)})")
-    rline = next((l for l in advblock.splitlines() if re.match(r"\s*(Red team|レッドチーム)\s*[:：]", l)), "")
-    check(bool(rline), "COUNCIL block states red-team status")
+    rm = re.search(r"(?:red team|レッドチーム)\s*[:：]\s*([^|\n]*)", advblock, re.I)
+    rline = rm.group(1) if rm else ""
+    check(rm is not None, "COUNCIL block states red-team status")
     if redteam:
         rt = TOKENS.findall(rline)
         rt_tok = rt[-1] if rt else None
