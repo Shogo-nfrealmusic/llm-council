@@ -18,7 +18,9 @@ set -eu
 roles=()
 bodies=()
 idx=-1
+cr="$(printf '\r')"
 while IFS= read -r line || [ -n "$line" ]; do
+  line="${line%"$cr"}"
   case "$line" in
     "=== ROLE: "*" ===")
       idx=$((idx + 1))
@@ -28,6 +30,8 @@ while IFS= read -r line || [ -n "$line" ]; do
       ;;
     *)
       if [ $idx -ge 0 ]; then
+        # Answer text must not be able to fake a packet boundary.
+        case "$line" in "==="*) line="  ${line}" ;; esac
         bodies[$idx]="${bodies[$idx]}${line}
 "
       fi

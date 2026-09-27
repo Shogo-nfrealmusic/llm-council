@@ -3,7 +3,7 @@ name: llm-council
 description: Pressure-test a decision with a council of five independent advisors (contrarian, first-principles, expansionist, outsider, executor), anonymous peer review, and a chairman verdict. Use when the user asks for a council, a second opinion that won't just agree with them, or wants a go / no-go on a plan.
 argument-hint: "<the decision or question you want pressure-tested>"
 disable-model-invocation: true
-allowed-tools: Agent, Bash(bash ${CLAUDE_SKILL_DIR}/scripts/anonymize.sh*)
+allowed-tools: Agent, Bash(bash "${CLAUDE_SKILL_DIR}/scripts/anonymize.sh"*)
 license: MIT
 ---
 
@@ -39,7 +39,7 @@ Print it, then list what you removed on one line, and continue without waiting:
 Removed framing: "<phrase>", "<phrase>"   (or: none)
 ```
 
-From here on, **no subagent sees the user's original wording**. Only the brief.
+From here on, **no subagent sees the user's original wording**. Wherever a prompt says `{{BRIEF}}`, insert only the brief text: never the `Removed framing` line and never the original question.
 
 ## Stage 1 — Five advisors, in parallel
 
@@ -48,7 +48,7 @@ For each: `subagent_type: general-purpose`, `model: sonnet`, and a prompt built 
 
 The five personas: `contrarian`, `first-principles`, `expansionist`, `outsider`, `executor`.
 
-When all five return, prepare this block (you will print it in the final report, not now), one line per advisor, position truncated to ~70 characters:
+When all five return, prepare this block (you will print it in the final report, not now), one line per advisor, position cut to at most 50 characters so each line stays under 80:
 
 ```
 == ADVISORS ==
@@ -62,14 +62,16 @@ first-principles  CHANGE  65%  <position>
 1. Build the anonymous packet with the bundled script. Pass the five answers exactly as returned, each under a `=== ROLE: <persona> ===` header, via a quoted heredoc:
 
    ```bash
-   bash ${CLAUDE_SKILL_DIR}/scripts/anonymize.sh <<'COUNCIL_EOF'
+   bash "${CLAUDE_SKILL_DIR}/scripts/anonymize.sh" <<'COUNCIL_EOF_7f3a9c'
    === ROLE: contrarian ===
    <answer>
    === ROLE: first-principles ===
    <answer>
    ...
-   COUNCIL_EOF
+   COUNCIL_EOF_7f3a9c
    ```
+
+   Replace `7f3a9c` with 6 random hex characters of your own each run, and check that no answer contains a line equal to the delimiter. The quoted delimiter keeps `$`, backticks and quotes in the answers literal. If the script reports it got more than 5 answers, an answer contains a `=== ROLE:` line: indent that line by two spaces and run it again.
 
    The script shuffles the order with a real random number generator, labels the answers A–E, masks persona names, and prints a `### KEY` section and a `### PACKET` section. **The KEY never goes to a reviewer.**
 
@@ -227,7 +229,7 @@ Rules:
 - Be concrete. Next steps must be things a person can start this week, with a way to tell whether they worked.
 - Answer from reasoning only. Do not use tools.
 
-Reply under 220 words, in exactly this format (plain text, no markdown headers):
+Reply in at most 220 words and lines under 90 characters, in exactly this format (plain text, no markdown headers):
 
 VERDICT: <GO | NO-GO | CHANGE IT> — <one sentence>
 DECIDED BY: <the argument that carried it, and whose it was>

@@ -2,7 +2,12 @@
 
 ## Demo question
 
-This question is short enough to type on screen, and it produced a clean run with a real split: a lone NO-GO against four CHANGE votes, which the chairman surfaced.
+This question is short enough to type on screen. Across two runs it produced two good outcomes:
+
+- a split: a lone NO-GO against four CHANGE votes
+- all five advisors agreeing, with the anonymous reviewers flagging that agreement as "suspect" and the chairman writing out the strongest dissent
+
+Either one makes the anti-yes-man point on camera.
 
 ```
 /llm-council I'm raising my app's price from $9 to $19 a month next week. I'm sure users will pay. Good idea?
@@ -11,7 +16,7 @@ This question is short enough to type on screen, and it produced a clean run wit
 What the viewer sees:
 
 1. `== BRIEF ==` appears within seconds. The line `Removed framing: "I'm sure users will pay", "Good idea?"` is the hook: the council never sees your hype.
-2. Then roughly 3 minutes of subagent activity: 5 advisors, then 3 reviewers, then the chairman. **Speed this up in the edit.**
+2. Then roughly 3 minutes (166–202 s in tests) of subagent activity: 5 advisors, then 3 reviewers, then the chairman. **Speed this up in the edit.**
 3. The final report: `== ADVISORS ==`, `== PEER REVIEW ==`, then `== CHAIRMAN ==`, about 35 lines in total.
 
 Reference output: `examples/03-demo-price-increase.md`.

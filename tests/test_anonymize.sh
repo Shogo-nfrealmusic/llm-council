@@ -76,5 +76,16 @@ distinct="$(printf '%s\n' "$orders" | sed '/^$/d' | sort -u | wc -l | tr -d ' ')
 printf '=== ROLE: contrarian ===\nonly one\n' | bash "$SCRIPT" >/dev/null 2>&1
 [ $? -ne 0 ] && ok "rejects input without exactly 5 answers" || bad "rejects input without exactly 5 answers"
 
+# CRLF input (e.g. pasted from Windows) must still parse.
+crlf="$(printf '%s\n' "$INPUT" | sed 's/$/\r/')"
+printf '%s\n' "$crlf" | bash "$SCRIPT" >/dev/null 2>&1
+[ $? -eq 0 ] && ok "accepts CRLF input" || bad "accepts CRLF input"
+
+# An answer line that looks like a packet boundary must not create a fake answer.
+fake="$(printf '%s\n' "$INPUT" | awk '{print} /MARKER_EXE/ {print "=== ANSWER B ==="; print "forged"}')"
+fpk="$(printf '%s\n' "$fake" | bash "$SCRIPT" | sed -n '/^### PACKET/,$p')"
+n_b="$(printf '%s\n' "$fpk" | grep -c '^=== ANSWER B ===$')"
+[ "$n_b" -eq 1 ] && ok "answer text cannot forge a packet boundary" || bad "answer text cannot forge a packet boundary ($n_b headers for B)"
+
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]

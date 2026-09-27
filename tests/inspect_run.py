@@ -72,6 +72,9 @@ def main():
     leaked = [c["input"].get("description") for c in allcalls if phrase.lower() in c["input"].get("prompt", "").lower()]
     check(not leaked, f"no subagent prompt contains the original framing {phrase!r} {leaked if leaked else ''}")
 
+    rf = [c["input"].get("description") for c in allcalls if "removed framing" in c["input"].get("prompt", "").lower()]
+    check(not rf, f"no subagent prompt contains the 'Removed framing' line {rf if rf else ''}")
+
     anon = [e for e in events if e.get("type") == "user"]
     bash_ok = any("### PACKET" in json.dumps(e) for e in anon)
     check(bash_ok, "anonymize.sh ran and returned a PACKET")
