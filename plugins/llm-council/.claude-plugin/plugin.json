@@ -1,8 +1,8 @@
 {
   "name": "llm-council",
   "displayName": "LLM Council",
-  "version": "0.1.0",
-  "description": "Pressure-test a decision with five independent advisors, anonymous peer review, and a chairman verdict.",
+  "version": "0.2.0",
+  "description": "Pressure-test a decision with independent advisors on mixed models, a red team when they all agree, anonymous peer review, and a chairman verdict.",
   "author": { "name": "Shogo Kikuchi", "url": "https://github.com/Shogo-nfrealmusic" },
   "homepage": "https://github.com/Shogo-nfrealmusic/llm-council",
   "repository": "https://github.com/Shogo-nfrealmusic/llm-council",

@@ -60,7 +60,7 @@ Then run it as `/llm-council <your question>`. For one project only, copy into t
 | Command | What runs | Measured time | Cost at API list prices |
 |---|---|---|---|
 | `/llm-council <question>` | 5 advisors (+ red team if unanimous), 3 reviewers, chairman | 126–158 s | $0.99–1.11 |
-| `/llm-council --quick <question>` | 3 advisors (contrarian, first-principles, executor; + red team if unanimous), 1 reviewer, Sonnet chairman | 100–155 s | $0.75–0.86 |
+| `/llm-council --quick <question>` | 3 advisors (contrarian, first-principles, executor; + red team if unanimous), 1 reviewer, Sonnet chairman | 83–155 s | $0.71–0.86 |
 | add `--no-notes` | same, but nothing is written to `./council-notes/` | | |
 
 Details and how these were measured: [`examples/RUNS.md`](examples/RUNS.md). On a Pro or Max plan a run counts toward your usage limits; there is no separate charge. Most of the cost is the main session (the "clerk") on Opus; the subagents are cheap.
@@ -126,7 +126,7 @@ Read these before you trust a verdict.
 /llm-council --quick 初めての社員を月給30万円で雇います。もう決めた、いいよね？
 ```
 
-- `--quick` を付けると、アドバイザー3人・レビュアー1人の軽い版になります（計測では100〜155秒）。
+- `--quick` を付けると、アドバイザー3人・レビュアー1人の軽い版になります（計測では83〜155秒）。
 - 実行のたびに、全記録が `./council-notes/日付-題名.md` に保存されます。最後の行に保存先が出ます。保存したくないときは `--no-notes` を付けるか、環境変数 `LLM_COUNCIL_NOTES=off` を設定してください。
 - 「絶対」「いいよね？」のような言い回しは、アドバイザーに渡す前に取り除かれます。取り除いた言葉はブリーフの下に表示されます。
 - 実際の日本語の実行例: [`examples/04-ja-instagram-ads.md`](examples/04-ja-instagram-ads.md)

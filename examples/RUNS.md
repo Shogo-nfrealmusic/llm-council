@@ -9,7 +9,7 @@ Cost is what Claude Code reports in `total_cost_usd`: token usage priced at **AP
 | Mode | Runs | Wall time | Cost (list) | Inspector |
 |---|---|---|---|---|
 | standard | 6 eval cases (3 run at a time) | 126–158 s (median about 138 s) | $0.99–1.11 | all checks pass (6 of 6) |
-| quick, no red team | `06-quick-quit-job.md` | 100 s | $0.75 | all checks pass |
+| quick, no red team | `06-quick-quit-job.md`; a `--no-notes` run | 100 s; 83 s | $0.75; $0.71 | all checks pass |
 | quick, red team triggered | Japanese ¥500k ads case | 155 s | $0.86 | all checks pass |
 | quick, CLAUDE.md leak test (clean folder) | 1 | 101 s | $0.76 | — |
 | plain single answer (for comparison) | 6 eval cases | 16–28 s | $0.16–0.41 | — |

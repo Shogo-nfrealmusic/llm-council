@@ -6,7 +6,7 @@
     {
       "name": "llm-council",
       "source": "./plugins/llm-council",
-      "description": "Pressure-test a decision with five independent advisors, anonymous peer review, and a chairman verdict."
+      "description": "Pressure-test a decision with independent advisors on mixed models, a red team when they all agree, anonymous peer review, and a chairman verdict."
     }
   ]
 }
