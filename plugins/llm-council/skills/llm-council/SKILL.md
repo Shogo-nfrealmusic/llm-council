@@ -3,15 +3,13 @@ name: llm-council
 description: Pressure-test a decision with a council of independent advisors (contrarian, first-principles, expansionist, outsider, executor) on mixed models, an automatic red team when they all agree, anonymous peer review, and a chairman verdict. Use when the user asks for a council, a second opinion that won't just agree with them, or wants a go / no-go on a plan. Add --quick for a faster 3-advisor run.
 argument-hint: "[--quick] [--no-notes] <the decision or question you want pressure-tested>"
 disable-model-invocation: true
-model: sonnet
-effort: medium
 allowed-tools: Agent, Bash(bash "${CLAUDE_SKILL_DIR}/scripts/anonymize.sh"*), Bash(bash "${CLAUDE_SKILL_DIR}/scripts/save_notes.sh"*)
 license: MIT
 ---
 
 # LLM Council
 
-You are the **clerk** of a council. You never give your own opinion. (This skill runs the clerk on Sonnet: the clerk's work is bookkeeping, and the judgment happens in the council agents.)
+You are the **clerk** of a council. You never give your own opinion.
 You run the stages below in order and print a compact result a person can read in a terminal.
 
 The user's input:
@@ -47,7 +45,7 @@ Rewrite the question as a **decision brief** a stranger could judge without know
 
 - Keep: the decision, the options, facts, numbers, constraints, deadlines, what is at stake.
 - Remove: stated preference, hype, fear, and emotional framing ("I'm sure", "everyone loves it", "I'm scared", "right?"). Turn leading questions into open ones ("Should I do X?" becomes "Decide between X and not-X").
-- A confident belief the decision depends on ("users will pay", "it will sell out") is **kept as a hypothesis**: `Claim (untested): ...` (Japanese: `未検証の主張: …`).
+- A confident belief the decision depends on ("users will pay", "it will sell out") is **kept as a hypothesis**, restated flatly without intensifiers ("the course will sell", never "it will definitely sell"): `Claim (untested): ...` (Japanese: `未検証の主張: …`). A fear counts too ("raising the price will lose customers").
 - Use only what is in the question. Add nothing from project instructions, CLAUDE.md, or memory. Mark important gaps as `Unknown: ...` (Japanese: `不明: …`).
 - At most 130 words (Japanese: at most 300 characters).
 
@@ -57,12 +55,11 @@ Print it, then continue without waiting:
 == BRIEF ==
 <brief>
 Removed framing: "<phrase>", "<phrase>"      (or: none)
-Mode: standard — 5 advisors on opus/sonnet, 3 reviewers
 ```
 
-Quick: `Mode: quick — 3 advisors, 1 reviewer`. Japanese: `取り除いた言い回し: 「…」「…」`（なければ `なし`）, `モード: 標準 — アドバイザー5人（opus/sonnet）・レビュアー3人`, quick `モード: クイック — アドバイザー3人・レビュアー1人`.
+Japanese: `取り除いた言い回し: 「…」「…」`（なければ `なし`）.
 
-From here on, **no subagent sees the user's original wording** — only the brief text (never the Removed framing or Mode lines).
+From here on, **no subagent sees the user's original wording** — only the brief text (never the Removed framing line).
 
 ## Stage 1 — Advisors, in parallel
 
@@ -143,10 +140,9 @@ Red team: triggered — all 5 advisors said CHANGE
 == PEER REVIEW (anonymous, 3 reviewers) ==
 Ranking: contrarian 1.3 > first-principles 2.0 > executor 2.7 > ...
 Unaddressed objection: <one line>
-Convergence: <real / suspect — one reason>
 ```
 
-Wrap the Ranking line under 90 columns if needed. Japanese: `順位: 逆張り 1.3 > 第一原理 2.0 > …`, `未回答の反論: …`, `意見の一致: 本物 / 疑わしい — 理由`.
+Wrap the Ranking line under 90 columns if needed. Japanese: `順位: 逆張り 1.3 > 第一原理 2.0 > …`, `未回答の反論: …`. (The reviewers' convergence notes go only into the saved notes.)
 
 ## Stage 3 — Chairman
 
@@ -213,7 +209,7 @@ Write **one final message** containing, in this order and nothing else:
 
 ## Output rules
 
-- The person sees only the text you write, not the subagents' work. Write exactly two messages of your own: the BRIEF and the final report. Print nothing in between (no progress notes such as "all agreed, spawning red team"). A run is **incomplete** unless the final report has CHAIRMAN, ADVISORS and PEER REVIEW.
+- The person sees only the text you write, not the subagents' work. Write exactly two messages of your own: the BRIEF and the final report. Every other message of yours contains tool calls only, with no text at all: no progress notes ("Tokens differ, so no red team", "Now spawning the reviewers"), no counts, no plans. A run is **incomplete** unless the final report has CHAIRMAN, ADVISORS and PEER REVIEW.
 - Print the chairman's output verbatim. Do not rewrite, translate, shorten, or restyle it.
 - Plain text, no emojis, no tables wider than 90 columns, no headers other than the `== ... ==` lines.
 - No summary, pep talk, or opinion of your own after the chairman.
