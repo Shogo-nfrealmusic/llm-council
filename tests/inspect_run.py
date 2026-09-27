@@ -9,11 +9,11 @@ Checks:
   - advisors: 3 (quick) or 5 (standard) subagent calls in ONE assistant message, on >= 2 models
   - red team: spawned exactly when every advisor gave the same POSITION token, and shown
   - reviewers: 1 (quick) or 3 (standard) in one message; no persona names, no KEY, all labels
-  - chairman: standard = no model override (session model); quick = sonnet
+  - chairman: standard = opus; quick = sonnet
   - no subagent prompt contains the user's original framing or the "Removed framing" line
   - every subagent is one of the plugin's council agents (they start without CLAUDE.md)
   - anonymize.sh returned a PACKET; save_notes.sh ran and the last line names the file
-  - visible output has BRIEF, ADVISORS, PEER REVIEW, CHAIRMAN in order
+  - visible output has BRIEF, CHAIRMAN, ADVISORS, PEER REVIEW in order (exactly 2 messages)
   - --lang ja: brief, advisors and chairman are mostly Japanese; --lang en: no Japanese
 """
 import json, re, sys
@@ -122,7 +122,7 @@ def main():
         if quick:
             check(m == "sonnet", f"quick chairman on sonnet (got {m})")
         else:
-            check(m is None, f"standard chairman inherits session model (got {m})")
+            check(m == "opus", f"standard chairman on opus (got {m})")
 
     leaked = [c["input"].get("description") for c in allcalls if phrase.lower() in c["input"].get("prompt", "").lower()]
     check(not leaked, f"no subagent prompt contains the original framing {phrase!r} {leaked if leaked else ''}")
@@ -138,8 +138,8 @@ def main():
     alltext = "\n".join(texts)
     report["visible_messages"] = len(texts)
     check(len(texts) == 2, f"exactly 2 visible messages (BRIEF, final report) — got {len(texts)}")
-    pos = [alltext.find(h) for h in ("== BRIEF ==", "== ADVISORS ==", "== PEER REVIEW", "== CHAIRMAN ==")]
-    check(all(p >= 0 for p in pos) and pos == sorted(pos), f"visible output has BRIEF, ADVISORS, PEER REVIEW, CHAIRMAN in order {pos}")
+    pos = [alltext.find(h) for h in ("== BRIEF ==", "== CHAIRMAN ==", "== ADVISORS ==", "== PEER REVIEW")]
+    check(all(p >= 0 for p in pos) and pos == sorted(pos), f"visible output has BRIEF, CHAIRMAN, ADVISORS, PEER REVIEW in order {pos}")
 
     # Positions from the visible ADVISORS block.
     advblock = section(alltext, "== ADVISORS ==", "== PEER REVIEW")
@@ -161,7 +161,7 @@ def main():
               f"red team took a different position ({rt_tok} vs {toks[0] if toks else None})")
     check(bool(re.search(r"Red team:|レッドチーム:", advblock)), "ADVISORS block states red-team status")
 
-    chairtext = section(alltext, "== CHAIRMAN ==")
+    chairtext = section(alltext, "== CHAIRMAN ==", "== ADVISORS ==")
     vm = re.search(r"VERDICT:\s*(GO|NO-GO|CHANGE IT)", chairtext)
     report["verdict"] = vm.group(1) if vm else None
     check(vm is not None, f"chairman gave a verdict ({report['verdict']})")
@@ -176,7 +176,7 @@ def main():
         report["notes"] = m.group(1) if m else None
 
     if lang:
-        brief = section(alltext, "== BRIEF ==", "== ADVISORS ==")
+        brief = section(alltext, "== BRIEF ==", "== CHAIRMAN ==")
         body = brief + advblock + chairtext
         body = re.sub(r"==[^=\n]+==|VERDICT|NO-GO|CHANGE IT|CHANGE|GO|red-team|Red team|council-notes/\S+|opus|sonnet|haiku", "", body)
         r = ja_ratio(body)
