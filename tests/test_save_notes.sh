@@ -10,21 +10,23 @@ WORK="$(mktemp -d)"; trap 'rm -rf "$WORK"' EXIT
 cd "$WORK"
 TODAY="$(date +%F)"
 
-ans="$WORK/llm-council-answers.test1"
-printf '=== ROLE: contrarian ===\nPOSITION: NO-GO — fails\n=== ROLE: executor ===\nPOSITION: CHANGE — test small\n' > "$ans"
+mkdir -p "$WORK/.llm-council-work"; printf '*\n' > "$WORK/.llm-council-work/.gitignore"
+ans="$WORK/.llm-council-work/run.test1"; mkdir -p "$ans"
+printf '=== ANSWER A ===\nPOSITION: NO-GO — fails\n=== ANSWER B ===\nPOSITION: CHANGE — test small\n' > "$ans/packet.md"
 
 out="$(printf '# Council notes\n\n## Advisors\n@@ANSWERS@@\n\n## Chairman\nVERDICT: CHANGE IT\n' | bash "$SCRIPT" "Raise price to \$19!" "$ans")"; rc=$?
 [ $rc -eq 0 ] && ok "exits 0" || bad "exits 0 ($rc)"
 f="council-notes/$TODAY-raise-price-to-19.md"
 [ "$out" = "NOTES: $f" ] && ok "prints path ($out)" || bad "prints path (got '$out', want 'NOTES: $f')"
 [ -f "$f" ] && ok "file written" || bad "file written"
-grep -q '^### contrarian$' "$f" && grep -q 'POSITION: NO-GO — fails' "$f" && ok "answers inserted with persona headings" || bad "answers inserted with persona headings"
+grep -q '^### Answer A$' "$f" && grep -q 'POSITION: NO-GO — fails' "$f" && ok "answers inserted with headings" || bad "answers inserted with headings"
 grep -q '@@ANSWERS@@' "$f" && bad "marker replaced" || ok "marker replaced"
 grep -q '^VERDICT: CHANGE IT$' "$f" && ok "rest of notes kept" || bad "rest of notes kept"
-[ ! -e "$ans" ] && ok "private answers file removed after use" || bad "private answers file removed after use"
+[ ! -e "$ans" ] && ok "work dir removed after use" || bad "work dir removed after use"
+[ ! -e "$WORK/.llm-council-work" ] && ok "empty .llm-council-work removed" || bad "empty .llm-council-work removed"
 
 # A file that is not one of ours is never deleted.
-keep="$WORK/important.txt"; printf "=== ROLE: x ===\ny\n" > "$keep"
+keep="$WORK/important"; mkdir -p "$keep"; printf "=== ANSWER A ===\ny\n" > "$keep/packet.md"
 printf "@@ANSWERS@@\n" | bash "$SCRIPT" "keep test" "$keep" >/dev/null
 [ -e "$keep" ] && ok "foreign file not deleted" || bad "foreign file not deleted"
 
@@ -43,6 +45,12 @@ base="$(basename "${out5#NOTES: }" .md)"
 [ ${#base} -le 61 ] && ok "long slug cut (${#base} chars)" || bad "long slug cut (${#base} chars)"
 out6="$(printf 'x\n' | bash "$SCRIPT" "../../etc/passwd")"
 case "$out6" in "NOTES: council-notes/$TODAY-etc-passwd.md") ok "path traversal neutralised";; *) bad "path traversal neutralised ($out6)";; esac
+
+# --discard removes the work dir without writing notes (used with --no-notes).
+mkdir -p "$WORK/.llm-council-work/run.test2"; printf 'x\n' > "$WORK/.llm-council-work/run.test2/packet.md"
+out10="$(bash "$SCRIPT" --discard "$WORK/.llm-council-work/run.test2" < /dev/null)"
+[ "$out10" = "NOTES: off" ] && [ ! -e "$WORK/.llm-council-work/run.test2" ] && ok "--discard removes work dir" || bad "--discard removes work dir ($out10)"
+ls council-notes | grep -q discard && bad "--discard writes no notes" || ok "--discard writes no notes"
 
 # Can be turned off.
 out7="$(printf 'x\n' | LLM_COUNCIL_NOTES=off bash "$SCRIPT" "off test")"

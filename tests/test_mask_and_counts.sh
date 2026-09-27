@@ -11,7 +11,9 @@ SCRIPT="$HERE/../plugins/llm-council/skills/llm-council/scripts/anonymize.sh"
 PASS=0; FAIL=0
 ok()  { PASS=$((PASS+1)); echo "  ok   - $1"; }
 bad() { FAIL=$((FAIL+1)); echo "  FAIL - $1"; }
-packet_of() { sed -n '/^### PACKET/,/^### ANSWERS FILE/p'; }
+WORK="$(mktemp -d)"; trap 'rm -rf "$WORK"' EXIT; cd "$WORK"
+# stdin: the script's stdout; prints the packet file's content
+packet_of() { f="$(sed -n 's/^### PACKET FILE: //p')"; [ -n "$f" ] && [ -f "$f" ] && cat "$f"; }
 
 SIX='=== ROLE: contrarian ===
 POSITION: NO-GO — M1
@@ -99,11 +101,16 @@ jpk="$(printf '%s\n' "$JA" | bash "$SCRIPT" 5 | packet_of)"
 if printf '%s\n' "$jpk" | grep -qE '逆張り役|実行役|部外者'; then bad "Japanese self-references masked"; else ok "Japanese self-references masked"; fi
 printf '%s\n' "$jpk" | grep -qF "この広告は失敗する。" && ok "Japanese text intact" || bad "Japanese text intact"
 
-# The answers (with personas) are kept in a private file for the notes.
-af="$(printf '%s\n' "$SIX" | bash "$SCRIPT" 6 | sed -n 's/^### ANSWERS FILE: //p')"
-[ -n "$af" ] && [ -f "$af" ] && ok "answers file written" || bad "answers file written ($af)"
-[ -n "$af" ] && grep -q '^=== ROLE: red-team ===$' "$af" && grep -q 'M6' "$af" && ok "answers file keeps personas and text" || bad "answers file keeps personas and text"
-[ -n "$af" ] && [ "$(stat -f %Lp "$af" 2>/dev/null || stat -c %a "$af")" = "600" ] && ok "answers file is private (600)" || bad "answers file is private (600)"
+# The packet lives in ./.llm-council-work/<id>/packet.md, next to nothing else
+# (so a reviewer that can read it cannot stumble on the key).
+pf="$(printf '%s\n' "$SIX" | bash "$SCRIPT" 6 | sed -n 's/^### PACKET FILE: //p')"
+case "$pf" in "$WORK"/.llm-council-work/*/packet.md) ok "packet file under ./.llm-council-work (absolute path)";; *) bad "packet file under ./.llm-council-work ($pf)";; esac
+d="$(dirname "$pf")"
+[ "$(ls -A "$d" | tr '\n' ' ')" = "packet.md " ] && ok "work dir holds only the packet" || bad "work dir holds only the packet ($(ls -A "$d" | tr '\n' ' '))"
+[ "$(cat "$WORK/.llm-council-work/.gitignore" 2>/dev/null)" = "*" ] && ok "work dir is git-ignored" || bad "work dir is git-ignored"
+grep -q '^[A-F] = ' "$pf" && bad "packet file has no key" || ok "packet file has no key"
+out="$(printf '%s\n' "$SIX" | bash "$SCRIPT" 6)"
+printf '%s\n' "$out" | grep -q '^=== ANSWER' && bad "answers not echoed to stdout" || ok "answers not echoed to stdout"
 
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]

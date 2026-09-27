@@ -10,11 +10,10 @@
 #   ### KEY (private — never show to reviewers)
 #   A = <role>
 #   ...
-#   ### PACKET (send to reviewers verbatim)
-#   === ANSWER A ===
-#   <text with persona self-references masked>
-#   ...
-#   ### ANSWERS FILE: <path>   (private copy with personas, for the notes)
+#   ### PACKET FILE: <absolute path>
+# The packet file holds "=== ANSWER A ===" blocks with persona self-references
+# masked. It lives in ./.llm-council-work/run.XXXXXX/ (git-ignored); save_notes.sh
+# removes it at the end.
 #
 # The order comes from bash $RANDOM (Fisher–Yates), not from an LLM's idea of
 # "shuffled". Works on the bash 3.2 that ships with macOS.
@@ -83,28 +82,27 @@ mask() {
   '
 }
 
-echo "### KEY (private — never show to reviewers)"
-k=0
-while [ $k -lt $n ]; do
-  echo "${labels[$k]} = ${roles[${order[$k]}]}"
-  k=$((k + 1))
-done
-echo
-echo "### PACKET (send to reviewers verbatim)"
+# The packet goes to ./.llm-council-work/<id>/packet.md, inside the project, so
+# reviewer and chairman subagents can read it without a permission prompt and the
+# clerk does not have to copy it into every prompt. Nothing else goes in that
+# folder: the key stays on stdout only.
+umask 077
+mkdir -p .llm-council-work
+[ -f .llm-council-work/.gitignore ] || printf '*\n' > .llm-council-work/.gitignore
+wdir="$(mktemp -d "$PWD/.llm-council-work/run.XXXXXX")"
+pfile="$wdir/packet.md"
 k=0
 while [ $k -lt $n ]; do
   echo "=== ANSWER ${labels[$k]} ==="
   printf '%s' "${bodies[${order[$k]}]}" | mask
   echo
   k=$((k + 1))
-done
+done > "$pfile"
 
-# Private copy (personas included) for the saved notes. Readable by the user only.
-umask 077
-afile="$(mktemp "${TMPDIR:-/tmp}/llm-council-answers.XXXXXX")"
+echo "### KEY (private — never show to reviewers)"
 k=0
 while [ $k -lt $n ]; do
-  printf '=== ROLE: %s ===\n%s' "${roles[$k]}" "${bodies[$k]}" >> "$afile"
+  echo "${labels[$k]} = ${roles[${order[$k]}]}"
   k=$((k + 1))
 done
-echo "### ANSWERS FILE: $afile"
+echo "### PACKET FILE: $pfile"
