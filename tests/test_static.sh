@@ -68,5 +68,7 @@ grep -q "Start from the person's own plan" "$P/agents/council-chairman.md" && ok
 grep -q "which fact defeats it" "$P/agents/council-chairman.md" && ok "chairman must answer a rejected red team with a fact" || bad "chairman must answer a rejected red team with a fact"
 grep -q "Start from the person's own plan" "$S" 2>/dev/null && ok "fast path runs the same plan-first test" || bad "fast path runs the same plan-first test"
 
+grep -q 'bash "${CLAUDE_SKILL_DIR}/scripts/save_notes.sh" <slug> none <<' "$SK" && ok "fast path gives the literal save command (pre-approved pattern)" || bad "fast path gives the literal save command (pre-approved pattern)"
+grep -q 'more than 14 non-empty lines' "$SK" && ok "fast answer over-length triggers one retry" || bad "fast answer over-length triggers one retry"
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]

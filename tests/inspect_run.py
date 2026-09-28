@@ -268,7 +268,7 @@ def inspect_fast(solo, allcalls, texts, bash_calls, events, phrase, lang, no_not
     ans = section(alltext, "== ANSWER ==")
     body = [l for l in ans.splitlines()[1:] if l.strip() and not re.search(r"Council skipped|評議会は省略", l)]
     report["answer_lines"] = len(body)
-    check(len(body) <= 12, f"fast answer is at most 12 non-empty lines (got {len(body)})")
+    check(len(body) <= 14, f"fast answer is at most 14 non-empty lines (got {len(body)})")
     vm = re.search(r"VERDICT:\s*(GO|NO-GO|CHANGE IT)", ans)
     report["verdict"] = vm.group(1) if vm else None
     check(vm is not None, f"fast answer gives a verdict ({report['verdict']})")

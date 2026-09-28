@@ -1,10 +1,10 @@
 ---
 name: llm-council
 description: Pressure-test a decision with a council of independent advisors (contrarian, first-principles, expansionist, outsider, executor) on mixed models, an automatic red team when they all agree, anonymous peer review, and a chairman verdict. Use when the user asks for a council, a second opinion that won't just agree with them, or wants a go / no-go on a plan. Simple, clear-cut questions get one fast answer instead (the output says so); add --full to force the council, --quick for a faster 3-advisor council.
-argument-hint: "[--quick] [--full] [--fast] [--no-notes] <the decision or question you want pressure-tested>"
+argument-hint: "[--quick] [--full] [--fast] [--multi] [--no-notes] <the decision or question you want pressure-tested>"
 disable-model-invocation: true
 effort: low
-allowed-tools: Agent, Bash(bash "${CLAUDE_SKILL_DIR}/scripts/anonymize.sh"*), Bash(bash "${CLAUDE_SKILL_DIR}/scripts/save_notes.sh"*)
+allowed-tools: Agent, Bash(bash "${CLAUDE_SKILL_DIR}/scripts/anonymize.sh"*), Bash(bash "${CLAUDE_SKILL_DIR}/scripts/save_notes.sh"*), Bash(bash "${CLAUDE_SKILL_DIR}/scripts/external_advisor.sh"*)
 license: MIT
 ---
 
@@ -25,7 +25,7 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
 1. **Council agents.** The members are six subagent types shipped with this plugin: `council-advisor`, `council-red-team`, `council-reviewer`, `council-chairman`, `council-chairman-quick` for quick mode, and `council-solo` for the fast path. Use them with the plugin prefix (`llm-council:council-advisor` ...) if that is how they appear in your list of available agents, else without it. They start without the user's CLAUDE.md and hold their own instructions, so your prompts to them carry only data. If they are not available, do not improvise with other agent types: say `The council agents are not installed. See the README (Install).` and stop.
 
-2. **Flags** (leading, any order). `--quick` = quick mode; `--no-notes` = do not save notes; `--full` = always convene the council (skip triage); `--fast` = always take the fast path. Remove the flags from the question. Default: triage decides, standard mode, notes saved.
+2. **Flags** (leading, any order). `--quick` = quick mode; `--no-notes` = do not save notes; `--full` = always convene the council (skip triage); `--fast` = always take the fast path; `--multi` = let non-Claude models answer some angles if the user configured them (implies `--full`). Remove the flags from the question. Default: triage decides, standard mode, notes saved.
 
    | | standard (default) | quick |
    |---|---|---|
@@ -94,7 +94,27 @@ Decision brief:
 ```
 
 - If it replies `ESCALATE: <reason>`, the question was not simple: run the full council from Stage 1 as if there had been no triage, and in the final report put the line `Fast path handed this to the council: <reason>` (Japanese: `簡易回答から評議会に回しました: <理由>`) right after `== CHAIRMAN ==`. Do not print anything in between.
-- Otherwise its reply has two parts separated by `---DETAILS---`. Save the notes (Stage 4, with the work folder `none`, the section `## Fast answer` holding the whole reply instead of Chairman / Advisor answers / Reviews, and mode `fast`), then write the fast final report:
+- Otherwise its reply has two parts separated by `---DETAILS---`. If part 1 has no `VERDICT:` line or has more than 14 non-empty lines, spawn it once more with the same input plus the line `Your previous reply broke the format. Follow the Reply format exactly.`
+- Save the notes with exactly this command (the second argument is the literal word `none`; do not create a folder, and add nothing before `bash`). With `--no-notes`, skip it.
+
+```bash
+bash "${CLAUDE_SKILL_DIR}/scripts/save_notes.sh" <slug> none <<'COUNCIL_EOF_7f3a9c'
+# LLM Council — <topic in QLANG>
+
+- Date: <YYYY-MM-DD> / Mode: fast (council skipped: <reason>) / Language: <QLANG>
+
+## Question (as asked)
+<the user's question, verbatim, without flags>
+
+## Brief
+<full brief and the Removed framing line>
+
+## Fast answer
+<the council-solo reply, both parts, verbatim>
+COUNCIL_EOF_7f3a9c
+```
+
+Then write the fast final report:
 
 ```
 == ANSWER ==
@@ -116,6 +136,18 @@ Language: <QLANG>
 Decision brief:
 <brief>
 ```
+
+**Multi-model (only with `--multi`).** Before spawning, run `bash "${CLAUDE_SKILL_DIR}/scripts/external_advisor.sh" detect`. It prints the providers the user configured, one per line, or `none`.
+- `none`: run the council as usual and add ` | other models: none configured` to the COUNCIL line.
+- Otherwise give the listed providers, in order, one angle each: `outsider`, `first-principles`, `expansionist` (standard) or `first-principles`, `executor` (quick). Leave the other angles to `council-advisor`. In the same message as those Agent calls, run for each assigned angle:
+
+  ```bash
+  bash "${CLAUDE_SKILL_DIR}/scripts/external_advisor.sh" ask <provider> <angle> <QLANG> <<'COUNCIL_EOF_7f3a9c'
+  <brief>
+  COUNCIL_EOF_7f3a9c
+  ```
+
+  Its answer is everything after the first line (`### MODEL: <label>`). If the command fails, spawn `council-advisor` for that angle instead. Put each label in the notes Key and add ` | other models: <angle> <label>, ...` to the COUNCIL line.
 
 When they return, read each `POSITION:` token (GO, NO-GO or CHANGE).
 

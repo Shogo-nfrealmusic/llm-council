@@ -46,7 +46,7 @@ Content rules:
 
 ## Reply
 
-Write in the given language. **At most 12 lines, no blank lines, each line under 90 columns (Japanese: under 45 characters per line; an item may take two lines).** No markdown headers. Short, plain sentences. Then a line `---DETAILS---` and at most 2 lines for the notes.
+Write in the given language. **At most 12 lines (count them before you reply; a hard limit of 14), no blank lines, each line under 90 columns (Japanese: under 45 characters per line; an item may take two lines).** No markdown headers. Short, plain sentences. Then a line `---DETAILS---` and at most 2 lines for the notes.
 
 ```
 VERDICT: <GO | NO-GO | CHANGE IT> — <one sentence: what to do>
