@@ -49,5 +49,24 @@ body() { awk 'BEGIN{n=0} /^---$/{n++; if(n==2){f=1; next}} f' "$1"; }
   && ok "quick chairman has the same instructions as the chairman" || bad "quick chairman has the same instructions as the chairman"
 fm "$P/agents/council-chairman-quick.md" | grep -qx "omitClaudeMd: true" && ok "quick chairman starts without CLAUDE.md" || bad "quick chairman starts without CLAUDE.md"
 
+# v3: triage / fast path
+S="$P/agents/council-solo.md"
+[ -f "$S" ] && ok "fast-path agent council-solo exists" || bad "fast-path agent council-solo exists"
+fm "$S" 2>/dev/null | grep -qx "name: council-solo" && ok "council-solo: name matches file" || bad "council-solo: name matches file"
+fm "$S" 2>/dev/null | grep -qx "omitClaudeMd: true" && ok "council-solo: starts without CLAUDE.md" || bad "council-solo: starts without CLAUDE.md"
+fm "$S" 2>/dev/null | grep -qx "tools: \[\]" && ok "council-solo: no tools" || bad "council-solo: no tools"
+fm "$S" 2>/dev/null | grep -q "^effort: " && ok "council-solo sets its own effort" || bad "council-solo sets its own effort"
+grep -qi "ignore them" "$S" 2>/dev/null && ok "council-solo: told to ignore project instructions" || bad "council-solo: told to ignore project instructions"
+grep -q '^ESCALATE:' "$S" 2>/dev/null && grep -q 'ESCALATE' "$SK" && ok "fast path can hand back to the full council (ESCALATE)" || bad "fast path can hand back to the full council (ESCALATE)"
+grep -q '## Stage 0.5 — Triage' "$SK" && ok "SKILL.md has a triage stage" || bad "SKILL.md has a triage stage"
+grep -q -- '--full' "$SK" && grep -q -- '--fast' "$SK" && ok "--full / --fast flags documented" || bad "--full / --fast flags documented"
+grep -q 'council-solo' "$SK" && ok "SKILL.md uses council-solo" || bad "SKILL.md uses council-solo"
+grep -q 'Route: fast' "$SK" && grep -q '経路: 簡易' "$SK" && ok "fast route is announced (en/ja)" || bad "fast route is announced (en/ja)"
+grep -q 'VERDICT:' "$S" 2>/dev/null && ok "fast path uses the same VERDICT format" || bad "fast path uses the same VERDICT format"
+# v3: chairman tests the asker's own plan first and answers the red team
+grep -q "Start from the person's own plan" "$P/agents/council-chairman.md" && ok "chairman tests the asker's plan before the votes" || bad "chairman tests the asker's plan before the votes"
+grep -q "which fact defeats it" "$P/agents/council-chairman.md" && ok "chairman must answer a rejected red team with a fact" || bad "chairman must answer a rejected red team with a fact"
+grep -q "Start from the person's own plan" "$S" 2>/dev/null && ok "fast path runs the same plan-first test" || bad "fast path runs the same plan-first test"
+
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]

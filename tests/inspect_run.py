@@ -101,6 +101,15 @@ def main():
         report["checks"].append({"ok": bool(cond), "msg": msg})
         ok &= bool(cond)
 
+    solo = [c for c in allcalls if kind(c) == "solo"]
+    advisors_called = any(kind(c) == "advisor" for c in allcalls)
+    if solo and not advisors_called:
+        return inspect_fast(solo, allcalls, texts, bash_calls, events, phrase, lang, no_notes, out, jout, check, report)
+    report["route"] = "escalated" if solo else "council"
+    if solo:
+        check(any(re.search(r"handed this to the council|評議会に回しました", t) for t in texts),
+              "an escalated fast path says so in the final report")
+
     print(f"subagent call groups (per assistant message): {[len(g) for g in groups]}")
     for c in allcalls:
         i = c["input"]
@@ -238,6 +247,55 @@ def main():
         with open(jout, "w") as f:
             json.dump(report, f, ensure_ascii=False, indent=1)
     sys.exit(0 if ok else 1)
+
+
+def inspect_fast(solo, allcalls, texts, bash_calls, events, phrase, lang, no_notes, out, jout, check, report):
+    """Checks for a fast-path run: one council-solo call, same privacy rules, short answer-first output."""
+    report["route"] = "fast"
+    report["mode"] = "fast"
+    check(len(solo) == 1 and len(allcalls) == 1, f"fast path: exactly one subagent, council-solo ({len(allcalls)} calls)")
+    check(solo[0]["input"].get("model") == "opus", f"fast path: council-solo on opus (got {solo[0]['input'].get('model')})")
+    check(solo[0]["input"].get("run_in_background") is False, "fast path: foreground call")
+    p = solo[0]["input"].get("prompt", "")
+    check(phrase.lower() not in p.lower(), f"fast path: prompt has no original framing {phrase!r}")
+    check(not re.search(r"removed framing|取り除いた言い回し", p, re.I), "fast path: prompt has no 'Removed framing' line")
+    alltext = "\n".join(texts)
+    report["visible_messages"] = len(texts)
+    check(len(texts) == 2, f"exactly 2 visible messages (BRIEF, answer) — got {len(texts)}")
+    check(re.search(r"^(Route: fast|経路: 簡易)", alltext, re.M) is not None, "BRIEF says the council was skipped (Route line)")
+    pos = [alltext.find(h) for h in ("== BRIEF ==", "== ANSWER ==")]
+    check(all(x >= 0 for x in pos) and pos == sorted(pos), f"visible output has BRIEF, ANSWER in order {pos}")
+    ans = section(alltext, "== ANSWER ==")
+    body = [l for l in ans.splitlines()[1:] if l.strip() and not re.search(r"Council skipped|評議会は省略", l)]
+    report["answer_lines"] = len(body)
+    check(len(body) <= 12, f"fast answer is at most 12 non-empty lines (got {len(body)})")
+    vm = re.search(r"VERDICT:\s*(GO|NO-GO|CHANGE IT)", ans)
+    report["verdict"] = vm.group(1) if vm else None
+    check(vm is not None, f"fast answer gives a verdict ({report['verdict']})")
+    check("---DETAILS---" not in alltext and not re.search(r"^(CRUX|論点の核心):", alltext, re.M), "details are not printed")
+    check(re.search(r"Council skipped|評議会は省略", alltext) is not None, "final line says the council was skipped")
+    last = alltext.strip().splitlines()[-1] if alltext.strip() else ""
+    if no_notes:
+        saves = [b for b in bash_calls if "save_notes.sh" in b]
+        check(all("--discard" in b for b in saves), "with --no-notes, no notes were written")
+    else:
+        check(any("save_notes.sh" in b for b in bash_calls), "save_notes.sh ran")
+        m = re.search(r"(council-notes/\S+\.md)", last)
+        check(m is not None, f"last line names the notes file ({last[:80]!r})")
+    if lang:
+        b = re.sub(r"==[^=\n]+==|VERDICT|NO-GO|CHANGE IT|CHANGE|GO|--full|council-notes/\S+", "", alltext)
+        r = ja_ratio(b)
+        report["ja_ratio"] = round(r, 2)
+        check(r > 0.6 if lang == "ja" else r < 0.02, f"visible output language matches ({lang}, ja ratio {r:.2f})")
+    res = [e for e in events if e.get("type") == "result"]
+    report["cost_usd_list"] = max((e.get("total_cost_usd") or 0) for e in res) if res else None
+    report["ok"] = all(c["ok"] for c in report["checks"])
+    print(f"route=fast verdict={report['verdict']} cost={report['cost_usd_list']}")
+    if out:
+        open(out, "w").write("\n\n".join(texts) + "\n")
+    if jout:
+        json.dump(report, open(jout, "w"), ensure_ascii=False, indent=1)
+    sys.exit(0 if report["ok"] else 1)
 
 
 if __name__ == "__main__":

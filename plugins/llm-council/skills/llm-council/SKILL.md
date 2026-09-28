@@ -1,7 +1,7 @@
 ---
 name: llm-council
-description: Pressure-test a decision with a council of independent advisors (contrarian, first-principles, expansionist, outsider, executor) on mixed models, an automatic red team when they all agree, anonymous peer review, and a chairman verdict. Use when the user asks for a council, a second opinion that won't just agree with them, or wants a go / no-go on a plan. Add --quick for a faster 3-advisor run.
-argument-hint: "[--quick] [--no-notes] <the decision or question you want pressure-tested>"
+description: Pressure-test a decision with a council of independent advisors (contrarian, first-principles, expansionist, outsider, executor) on mixed models, an automatic red team when they all agree, anonymous peer review, and a chairman verdict. Use when the user asks for a council, a second opinion that won't just agree with them, or wants a go / no-go on a plan. Simple, clear-cut questions get one fast answer instead (the output says so); add --full to force the council, --quick for a faster 3-advisor council.
+argument-hint: "[--quick] [--full] [--fast] [--no-notes] <the decision or question you want pressure-tested>"
 disable-model-invocation: true
 effort: low
 allowed-tools: Agent, Bash(bash "${CLAUDE_SKILL_DIR}/scripts/anonymize.sh"*), Bash(bash "${CLAUDE_SKILL_DIR}/scripts/save_notes.sh"*)
@@ -23,9 +23,9 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
 ## Setup (decide silently, print nothing yet)
 
-1. **Council agents.** The members are five subagent types shipped with this plugin: `council-advisor`, `council-red-team`, `council-reviewer`, `council-chairman`, and `council-chairman-quick` for quick mode. Use them with the plugin prefix (`llm-council:council-advisor` ...) if that is how they appear in your list of available agents, else without it. They start without the user's CLAUDE.md and hold their own instructions, so your prompts to them carry only data. If they are not available, do not improvise with other agent types: say `The council agents are not installed. See the README (Install).` and stop.
+1. **Council agents.** The members are six subagent types shipped with this plugin: `council-advisor`, `council-red-team`, `council-reviewer`, `council-chairman`, `council-chairman-quick` for quick mode, and `council-solo` for the fast path. Use them with the plugin prefix (`llm-council:council-advisor` ...) if that is how they appear in your list of available agents, else without it. They start without the user's CLAUDE.md and hold their own instructions, so your prompts to them carry only data. If they are not available, do not improvise with other agent types: say `The council agents are not installed. See the README (Install).` and stop.
 
-2. **Flags.** A leading `--quick` means quick mode; a leading `--no-notes` means do not save notes. Remove the flags from the question. Default: standard mode, notes saved.
+2. **Flags** (leading, any order). `--quick` = quick mode; `--no-notes` = do not save notes; `--full` = always convene the council (skip triage); `--fast` = always take the fast path. Remove the flags from the question. Default: triage decides, standard mode, notes saved.
 
    | | standard (default) | quick |
    |---|---|---|
@@ -40,7 +40,7 @@ If the input is empty, ask the user for the decision they want pressure-tested a
 
 4. **One turn, foreground only.** Pass `run_in_background: false` on **every** Agent call and wait for the results in this same turn. Never end your turn, schedule a wakeup, or poll while the council is running: the pre-approved scripts last only for the current turn, so a run split across turns stops at a permission prompt.
 
-5. **Silence.** You write exactly two messages with text: the BRIEF and the final report. Every other message contains tool calls only, with no text at all: no progress notes ("deliberating...", "審議中です"), no counts, no plans. The person already sees the subagents working. If you want to note something for yourself (for example "4 CHANGE, 1 NO-GO, so no red team"), put it in the `description` of your next tool call, never in message text.
+5. **Silence.** You write exactly two messages with text: the BRIEF and the final report (on the fast path too). Every other message contains tool calls only, with no text at all: no progress notes ("deliberating...", "審議中です"), no counts, no plans. The person already sees the subagents working. If you want to note something for yourself (for example "4 CHANGE, 1 NO-GO, so no red team"), put it in the `description` of your next tool call, never in message text.
 
 ## Stage 0 — Neutral brief (you write this yourself)
 
@@ -62,7 +62,48 @@ Claim to test: <the claim(s), one line>           (omit the line if there are no
 
 Japanese: `取り除いた言い回し: 「…」「…」`（なければ `なし`）, `検証する主張: …`.
 
+Decide the route (Stage 0.5) before printing, so the Route line, if any, goes in this same message.
+
 From here on, **no subagent sees the user's original wording**: only the full brief (never the Removed framing line).
+
+## Stage 0.5 — Triage (decide silently)
+
+A council costs minutes. On a simple question one careful answer is as good and easier to read. Decide the route from the brief:
+
+- **Fast path** only if **both** hold:
+  1. **Clear-cut.** The facts point one way: you could state the answer in one sentence, and a careful advisor would be unlikely to disagree. Textbook warning signs of a scam (guaranteed high returns, an up-front fee or gift-card payment, rewards for recruiting, pressure to pay fast) count as clear-cut, however much money is involved.
+  2. **Small or easily undone.** The worst realistic case is small next to what the brief shows the person has, or can be undone within days: no long lease or contract, no personal guarantee, no quitting a job or shutting a business, no hiring, firing or giving away equity, nothing medical or legal.
+- **Full council** otherwise, and whenever you are unsure. `--full` forces it; `--fast` forces the fast path.
+
+On the fast path, add one line to the BRIEF you print:
+
+```
+Route: fast — council skipped: <one short reason>. Use --full for the whole council.
+```
+
+Japanese: `経路: 簡易 — 評議会は省略: <短い理由>。全員で審議するには --full。`
+
+Then spawn **one** `council-solo` subagent (`opus`, `run_in_background: false`) with:
+
+```
+Language: <QLANG>
+Triage: <your one short reason>
+
+Decision brief:
+<brief>
+```
+
+- If it replies `ESCALATE: <reason>`, the question was not simple: run the full council from Stage 1 as if there had been no triage, and in the final report put the line `Fast path handed this to the council: <reason>` (Japanese: `簡易回答から評議会に回しました: <理由>`) right after `== CHAIRMAN ==`. Do not print anything in between.
+- Otherwise its reply has two parts separated by `---DETAILS---`. Save the notes (Stage 4, with the work folder `none`, the section `## Fast answer` holding the whole reply instead of Chairman / Advisor answers / Reviews, and mode `fast`), then write the fast final report:
+
+```
+== ANSWER ==
+<part 1, verbatim>
+
+Council skipped (simple question). Full notes: <path>
+```
+
+Japanese: `評議会は省略（簡単な質問のため）。全記録: <path>`. If notes were off: `Council skipped (simple question). Notes not saved.` (Japanese: `評議会は省略（簡単な質問のため）。記録は保存していません。`)
 
 ## Stage 1 — Advisors, in parallel
 
@@ -181,7 +222,7 @@ The script puts the anonymous answers in place of `@@ANSWERS@@`, writes `./counc
 
 ## Final report
 
-Write **one final message**, at most about 20 lines, containing in this order and nothing else:
+(The fast path has its own short report, given in Stage 0.5.) For the council, write **one final message**, at most about 20 lines, containing in this order and nothing else:
 
 ```
 == CHAIRMAN ==
