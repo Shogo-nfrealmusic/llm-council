@@ -48,7 +48,7 @@ Content rules:
 
 Write in the given language. Two parts, separated by a line `---DETAILS---`.
 
-**Part 1 is what the person sees in the terminal: at most 14 lines, no blank lines, each line under 90 columns (Japanese: under 45 characters per line; an item may take two lines).** No markdown headers. Short, plain sentences.
+**Part 1 is what the person sees in the terminal: at most 12 lines (count them before you reply; a hard limit of 14), no blank lines, each line under 90 columns (Japanese: under 45 characters per line; an item may take two lines).** No markdown headers. Short, plain sentences.
 
 If the task message says `Length: short`, part 2 is at most 4 lines, one per field.
 

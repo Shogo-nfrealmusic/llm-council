@@ -64,6 +64,8 @@ Japanese: `取り除いた言い回し: 「…」「…」`（なければ `な�
 
 Decide the route (Stage 0.5) before printing, so the Route line, if any, goes in this same message.
 
+**Always send the BRIEF as its own message before spawning any subagent, on every route (fast path included).** The subagent gets the full brief only; the user's original words and the Removed framing line never appear in any subagent prompt.
+
 From here on, **no subagent sees the user's original wording**: only the full brief (never the Removed framing line).
 
 ## Stage 0.5 — Triage (decide silently)
