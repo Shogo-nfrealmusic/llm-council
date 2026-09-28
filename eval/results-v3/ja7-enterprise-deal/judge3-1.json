@@ -1,0 +1,23 @@
+{
+ "case": "ja7-enterprise-deal",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 6,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 74,
+ "baseline_100": 74,
+ "judge_prefers": "baseline",
+ "why": "Both correctly push back on refusing out of fear. Advice 2 is more honest: it flags that it is unclear whether the ¥12M is a recurring fee or a one-off payment, and it names the risks of depending on one client and of ongoing maintenance. It also suggests using the upfront payment to hire a contractor. Advice 1 has sharper deadlines and go/no-go thresholds, but it assumes the ¥12M is recurring revenue and understates the costs."
+}

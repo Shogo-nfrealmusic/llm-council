@@ -1,0 +1,10 @@
+{
+ "wall_s": 13.9,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.1823812,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.1823812
+ },
+ "n_results": 1
+}

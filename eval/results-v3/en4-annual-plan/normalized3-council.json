@@ -1,0 +1,5 @@
+{
+ "class": "GO",
+ "text": "Recommendation: Launch the annual plan at $490/year and offer it first to the 40 customers who asked.\nWhy:\n- Setup is about 1 day, plus $98/yr (2 months) lost per buyer who would otherwise pay for 12 months.\n- If all 40 switch, that's $3,920/yr, about 2% of the $176,400/yr currently billed (300 x $588).\n- \"2 months free\" is standard annual pricing, not a discount or promo — call it \"annual billing.\"\n- 40 customers already asked for it.\n- Set a refund rule for mid-year cancels (e.g., none after 30 days) before launch.\nRisks and unknowns:\n- Only already-loyal customers might switch, meaning you give up 2 months' revenue without gaining retention.\n- If churn is very low and most customers already stay 12+ months, an 11-months-for-the-price-of-12 structure would be better than 2 months free.\nNext steps:\n1. Build the plan in Stripe and email the 40 interested customers within 1 week, then add it to the pricing page.\n2. After 60 days, count how many switched and how many new signups came in.\n3. Success if 20+ of the 40 switch; stop or reconsider if new monthly signups fall or customers resist the price.",
+ "length": 197
+}

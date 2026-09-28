@@ -1,0 +1,24 @@
+# No, I wouldn't skip it. The case for offering it is strong.
+
+**40 customers asked for it.** That's 13% of your base. People who ask to pay a year upfront are telling you they plan to stay. If you say no, some of them will feel ignored, and some may need annual invoicing for their own procurement.
+
+**The discount probably costs less than it looks.** On paper, each switcher pays $490 instead of $588, so you give up $98. That's only true if every one of them would have stayed and paid all 12 months. Monthly customers churn:
+
+| Monthly churn | Expected revenue per customer over 12 months on monthly | Annual plan |
+|---|---|---|
+| 2% | ~$530 | $490 |
+| 3.3% | ~$490 (break-even) | $490 |
+| 5% | ~$450 | $490 |
+
+If your monthly churn is above about 3%, annual billing earns you more even before you count the benefits of having the cash upfront. If all 40 switch, that's roughly $19.6k now instead of trickling in over the year.
+
+**On the brand worry:** "2 months free on annual" isn't really a discount. It's the standard way SaaS companies price annual plans (roughly 15–20% off), and customers see it as a billing option, not a sale. Discounts hurt a brand when they're random, frequent, or cut the headline price, like "50% off this week!" A permanent annual option does none of those things.
+
+**The real risks are small and manageable:**
+- Customers who would have stayed 12+ months anyway now pay $98 less. This is the true cost, and it's why your churn rate is the number to check.
+- You'll need a refund policy for mid-year cancellations. "No refunds, but you keep access until the term ends" is common.
+- Annual customers won't see a price increase until they renew.
+
+**A middle ground if your cofounder isn't convinced:** don't put it on the pricing page yet. Email the 40 who asked, and maybe the rest of your current customers, with an annual option. Look at who takes it and what your churn does over the next few months, then decide whether to add it to the public pricing page. That's about a day of work, can be reversed, and gives you data to discuss instead of opinions.
+
+What's your monthly churn right now? That's the number that settles this.

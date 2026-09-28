@@ -1,0 +1,23 @@
+{
+ "case": "ja6-booking-form",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 80,
+ "baseline_100": 78,
+ "judge_prefers": "council",
+ "why": "Both make the right call to delete the six unused fields. Advice 2 is slightly more useful: it names the real risk of losing past answers, suggests hiding the fields so the change is easy to undo, and sets a clear pass/fail test, though it wrongly says there is no future plan when the question never said so."
+}

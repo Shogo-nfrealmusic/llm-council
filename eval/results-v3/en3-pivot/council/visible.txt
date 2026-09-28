@@ -1,0 +1,23 @@
+== BRIEF ==
+Removed framing: "hottest thing right now", "obviously the right call, isn't it?"
+Claim to test: AI agents attract strong investor and market demand, so pivoting fully is the right move.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Don't shut down; keep the app and test one agent product on it.
+WHY:
+- Shutting off $16k MRR ($192k/yr) with unknown runway may be fatal (Contrarian).
+- Agent demand/investor appetite is open: no product, buyer or investor is named yet.
+- 2% churn (~50-month life): your 40 teams are the first agent buyers (Expansionist).
+- Shutting down may breach contracts; a running, low-churn app can also be sold.
+BIGGEST RISK: Split focus slows the agent build past a real, short funding window.
+NEXT STEPS:
+1. In 1 week: runway = cash / (full burn incl. payroll tax, benefits - $16k MRR)
+   — success: months known / stop if: under 3 (rule of thumb): raise money first
+2. In 2 weeks: pitch one defined agent add-on to all 40 teams — success: 5+ paid pilots
+   (rule of thumb, 1 in 8) / stop if: under 2 say yes - rethink the product, not the app
+3. For 90 days: 1 runs app, 3 build — success: paid pilots grow / stop if: churn doubles
+WOULD CHANGE IT: A real investor offer tied to a full pivot would make the pivot a GO.
+
+== COUNCIL ==
+contrarian CHANGE, first-principles CHANGE, expansionist CHANGE, outsider NO-GO, executor CHANGE | red team: not needed | top-ranked: contrarian
+Full notes: council-notes/2026-09-29-pivot-to-ai-agents.md

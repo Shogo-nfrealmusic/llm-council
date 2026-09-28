@@ -1,0 +1,23 @@
+{
+ "case": "en7-second-bakery",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 6,
+  "right_call": 7,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 7
+ },
+ "council_100": 68,
+ "baseline_100": 74,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 gives a real break-even analysis, points out that the limit may be production capacity rather than location, and lists concrete lease terms to negotiate, though a few of its figures are assumptions. Advice 2's rent-versus-savings comparison ignores revenue from the new shop, and its test of baking 20% more measures demand at the current shop, not across town, which undercuts its own point."
+}

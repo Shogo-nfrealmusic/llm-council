@@ -1,0 +1,248 @@
+skip en1-studio-price baseline
+skip en2-quit-job baseline
+skip en3-pivot baseline
+done en1-studio-price council {
+ "wall_s": 36.2,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.49410280000000006,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.49410280000000006
+ },
+ "n_results": 1
+}
+skip ja1-ads baseline
+done en2-quit-job council {
+ "wall_s": 136.2,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.0812903,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.9990747999999999,
+  "claude-sonnet-5": 0.08221550000000001
+ },
+ "n_results": 1
+}
+skip ja2-first-hire baseline
+done en3-pivot council {
+ "wall_s": 165.0,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.1118796,
+ "cost_by_model": {
+  "claude-opus-5-5": 1.0066932,
+  "claude-sonnet-5": 0.10518639999999999
+ },
+ "n_results": 1
+}
+skip ja3-course baseline
+done ja3-course council {
+ "wall_s": 46.4,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.4875694,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.4875694
+ },
+ "n_results": 1
+}
+skip en4-annual-plan baseline
+done ja1-ads council {
+ "wall_s": 230.5,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.3779705000000002,
+ "cost_by_model": {
+  "claude-sonnet-5": 0.0913727,
+  "claude-opus-5-5": 1.2865978
+ },
+ "n_results": 1
+}
+skip ja4-review-email baseline
+done en4-annual-plan council {
+ "wall_s": 51.5,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.47793199999999997,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.47793199999999997
+ },
+ "n_results": 1
+}
+skip ja5-crypto baseline
+done ja2-first-hire council {
+ "wall_s": 169.6,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.1300750999999998,
+ "cost_by_model": {
+  "claude-opus-5-5": 1.0235858,
+  "claude-sonnet-5": 0.10648930000000001
+ },
+ "n_results": 1
+}
+done ja4-review-email council {
+ "wall_s": 41.1,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.47838339999999996,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.47838339999999996
+ },
+ "n_results": 1
+}
+done en5-2fa baseline {
+ "wall_s": 15.8,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.19508520000000001,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.19508520000000001
+ },
+ "n_results": 1
+}
+done en6-gift-card baseline {
+ "wall_s": 8.9,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.1413252,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.1413252
+ },
+ "n_results": 1
+}
+done en5-2fa council {
+ "wall_s": 33.2,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.4578376,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.4578376
+ },
+ "n_results": 1
+}
+done ja6-booking-form baseline {
+ "wall_s": 13.9,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.1823812,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.1823812
+ },
+ "n_results": 1
+}
+done en6-gift-card council {
+ "wall_s": 30.3,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.4492558,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.4492558
+ },
+ "n_results": 1
+}
+done en7-second-bakery baseline {
+ "wall_s": 28.0,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.2162132,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.2162132
+ },
+ "n_results": 1
+}
+done ja6-booking-form council {
+ "wall_s": 39.5,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.473887,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.473887
+ },
+ "n_results": 1
+}
+done ja7-enterprise-deal baseline {
+ "wall_s": 25.4,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.1661252,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.1661252
+ },
+ "n_results": 1
+}
+done ja5-crypto council {
+ "wall_s": 182.5,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.1656769999999999,
+ "cost_by_model": {
+  "claude-opus-5-5": 1.0766501999999998,
+  "claude-sonnet-5": 0.0890268
+ },
+ "n_results": 1
+}
+done en8-equity-no-vesting baseline {
+ "wall_s": 20.4,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 0.2467772,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.2467772
+ },
+ "n_results": 1
+}
+done en7-second-bakery council {
+ "wall_s": 153.7,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.1000987999999998,
+ "cost_by_model": {
+  "claude-opus-5-5": 0.993724,
+  "claude-sonnet-5": 0.1063748
+ },
+ "n_results": 1
+}
+done ja7-enterprise-deal council {
+ "wall_s": 206.2,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.2577331,
+ "cost_by_model": {
+  "claude-opus-5-5": 1.1589489999999998,
+  "claude-sonnet-5": 0.09878409999999999
+ },
+ "n_results": 1
+}
+done en8-equity-no-vesting council {
+ "wall_s": 182.5,
+ "rc": 0,
+ "session_model": "claude-opus-5-5",
+ "cost_usd_list": 1.1906934,
+ "cost_by_model": {
+  "claude-opus-5-5": 1.0709754,
+  "claude-sonnet-5": 0.119718
+ },
+ "n_results": 1
+}
+en1-studio-price   inspector=PASS wall=36.2s cost=$0.49 positions=None red_team=None verdict=GO
+en2-quit-job       inspector=PASS wall=136.2s cost=$1.08 positions=['CHANGE', 'CHANGE', 'CHANGE', 'NO-GO', 'CHANGE'] red_team=False verdict=CHANGE IT
+en3-pivot          inspector=PASS wall=165.0s cost=$1.11 positions=['CHANGE', 'CHANGE', 'CHANGE', 'NO-GO', 'CHANGE'] red_team=False verdict=CHANGE IT
+ja1-ads            inspector=FAIL wall=230.5s cost=$1.38 positions=['CHANGE', 'CHANGE', 'CHANGE', 'CHANGE', 'CHANGE'] red_team=True verdict=CHANGE IT
+      FAIL - one chairman subagent issued
+ja2-first-hire     inspector=PASS wall=169.6s cost=$1.13 positions=['CHANGE', 'CHANGE', 'GO', 'CHANGE', 'CHANGE'] red_team=False verdict=GO
+ja3-course         inspector=FAIL wall=46.4s cost=$0.49 positions=None red_team=None verdict=CHANGE IT
+      FAIL - fast path: prompt has no original framing '絶対売れる'
+      FAIL - fast path: prompt has no 'Removed framing' line
+      FAIL - exactly 2 visible messages (BRIEF, answer) — got 1
+en4-annual-plan    inspector=PASS wall=51.5s cost=$0.48 positions=None red_team=None verdict=GO
+ja4-review-email   inspector=PASS wall=41.1s cost=$0.48 positions=None red_team=None verdict=GO
+ja5-crypto         inspector=PASS wall=182.5s cost=$1.17 positions=['NO-GO', 'NO-GO', 'NO-GO', 'NO-GO', 'NO-GO'] red_team=True verdict=NO-GO
+en5-2fa            inspector=FAIL wall=33.2s cost=$0.46 positions=None red_team=None verdict=GO
+      FAIL - fast answer is at most 14 non-empty lines (got 15)
+en6-gift-card      inspector=PASS wall=30.3s cost=$0.45 positions=None red_team=None verdict=NO-GO
+ja6-booking-form   inspector=PASS wall=39.5s cost=$0.47 positions=None red_team=None verdict=GO
+en7-second-bakery  inspector=FAIL wall=153.7s cost=$1.10 positions=['NO-GO', 'CHANGE', 'CHANGE', 'NO-GO', 'NO-GO'] red_team=False verdict=NO-GO
+      FAIL - chairman part 1 is at most 14 non-empty lines (got 15)
+ja7-enterprise-deal inspector=PASS wall=206.2s cost=$1.26 positions=['CHANGE', 'CHANGE', 'CHANGE', 'CHANGE', 'CHANGE'] red_team=True verdict=GO
+en8-equity-no-vesting inspector=PASS wall=182.5s cost=$1.19 positions=['CHANGE', 'CHANGE', 'CHANGE', 'CHANGE', 'CHANGE'] red_team=True verdict=CHANGE IT

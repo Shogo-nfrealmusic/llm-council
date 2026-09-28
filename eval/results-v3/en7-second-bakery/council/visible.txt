@@ -1,0 +1,24 @@
+== BRIEF ==
+Removed framing: "This is how we grow, right?"
+Claim to test: Selling out by 2pm every day shows there is enough unmet demand to support a second location across town.
+
+== CHAIRMAN ==
+VERDICT: NO-GO — Don't sign the 5-year lease on Monday. First test whether the demand exists.
+WHY:
+- If it fails, the loss is more than you can cover. One year of rent ($72k) is more
+  than your savings plus a year of profit ($30k + $36k = $66k) (contrarian).
+- The $60k loan is personally guaranteed, so losses reach your home, not just the shop.
+- Your claim isn't supported. Selling out by 2pm shows supply runs short (outsider).
+  It shows locals want more. It doesn't show people across town will come.
+BIGGEST RISK: The landlord leases the site to someone else while you run the test.
+NEXT STEPS:
+1. Before Monday, ask the landlord for a 3-week hold and a break clause. If refused, walk.
+2. Bake about 20% more for 2 weeks and count sales after 2pm — success: sells 8 of
+   10 days (rule of thumb) / stop if: most of the extra goes unsold.
+3. Cost out the new site (rent, loan, staff, ingredients) — success: breaks even
+   under $22k/month / stop if: it needs more sales than your current shop makes.
+WOULD CHANGE IT: The extra bread sells out and the site breaks even below $22k a month.
+
+== COUNCIL ==
+contrarian NO-GO, first-principles CHANGE, expansionist CHANGE, outsider NO-GO, executor NO-GO | red team: not needed | top-ranked: executor
+Full notes: council-notes/2026-09-29-second-bakery-lease.md

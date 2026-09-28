@@ -1,0 +1,23 @@
+{
+ "case": "ja5-crypto",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 82,
+ "baseline_100": 80,
+ "judge_prefers": "council",
+ "why": "Both correctly identify this as a likely Ponzi scheme. Advice 2 is more decisive: it rules out the tempting small test deposit and warns about being pulled into recruiting others. Advice 1's 'next steps' of checking registration and asking the friend about withdrawals leave room to invest if those checks look fine, though its concrete hotline numbers are a real strength."
+}

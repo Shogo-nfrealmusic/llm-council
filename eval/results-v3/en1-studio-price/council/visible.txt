@@ -1,0 +1,22 @@
+== BRIEF ==
+Removed framing: "I'm scared bookings will collapse", "people will hate us", "Keeping the price is the safer choice, right?"
+Claim to test: Raising the price from ¥25,000 to ¥30,000 would make bookings collapse and turn customers against the studio.
+Route: fast — council skipped: demand far exceeds supply at a below-market price, and a price change can be reversed within days. Use --full for the whole council.
+
+== ANSWER ==
+VERDICT: GO — raise to ¥30,000 for new bookings from next month; honor existing ones.
+WHY:
+- Full weekends, a 3-week waitlist and 4.9 stars from 400 reviews show demand exceeds supply.
+- ¥30,000 is still ¥2,000–8,000 below all three nearby rivals (¥32,000–38,000).
+- Revenue math: at ¥30,000 you can lose 1 in 6 bookings (17%) and still earn the same.
+- Your claim that bookings would collapse is contradicted: the raise is 20% and still undercuts rivals.
+- Resentment is mostly avoided by honoring the old price on existing bookings and the waitlist.
+BIGGEST RISK: Weekday slots may already be weak, and the higher price could empty them further.
+NEXT STEPS:
+1. Update the price on every booking channel the same day; waitlist keeps ¥25,000.
+2. Track weekend fill and waitlist length weekly for the first 4 weeks — success: weekends
+   full, waitlist 1+ week / stop if: weekend fill below 83% (break-even), then revert.
+3. Record weekday utilization before and after, to judge weekday pricing separately.
+WOULD CHANGE IT: New-booking volume falling more than 17% below the pre-raise rate for 4 weeks.
+
+Council skipped (simple question). Full notes: council-notes/2026-09-29-studio-price-raise.md

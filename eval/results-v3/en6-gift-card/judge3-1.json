@@ -1,0 +1,23 @@
+{
+ "case": "en6-gift-card",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 10,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 9,
+  "right_call": 10,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 9
+ },
+ "council_100": 80,
+ "baseline_100": 90,
+ "judge_prefers": "baseline",
+ "why": "Both make the right call. Advice 1 covers more of what matters: what to do if gift cards were already bought (contact Apple quickly), protecting bank details, reporting to the agency's Inspector General, and where to look for real funding. Advice 2's step of calling the agency to confirm the grant gives a scam more weight than it deserves, and its steps for anyone who already paid are thin."
+}

@@ -1,0 +1,23 @@
+{
+ "case": "en4-annual-plan",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 6,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 6
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 68,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Advice 1's churn break-even figures are correct, and its points on upfront cash and the price-increase lag show what the discount really costs. Advice 2's cost math is also correct, but its '11-months-for-the-price-of-12' alternative is garbled and its success threshold is arbitrary."
+}

@@ -1,0 +1,23 @@
+{
+ "case": "ja5-crypto",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 80,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Both correctly advise against investing. Advice 1 gives concrete checks the person can verify (FSA registration list, whether the friend actually withdrew principal to a bank account) and specific hotlines. Advice 2 adds good points about the small-test trap and protecting the funds, but it states some things too flatly, such as saying the guarantee 'cannot hold as fact' and assuming a deadline the question never gave."
+}

@@ -1,0 +1,23 @@
+{
+ "case": "ja4-review-email",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 8
+ },
+ "council_100": 82,
+ "baseline_100": 74,
+ "judge_prefers": "council",
+ "why": "Advice 1 sets clear success and stop thresholds, points out the need for recipient consent and Google's rules, and suggests writing in each customer's language. Advice 2 has a good idea about timing the email to the photo delivery, but it states the review rate as 4–5% when it is actually 3–5%, sounds overconfident that nobody will mind, uses English only for a varied tourist customer base, and gives no success threshold."
+}

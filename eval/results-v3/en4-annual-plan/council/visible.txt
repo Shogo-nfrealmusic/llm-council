@@ -1,0 +1,21 @@
+== BRIEF ==
+Removed framing: "I'm probably overthinking this", "should just skip it, right?"
+Claim to test: Discounts cheapen the brand (cofounder's view).
+Route: fast — council skipped: demand is already requested and the offer is cheap to launch and to withdraw. Use --full for the whole council.
+
+== ANSWER ==
+VERDICT: GO — launch the annual plan at $490/year and offer it first to the 40 who asked.
+WHY:
+- Full cost is about 1 day of setup plus $98/yr (2 months) lost per buyer who'd pay 12 months.
+- If all 40 switch, that is $3,920/yr, about 2% of the $176,400/yr you bill now (300 x $588).
+- Cofounder's claim is open but weak: "2 months free" is standard annual pricing, not a sale.
+- 40 customers asked for it. Call it "annual billing", never "discount" or "promo".
+- Tip: set a refund rule for mid-year cancels (e.g. none after 30 days) before launch.
+BIGGEST RISK: Only loyal customers switch, so you give up 2 months' revenue and gain no retention.
+NEXT STEPS:
+1. Build the plan in Stripe and email the 40 within 1 week, then add it to the pricing page.
+2. After 60 days, count switchers and new signups. Success: 20+ of the 40 switch (rule of
+   thumb: half) / stop if: new monthly signups fall or the cofounder sees buyers resist price.
+WOULD CHANGE IT: Very low churn, where most customers stay over 12 months, would favor 11 months.
+
+Council skipped (simple question). Full notes: council-notes/2026-09-29-annual-plan.md

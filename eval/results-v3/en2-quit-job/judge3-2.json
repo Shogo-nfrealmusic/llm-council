@@ -1,0 +1,23 @@
+{
+ "case": "en2-quit-job",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 7,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 7
+ },
+ "council_100": 80,
+ "baseline_100": 74,
+ "judge_prefers": "council",
+ "why": "Advice 1's math checks out, and its quit trigger is consistent: quit once net MRR covers full costs and savings reach 6 months. It also raises the fair counterpoint that growth may be limited by the asker's available hours. Advice 2 is more realistic about expenses and gives a fallback plan. However, its $2,500 MRR trigger is below its own ~$3,000 burn estimate, it assumes facts that weren't given (SaaS hiring prospects), and it weakens its advice by planning for quitting Friday anyway."
+}

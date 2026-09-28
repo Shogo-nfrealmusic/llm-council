@@ -1,0 +1,23 @@
+{
+ "case": "en2-quit-job",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 8
+ },
+ "council_100": 76,
+ "baseline_100": 72,
+ "judge_prefers": "council",
+ "why": "Both correctly say not to quit Friday. Advice 1 gives a sharper estimate of the monthly shortfall, but it treats assumed costs and rehireability as likely facts, and its best-case figure of about $2k left is overstated (it's closer to $300). Advice 2 tells the asker to add up their real costs, raises the good counterpoint that growth may be limited by their available hours, and sets a clear rule for when to quit, though its salary-matching benchmark is less relevant."
+}

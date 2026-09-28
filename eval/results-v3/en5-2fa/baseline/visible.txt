@@ -1,0 +1,21 @@
+**No. Require it, and fix the "annoying" part instead of making it optional.**
+
+**Why optional won't work**
+
+- **One weak account puts everyone at risk.** Attackers don't need all 12 accounts, only one. Once they're inside a designer's Google account, they can see shared client Drives, reset passwords for other tools that use "Sign in with Google," and send fake invoices from a real company address. Invoice fraud and client-data leaks are the main risks for an agency your size.
+- **The people who opt out tend to be the ones who need it most.** Anyone who finds a second step annoying is also likely to reuse passwords.
+- **Clients may start asking.** Security questionnaires and contracts often ask whether you enforce 2FA. "Optional" is a weak answer there.
+
+**The complaint is usually fixable.** Modern 2FA rarely slows anyone down day to day. The annoyance usually comes from typing SMS codes or being asked again and again. In Google Workspace:
+
+1. **Allow trusted devices.** In the Admin console, go to Security → Authentication → 2-Step Verification and turn on "Allow user to trust the device." People then get prompted mainly on new devices or new sign-ins, not every day.
+2. **Push people to faster methods than SMS.** Passkeys (fingerprint or face on a laptop or phone) and Google's tap-to-approve phone prompt each take a couple of seconds. Passkeys can even replace the password.
+3. **Give a grace period.** Use the enforcement setting's enrollment window (for example, 1–2 weeks) so nobody gets locked out in the middle of a deadline.
+
+**Handling the two designers**
+
+- Ask them what exactly slows them down: SMS codes, frequent prompts, or switching between several machines. Then set up the fix above with them in person during the 10 minutes. If the setup removes the friction, most of the pushback goes away.
+- Present it as protecting clients and the business, not as distrust: "Our client files live in these accounts, so this is non-negotiable, but I'll make it as painless as possible."
+- Have an owner or admin keep backup codes (or a spare security key) for recovery, so a lost phone doesn't stop someone from working.
+
+Keeping the peace matters, but a single phished account would cost far more goodwill, with clients as well as staff, than 10 minutes of setup. Make it mandatory with a short deadline, and make the daily experience smooth.

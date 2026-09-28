@@ -1,0 +1,23 @@
+{
+ "case": "en3-pivot",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 82,
+ "baseline_100": 76,
+ "judge_prefers": "council",
+ "why": "Both make the right call. Advice 2 wins because its next steps have deadlines and pass/fail criteria (a runway calculation, 5+ paid pilots, a churn trigger), and it names the unknowns: runway, contracts, and whether an investor offer is actually on the table. Advice 1 states that 2% churn is 'healthy' as if it were a benchmark, and its validation targets are vaguer."
+}

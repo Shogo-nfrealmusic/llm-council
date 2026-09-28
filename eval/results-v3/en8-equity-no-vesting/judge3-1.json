@@ -1,0 +1,23 @@
+{
+ "case": "en8-equity-no-vesting",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 6
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 68,
+ "baseline_100": 80,
+ "judge_prefers": "baseline",
+ "why": "Both make the right call: vesting for both founders. Advice 1 also covers the day-one IP assignment and a fixed-fee lawyer, and its reasoning is accurate. Advice 2 says investors flag 'unvested founder equity' when it means equity with no vesting, makes a doubtful claim about when the risk is highest, and leaves out IP assignment, though it does usefully set a point to stop if he refuses vesting."
+}

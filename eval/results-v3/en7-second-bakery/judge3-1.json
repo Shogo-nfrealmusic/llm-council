@@ -1,0 +1,23 @@
+{
+ "case": "en7-second-bakery",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 6,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 72,
+ "baseline_100": 78,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 works out a realistic break-even (about $22-25k a month in new sales, roughly the current shop's total revenue), names key unknowns like the owner's salary and a lease guarantee, and gives concrete ways to negotiate the lease. Advice 2 is tidier, but its main test (baking 20% more at the current shop) only measures local demand, which it had just said doesn't prove demand across town, and it names fewer unknowns."
+}

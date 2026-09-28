@@ -1,0 +1,23 @@
+{
+ "case": "ja2-first-hire",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 6,
+  "right_call": 6,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 6
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 7,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 64,
+ "baseline_100": 74,
+ "judge_prefers": "baseline",
+ "why": "Advice 2 answers the asker's request for validation directly: it calls this a good decision but says \"best\" rests on an unchecked premise. It explains well why losing 80万円 of requests may come from a shortage of photographers rather than of the owner's time, and it suggests a part-timer or contractor as a cheaper alternative. Advice 1 has sharper numeric thresholds, but it never addresses the request for validation, and its stop line is ambiguous."
+}

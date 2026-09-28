@@ -1,0 +1,23 @@
+{
+ "case": "en5-2fa",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 82,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Both make the right call. Advice 1 takes the designers' concerns seriously by asking what exactly slows them down, and it covers more of the real risk: shared Drives, SSO pivoting and invoice fraud. Advice 2 has sharper success metrics, but it brushes off the designers' complaint with more certainty than the facts support, and its weekly re-prompt threshold is an invented number."
+}

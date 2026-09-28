@@ -1,0 +1,23 @@
+{
+ "case": "ja7-enterprise-deal",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 6,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 76,
+ "baseline_100": 78,
+ "judge_prefers": "baseline",
+ "why": "Both correctly steer away from refusing out of fear. Advice 2 is better calibrated: it asks whether the 12M yen is recurring or a one-time fee, points out the 25% dependence on one customer, and gets the churn math right (about 30,000 yen of extra loss a month, not 60,000). Advice 1 has sharper deadlines and thresholds, but it assumes the deal renews every year and brushes off the asker's worry about being pushed around."
+}

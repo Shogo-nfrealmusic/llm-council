@@ -1,0 +1,23 @@
+{
+ "case": "ja6-booking-form",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 78,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Both answers make the right call to delete the fields. Advice 2 gives the reason that matters most here: inbound tourists fill out a long form on a phone in a language they may not know well, which pushes up drop-off. It also takes the asker's fear head-on and records the completion rate before the change. Advice 1's hide-instead-of-delete tip is useful, but its 'risk' about losing past data is muddled, since it treats something that can be prevented as if it were unknown."
+}

@@ -1,0 +1,23 @@
+{
+ "case": "ja3-course",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 80,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Both answers make the right call: run a paid pre-sale before spending two weeks on production. Advice 1 gives graded thresholds (10+ orders, a few, zero) plus a full-refund guarantee. Its last step asks you to reach an audience, not only the 5 who DMed. Advice 2 adds a useful note on Japan's Specified Commercial Transactions Act (特定商取引法) disclosure. But its bar of 3 or more payments is low, and step 3 contradicts its own gating: it has you skip the pre-sale and go straight to production once 5 people have paid, which is still thin evidence."
+}

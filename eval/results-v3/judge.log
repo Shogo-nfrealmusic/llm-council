@@ -1,0 +1,57 @@
+en1-studio-price   right=GO        council=GO     ok baseline=CHANGE X  score council  79.3 vs  72.7  raw-read 7 vs 7
+en2-quit-job       right=CHANGE/NO-GO council=CHANGE ok baseline=CHANGE ok score council  76.7 vs  74.0  raw-read 7 vs 6
+en3-pivot          right=CHANGE/NO-GO council=CHANGE ok baseline=CHANGE ok score council  80.7 vs  75.3  raw-read 7 vs 7
+ja1-ads            right=CHANGE    council=CHANGE ok baseline=CHANGE ok score council  78.7 vs  73.3  raw-read 6 vs 7
+ja2-first-hire     right=GO        council=GO     ok baseline=GO     ok score council  67.3 vs  76.7  raw-read 5 vs 8
+ja3-course         right=CHANGE    council=CHANGE ok baseline=CHANGE ok score council  82.0 vs  76.7  raw-read 5 vs 8
+en4-annual-plan    right=GO        council=GO     ok baseline=GO     ok score council  69.3 vs  79.3  raw-read 6 vs 8
+ja4-review-email   right=GO        council=GO     ok baseline=GO     ok score council  79.3 vs  74.7  raw-read 6 vs 7
+ja5-crypto         right=NO-GO     council=NO-GO  ok baseline=NO-GO  ok score council  83.3 vs  81.3  raw-read 5 vs 8
+en5-2fa            right=GO        council=GO     ok baseline=GO     ok score council  80.0 vs  78.7  raw-read 6 vs 7
+en6-gift-card      right=NO-GO     council=NO-GO  ok baseline=NO-GO  ok score council  81.3 vs  89.3  raw-read 5 vs 8
+ja6-booking-form   right=GO        council=GO     ok baseline=GO     ok score council  79.3 vs  79.3  raw-read 7 vs 7
+en7-second-bakery  right=CHANGE/NO-GO council=NO-GO  ok baseline=NO-GO  ok score council  70.7 vs  75.3  raw-read 8 vs 6
+ja7-enterprise-deal right=GO        council=GO     ok baseline=CHANGE X  score council  74.7 vs  76.0  raw-read 6 vs 7
+en8-equity-no-vesting right=CHANGE    council=CHANGE ok baseline=CHANGE ok score council  70.7 vs  81.3  raw-read 7 vs 7
+{
+ "cases": 15,
+ "rounds": 3,
+ "council_avg_100": 76.9,
+ "baseline_avg_100": 77.6,
+ "council_higher_cases": 8,
+ "ties": 1,
+ "judgements_council_higher": 20,
+ "judgements": 45,
+ "judge_prefers_council": 16,
+ "council_correct_calls": 15,
+ "baseline_correct_calls": 13,
+ "per_criterion_council": {
+  "useful": 7.29,
+  "right_call": 8.33,
+  "actionable": 8.07,
+  "honest": 7.07,
+  "clear": 7.69
+ },
+ "per_criterion_baseline": {
+  "useful": 7.84,
+  "right_call": 8.49,
+  "actionable": 7.44,
+  "honest": 7.38,
+  "clear": 7.64
+ },
+ "raw_readability_council": 6.2,
+ "raw_readability_baseline": 7.2,
+ "simple_cases": 6,
+ "simple_council_avg_100": 78.8,
+ "simple_baseline_avg_100": 80.4,
+ "complex_cases": 9,
+ "complex_council_avg_100": 75.6,
+ "complex_baseline_avg_100": 75.7,
+ "routes": {
+  "fast": 7,
+  "council": 8,
+  "escalated": 0
+ },
+ "sign_test_p_two_sided": 0.791
+}
+FINISHED

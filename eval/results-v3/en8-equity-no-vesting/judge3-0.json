@@ -1,0 +1,23 @@
+{
+ "case": "en8-equity-no-vesting",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 6
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 70,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 makes the right call and adds key protections that Advice 2 leaves out: an IP assignment, credit for time already contributed, acceleration terms, and a lawyer check. Advice 2 wrongly says investors flag 'unvested' founder equity when the real red flag is equity with no vesting, and some of its risk points are vague, though it does handle the trust concern and gives clear success and stop criteria."
+}

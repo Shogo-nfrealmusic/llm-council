@@ -1,0 +1,23 @@
+== BRIEF ==
+Removed framing: "This is my moment", "everyone says go for it!", "Right?"
+Claim to test: Current growth (15%/month for 4 months) will continue enough to replace a $95k salary before savings run out.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Don't resign Friday; ask for part-time or leave, and quit on a cash trigger.
+WHY:
+- Even if 15% growth holds, $1,200 MRR takes ~13-14 months to reach $7,900/mo ($95k/12).
+- $8,000 lasts ~5.3 months on $1,500 rent alone. By then MRR is ~$2,400 (1,200 x 1.15^5).
+- That contradicts your claim, as the Contrarian showed. The 15% itself is unproven: ~$500 of new MRR, source unknown.
+- MRR grew from ~$690 while you had the job, so time may not be what limits growth (Expansionist).
+BIGGEST RISK: Growth really is limited by your hours, or asking for leave costs you goodwill at work.
+NEXT STEPS:
+1. Before Friday, add up your full monthly costs X: rent, food, insurance, taxes, SaaS costs.
+2. Before Friday, ask for a 4-day week, part-time or unpaid leave (or turn your notice into leave)
+   — success: a written yes / stop if: refused; then keep the full-time job and don't resign.
+3. Track net MRR monthly. Quit when it covers X and savings reach 6 months of X (rule of thumb)
+   — stop if: average growth over 3 months falls below the 15% you're counting on; reassess.
+WOULD CHANGE IT: If net MRR or a partner's income already covers X, quitting now is a GO.
+
+== COUNCIL ==
+contrarian CHANGE, first-principles CHANGE, expansionist CHANGE, outsider NO-GO, executor CHANGE | red team: not needed | top-ranked: contrarian
+Full notes: council-notes/2026-09-29-quit-job-saas.md

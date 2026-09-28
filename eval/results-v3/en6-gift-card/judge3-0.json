@@ -1,0 +1,23 @@
+{
+ "case": "en6-gift-card",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 10,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 9,
+  "right_call": 10,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 9
+ },
+ "council_100": 80,
+ "baseline_100": 90,
+ "judge_prefers": "baseline",
+ "why": "Both correctly say not to pay. Advice 1 is more complete and actionable: it gives recovery steps if gift cards were already bought (Apple support number, contacting the bank), reporting to the agency's Inspector General, and real funding sources. Advice 2's step of verifying with the agency adds less and treats a clearly fake grant as possibly real."
+}

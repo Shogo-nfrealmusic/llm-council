@@ -1,0 +1,23 @@
+{
+ "case": "ja5-crypto",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 9,
+  "right_call": 10,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 9
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 88,
+ "baseline_100": 82,
+ "judge_prefers": "council",
+ "why": "Advice 1 makes the correct call without hedging: don't invest anything, not even a test amount. It also warns about the small-withdrawal hook and the risk of being pulled into recruiting others. Advice 2 has good verification steps, but it only rules out investing the full amount and suggests checking the friend's withdrawals, which leaves the door open to an investment that is almost certainly a Ponzi scheme."
+}

@@ -1,0 +1,23 @@
+{
+ "case": "ja4-review-email",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 8
+ },
+ "council_100": 78,
+ "baseline_100": 74,
+ "judge_prefers": "council",
+ "why": "Both recommend sending the email and correctly warn against incentives and only asking happy customers. Advice 2 is slightly better because it sets clear numbers for success and for stopping, and it gets the current rate right (2–3 of 60 is about 3–5%, not 4–5%). Its legal warning is overstated, though: Japan's anti-spam email law generally exempts messages to people you already do business with."
+}

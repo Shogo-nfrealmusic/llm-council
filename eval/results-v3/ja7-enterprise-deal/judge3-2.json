@@ -1,0 +1,23 @@
+{
+ "case": "ja7-enterprise-deal",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 74,
+ "baseline_100": 76,
+ "judge_prefers": "baseline",
+ "why": "Both advisors correctly push back on refusing out of fear. Advice 2 is more accurate: it gives the right churn impact of about ¥30k per month and notes that 1,200万円 would be about 25% of revenue from one customer. It also asks whether the ¥12M recurs every year or is paid only once, and suggests using the prepayment to hire a contractor. Advice 1 has sharper deadlines and thresholds, but it misstates the churn impact, calls the delay the only real cost, and dismisses the asker's fear as groundless."
+}

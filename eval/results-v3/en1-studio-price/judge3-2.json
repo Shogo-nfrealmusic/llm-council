@@ -1,0 +1,23 @@
+{
+ "case": "en1-studio-price",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 78,
+ "baseline_100": 70,
+ "judge_prefers": "council",
+ "why": "Both correctly advise raising the price while keeping ¥25,000 for existing bookings and the waitlist. Advice 2 wins because it gives concrete success and revert thresholds tied to break-even. Advice 1 assumes a ¥10,000 cost per shoot that the asker never gave, and its weekday/weekend split is not a clean comparison, since weekday and weekend demand differ anyway."
+}

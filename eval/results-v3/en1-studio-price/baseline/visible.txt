@@ -1,0 +1,20 @@
+No. From what you've described, keeping the price is the riskier choice. Your partner is right, and ¥30,000 is probably still on the low side.
+
+**Your numbers say you're underpriced**
+- **A 3-week waitlist means more people want shoots than you can take.** You're already turning customers away every weekend. You're just doing it with a queue instead of a price.
+- **At ¥30,000 you'd still be the cheapest option nearby,** ¥2,000–8,000 below all three competitors, with 4.9 stars from 400 reviews behind you.
+- **A small drop in bookings wouldn't hurt you.** At ¥30,000 you'd have to lose more than 1 in 6 bookings before revenue falls. With a waitlist, the first people who drop off are the ones who wouldn't have gotten a slot anyway. So you could lose some demand and still fill every weekend.
+- **Profit rises more than revenue.** A shoot doesn't cost you more to run at ¥30,000. If each shoot costs you about ¥10,000, your profit per shoot goes from ¥15,000 to ¥20,000. That's 33% more for the same work.
+
+**"People will hate us"**
+Customers get angry about surprises, not about prices. Tourists usually book once. They see the price you charge on the day they book, and they don't know what you charged last year. To avoid surprises:
+- Keep the old price for everyone who has already booked or is on the waitlist.
+- Don't put the price rise in the reviews' path. Reviews come from the shoot itself, which isn't changing.
+
+**The real risk is weekdays**
+You said weekends are full, but you didn't mention weekdays. If weekdays have empty slots, a flat raise could lose bookings there. In that case, a safer first step is to charge ¥30,000 on weekends and keep ¥25,000 on weekdays. That also gives you a clean comparison.
+
+**Make it safe to try**
+Agree with your partner before you start: run ¥30,000 for 4–6 weeks. Go back to the old price only if weekend slots stop filling, not just because the waitlist gets shorter. A shorter waitlist is the expected result, not a failure. Compare how many requests you get per week before and after, using the same days of the week.
+
+One caveat: I tried to check your experiment ledger (`TPS 実験台帳.md`) to see whether you've tried a price change before, but I don't have permission to read it. If you've already tested a higher price, those results matter more than this reasoning. Grant access and I'll check.

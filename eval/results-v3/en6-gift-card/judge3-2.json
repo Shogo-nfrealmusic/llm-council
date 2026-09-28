@@ -1,0 +1,23 @@
+{
+ "case": "en6-gift-card",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 10,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 9
+ },
+ "baseline": {
+  "useful": 9,
+  "right_call": 10,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 84,
+ "baseline_100": 88,
+ "judge_prefers": "baseline",
+ "why": "Both make the right call. Advice 2 gives fuller recovery steps (contacting the bank, calling Apple with card numbers ready, reporting to the agency's Inspector General) and points to real funding sources. Advice 1 is tighter but overstates a few things: it says agencies 'never' charge grant fees and that gift cards 'cannot be traced', and its step of checking whether a grant exists adds little when the scam signs are this clear."
+}

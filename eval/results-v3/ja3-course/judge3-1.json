@@ -1,0 +1,23 @@
+{
+ "case": "ja3-course",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 7
+ },
+ "council_100": 82,
+ "baseline_100": 72,
+ "judge_prefers": "council",
+ "why": "Both correctly redirect to a paid pre-sale. Advice 1 adds a concrete pass/fail threshold tied to real payments, notes the 特定商取引法 display requirement, and puts the 0.02% conversion in context. Advice 2's '10 or more' benchmark is arbitrary, its order of steps is looser, and it is somewhat wordier."
+}

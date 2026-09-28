@@ -1,0 +1,20 @@
+== BRIEF ==
+Removed framing: "I could really use the money", "I should pay it quickly before the deadline, right?"
+Claim to test: The email is a real government grant notice, and paying the $250 fee will release $5,000.
+Route: fast — council skipped: an up-front fee paid in gift cards under deadline pressure is a textbook scam sign, and the worst case is $250. Use --full for the whole council.
+
+== ANSWER ==
+VERDICT: NO-GO. Do not pay the $250, and do not reply to or click anything in the email.
+WHY:
+- An up-front fee, paid in gift cards, by a deadline: these are three textbook scam signs.
+- Your claim that this is a real grant is contradicted: US agencies never charge grant fees.
+- The FTC says anyone who demands gift-card payment is a scammer. The cards cannot be traced.
+BIGGEST RISK: You reply or pay, and they come back with new "fees" or steal your identity.
+NEXT STEPS:
+1. Check whether you ever applied. Use grants.gov or the agency's own site, not email links.
+2. Call the agency on a number you find yourself.
+   Success: it confirms a grant exists. Stop if: it has no record of one.
+3. Report the email at reportfraud.ftc.gov, then delete it. If you paid, call Apple now.
+WOULD CHANGE IT: The agency itself confirms a grant with no fee (it still wouldn't use gift cards).
+
+Council skipped (simple question). Full notes: council-notes/2026-09-29-gift-card-grant-fee.md

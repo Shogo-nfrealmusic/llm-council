@@ -1,0 +1,23 @@
+{
+ "case": "en4-annual-plan",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 6,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 70,
+ "baseline_100": 76,
+ "judge_prefers": "baseline",
+ "why": "Advice 2 uses churn to show the real cost of the $98 discount, and its break-even math is correct. It also covers upfront cash and the fact that annual customers can't get a price increase until renewal. Advice 1 treats the $98 as a pure loss per buyer and contains a garbled alternative ('11-months-for-the-price-of-12'), though its success threshold is more concrete."
+}

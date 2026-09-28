@@ -1,0 +1,23 @@
+== BRIEF ==
+Removed framing: "because he's a close friend", "I want him to feel like a real cofounder", "Good, right?"
+Claim to test: Granting equity with no vesting keeps the paperwork simpler, and that simplicity is worth it.
+
+== CHAIRMAN ==
+VERDICT: CHANGE IT — Keep 25%, but on 4-year vesting and a 1-year cliff, for both of you.
+WHY:
+- Worst case: he quits early, keeps 25% for good, and only his consent can undo it.
+  Investors flag that (contrarian). No cash is given to size it, so choose the safe path.
+- Your claim that no vesting is simpler is wrong: vesting is standard template wording.
+  The hard, costly part is fixing a grant with no vesting later (first-principles).
+- The red team (keep it, investors re-vest later) did not move me. It admits a month-4
+  exit leaves 25% stuck, and the time before any investor arrives is the real risk.
+BIGGEST RISK: He reads the cliff as distrust. Putting your own shares on it too answers that.
+NEXT STEPS:
+1. Before Monday, check nothing is signed. Get a vesting template or lawyer for you both.
+2. Offer equal terms and title — success: both sign in week 1 / stop if: he rejects vesting
+3. If it is a US company, file the 83(b) — success: filed within 30 days of the grant
+WOULD CHANGE IT: If he brings IP or cash on day one, that part could vest at once.
+
+== COUNCIL ==
+contrarian CHANGE, first-principles CHANGE, expansionist CHANGE, outsider CHANGE, executor CHANGE | red team: argued GO | top-ranked: first-principles
+Full notes: council-notes/2026-09-29-equity-no-vesting.md

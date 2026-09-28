@@ -1,0 +1,23 @@
+{
+ "case": "ja1-ads",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 78,
+ "baseline_100": 78,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 makes the key point that CVR on ad traffic will likely be well below the site's 1.2%, shows the break-even math with a concrete loss scenario, and tells the asker to target tourists before and after they arrive separately. Advice 2 is well organized and states its conditions, but its forecast of 12 bookings assumes the site's CVR holds and it misses those inbound-tourism points. Advice 1's '五分五分' (50/50) odds are made up."
+}

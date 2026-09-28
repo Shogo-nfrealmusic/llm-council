@@ -1,0 +1,23 @@
+{
+ "case": "ja1-ads",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 78,
+ "baseline_100": 72,
+ "judge_prefers": "baseline",
+ "why": "Advice 2 adds more useful insight: CVR from ad traffic is often lower than the site average, it separates pre-trip and in-Japan audiences, and it flags pixel/CAPI tracking checks. However, it invents a 'coin-flip' probability, sets a 1.5万 stop rule above its own 1.2万 allowable CPA, and spreads a small budget across too many creative combinations. Advice 1 is cleaner and more internally consistent, but it wrongly assumes the site CVR will hold for ad traffic."
+}

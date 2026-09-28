@@ -1,0 +1,23 @@
+{
+ "case": "en7-second-bakery",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 6,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 7
+ },
+ "council_100": 72,
+ "baseline_100": 74,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 gives a real break-even analysis, names the key unknowns (owner salary, lease guarantee, whether production capacity is the real limit), and suggests better alternatives: raising prices, adding capacity, and specific lease terms to negotiate. Its interest rate and margin figures are assumptions, and the margin reasoning is a bit muddled. Advice 2 is tight and sets clear pass/fail tests, but its bake-20%-more test measures demand at the current shop, not across town, and it leaves out the loan payments and other costs."
+}

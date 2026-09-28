@@ -1,0 +1,72 @@
+{
+ "checks": [
+  {
+   "ok": true,
+   "msg": "fast path: exactly one subagent, council-solo (1 calls)"
+  },
+  {
+   "ok": true,
+   "msg": "fast path: council-solo on opus (got opus)"
+  },
+  {
+   "ok": true,
+   "msg": "fast path: foreground call"
+  },
+  {
+   "ok": true,
+   "msg": "fast path: prompt has no original framing 'やめた方がいい気がする'"
+  },
+  {
+   "ok": true,
+   "msg": "fast path: prompt has no 'Removed framing' line"
+  },
+  {
+   "ok": true,
+   "msg": "exactly 2 visible messages (BRIEF, answer) — got 2"
+  },
+  {
+   "ok": true,
+   "msg": "BRIEF says the council was skipped (Route line)"
+  },
+  {
+   "ok": true,
+   "msg": "visible output has BRIEF, ANSWER in order [0, 147]"
+  },
+  {
+   "ok": true,
+   "msg": "fast answer is at most 14 non-empty lines (got 12)"
+  },
+  {
+   "ok": true,
+   "msg": "fast answer gives a verdict (GO)"
+  },
+  {
+   "ok": true,
+   "msg": "details are not printed"
+  },
+  {
+   "ok": true,
+   "msg": "final line says the council was skipped"
+  },
+  {
+   "ok": true,
+   "msg": "save_notes.sh ran"
+  },
+  {
+   "ok": true,
+   "msg": "last line names the notes file ('評議会は省略（簡単な質問のため）。全記録: council-notes/2026-09-29-review-email.md')"
+  },
+  {
+   "ok": true,
+   "msg": "visible output language matches (ja, ja ratio 0.98)"
+  }
+ ],
+ "route": "fast",
+ "mode": "fast",
+ "visible_messages": 2,
+ "answer_lines": 12,
+ "verdict": "GO",
+ "ja_ratio": 0.98,
+ "cost_usd_list": 0.47838339999999996,
+ "ok": true
+}

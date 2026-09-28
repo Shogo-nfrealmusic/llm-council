@@ -1,0 +1,23 @@
+{
+ "case": "en5-2fa",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 7,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 8
+ },
+ "council_100": 80,
+ "baseline_100": 76,
+ "judge_prefers": "baseline",
+ "why": "Both make the right call. Advice 1 is more useful because it deals with the designers' actual complaint: it asks them what slows them down and fixes it with trusted devices, passkeys and admin-held recovery codes. It loses points for claiming without evidence that people who resist 2FA tend to reuse passwords. Advice 2 has clearer success checks, but it dismisses the designers' complaint as 'contradicted' without asking them."
+}

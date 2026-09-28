@@ -1,0 +1,23 @@
+{
+ "case": "en8-equity-no-vesting",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 74,
+ "baseline_100": 82,
+ "judge_prefers": "baseline",
+ "why": "Both make the right call: keep the grant but add standard 4-year vesting with a 1-year cliff, and file an 83(b) election. Advice 2 adds things Advice 1 leaves out: a day-one IP assignment, credit for time already worked, acceleration terms, and why fixing this later is harder once he holds leverage. Advice 1 has a useful 'stop if he rejects vesting' signal, but some of its risk points are vague."
+}

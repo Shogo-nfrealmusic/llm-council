@@ -1,0 +1,23 @@
+== BRIEF ==
+Removed framing: "Should I just leave it optional to keep the peace?", "annoying"
+Claim to test: Requiring 2FA would noticeably slow down the two designers' daily work.
+Route: fast — council skipped: standard security control, free and easily reversed. Use --full for the whole council.
+
+== ANSWER ==
+VERDICT: GO — require 2FA on all 12 Workspace accounts, with a short enrollment window.
+WHY:
+- Full cost: $0 in fees plus about 2 staff-hours total (12 people x 10 min setup).
+- A single phished login can expose every client file and email the account holds.
+- Designers' slowdown claim: mostly contradicted. Trusted devices are rarely re-asked.
+- It stays open until measured; a phone-prompt tap takes seconds when it does appear.
+- Tip: in Admin console, set an enrollment period before enforcement starts.
+- Offer phone prompt or authenticator app over SMS, and hand out backup codes.
+BIGGEST RISK: A staffer loses their phone near a client deadline and is locked out.
+NEXT STEPS:
+1. Announce it and enforce after a 2-week window — success: 12/12 enrolled in the
+   Admin 2SV report by enforcement day / stop if: none; extend window for stragglers.
+2. Check in with the two designers after 30 days — success: re-prompts under 1 a week
+   per device (rule of thumb) / stop if: more; fix trusted-device settings, keep 2FA.
+WOULD CHANGE IT: Only a real lockout risk with no backup method; that means fix setup.
+
+Council skipped (simple question). Full notes: council-notes/2026-09-29-require-2fa.md

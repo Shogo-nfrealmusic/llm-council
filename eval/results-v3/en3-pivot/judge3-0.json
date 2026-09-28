@@ -1,0 +1,23 @@
+{
+ "case": "en3-pivot",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 9
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 84,
+ "baseline_100": 76,
+ "judge_prefers": "council",
+ "why": "Both make the right call: keep the note app and test the agent idea first. Advice 1 is more actionable, with a runway check, deadlines and clear pass/fail numbers. Advice 2 reasons well but leaves its kill criteria and timelines vague, and states the churn benchmark as fact without support."
+}

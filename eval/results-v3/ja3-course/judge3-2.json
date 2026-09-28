@@ -1,0 +1,23 @@
+{
+ "case": "ja3-course",
+ "round": 2,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 7
+ },
+ "council_100": 84,
+ "baseline_100": 76,
+ "judge_prefers": "council",
+ "why": "Both answers make the same correct call: take paid pre-orders before spending two weeks on production. Advice 1 is tighter. It gives a clear stop-or-go rule (3 or more paid in a week to go ahead, 1 or fewer to stop) and flags the legally required seller disclosure for online sales in Japan (特定商取引法表記). Advice 2 leaves a gray zone between its thresholds ('数件') and its bar of 10 or more pre-orders is somewhat arbitrary."
+}

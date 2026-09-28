@@ -1,0 +1,23 @@
+{
+ "case": "en4-annual-plan",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 6,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 8,
+  "clear": 8
+ },
+ "council_100": 70,
+ "baseline_100": 80,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 correctly explains the churn math behind the 'discount' (its break-even figures of about 3.3% churn and $490 are right) and gives a sensible way to test the plan, though it underplays that customers who ask for annual billing tend to be the most loyal. Advice 2 has sharper next steps and success measures, but its '11-months-for-the-price-of-12' suggestion makes no sense and its 20-of-40 success threshold is arbitrary."
+}

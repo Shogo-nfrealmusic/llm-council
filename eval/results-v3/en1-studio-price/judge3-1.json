@@ -1,0 +1,23 @@
+{
+ "case": "en1-studio-price",
+ "round": 1,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 9,
+  "honest": 7,
+  "clear": 9
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 7
+ },
+ "council_100": 84,
+ "baseline_100": 74,
+ "judge_prefers": "council",
+ "why": "Both make the right call to raise the price and honor existing bookings. Advice 1 is clearer and easier to act on, with a set 4-week review and an 83% break-even revert trigger. Advice 2 has good points, like the waitlist absorbing lost bookings, but it hedges its recommendation, assumes a ¥10,000 cost per shoot that wasn't given, and its revert rule is vaguer."
+}

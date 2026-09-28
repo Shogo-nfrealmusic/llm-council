@@ -1,0 +1,23 @@
+{
+ "case": "ja4-review-email",
+ "round": 2,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 7,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 78,
+ "baseline_100": 76,
+ "judge_prefers": "council",
+ "why": "Both make the right call to send the email. Advice 2 adds the key compliance risks: Google's rules against incentives and review gating, and consent under Japan's anti-spam email law (特定電子メール法). It also gives concrete success and stop thresholds, though those numbers are its own assumptions, not facts from the question. Advice 1 has good practical tips, such as sending right after the photos are delivered and measuring against the previous 4 weeks, but it skips consent and gives no stop criterion."
+}

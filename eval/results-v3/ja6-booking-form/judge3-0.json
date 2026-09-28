@@ -1,0 +1,23 @@
+{
+ "case": "ja6-booking-form",
+ "round": 0,
+ "council_was": 1,
+ "council": {
+  "useful": 8,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 9,
+  "actionable": 8,
+  "honest": 7,
+  "clear": 8
+ },
+ "council_100": 80,
+ "baseline_100": 78,
+ "judge_prefers": "council",
+ "why": "Both advisors make the right call. Advice 1 adds two points Advice 2 misses: removing the fields from the form does not bring back past answers, so the person must decide whether to keep or delete that old data, and hiding the fields may be better than deleting them. Advice 2 tells the person to keep a CSV of everything, which works against its own privacy argument, and it states guesses about mobile drop-off as if they were facts."
+}

@@ -1,0 +1,23 @@
+{
+ "case": "ja1-ads",
+ "round": 0,
+ "council_was": 2,
+ "council": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 8,
+  "honest": 8,
+  "clear": 8
+ },
+ "baseline": {
+  "useful": 7,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 6,
+  "clear": 7
+ },
+ "council_100": 80,
+ "baseline_100": 70,
+ "judge_prefers": "council",
+ "why": "Advice 2 correctly derives break-even CPC from the given numbers, and it ties go/no-go criteria to the asker's own allowable CPA after pixel verification. Advice 1 adds useful domain insight on ad-traffic CVR and pre- vs post-arrival targeting, but it invents a 50/50 probability and assumed margins, and its stop threshold (¥15k) exceeds its own allowable CPA (¥12k)."
+}

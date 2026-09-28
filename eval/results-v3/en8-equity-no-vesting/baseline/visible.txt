@@ -1,0 +1,26 @@
+No, I'd push back on this. Giving him 25% is your call. Giving it with **no vesting** is one of the most common and expensive mistakes early founders make, and being close friends makes it riskier, not safer.
+
+## Why no vesting is a problem
+
+- **If he leaves, he keeps all 25% forever.** He might leave after 4 months because of burnout, a job offer, a move, or a falling-out. Friendships between cofounders often don't survive the stress of a startup. Without vesting, anyone who leaves still owns a quarter of the company.
+- **It will hurt fundraising.** Investors look at the cap table. A large stake owned by someone who isn't contributing is a red flag, and many investors will require founders to re-vest before they invest. You'd be renegotiating at the worst possible time, with a friend who then has all the leverage.
+- **It isn't really simpler.** Vesting is a standard clause in standard founder stock agreements (Clerky, Stripe Atlas, Carta and startup lawyers all use templates). The extra work is small compared with unwinding a bad grant later.
+
+## How to keep the cofounder feeling
+
+The usual structure makes you both equal:
+
+- **Both of you vest** on the standard schedule: 4 years, with a 1-year cliff. You put your own shares on vesting too.
+- **Give him credit** if he has already contributed, for example by starting part of his shares as already vested.
+- **Consider acceleration**, so his shares vest early if the company is sold or he's fired without cause.
+
+You could say something like: *"I want us to be real cofounders, so we'll do what real cofounders do: we both vest, on the same terms. That protects each of us if the other one walks."* That puts you in the same position, which is what being a cofounder means.
+
+## Before Monday
+
+1. **Don't sign a grant without vesting.** It's fine if he starts work Monday and the paperwork follows within a week or two.
+2. **Get an IP assignment signed on day one**, so that everything he builds belongs to the company. This matters as much as vesting.
+3. **If you're in the US, he must file an 83(b) election within 30 days** of getting shares that vest. Missing that deadline can create a large tax bill later. It's a one-page form, but the deadline is strict.
+4. **Spend an hour with a startup lawyer.** Many offer fixed-fee founder packages, and 25% of your company is worth that cost.
+
+I'm not a lawyer, and the details depend on where you're incorporated. But almost every startup lawyer, accelerator and investor would give you this same advice.

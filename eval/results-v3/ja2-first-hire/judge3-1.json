@@ -1,0 +1,23 @@
+{
+ "case": "ja2-first-hire",
+ "round": 1,
+ "council_was": 2,
+ "council": {
+  "useful": 7,
+  "right_call": 7,
+  "actionable": 8,
+  "honest": 6,
+  "clear": 7
+ },
+ "baseline": {
+  "useful": 8,
+  "right_call": 8,
+  "actionable": 7,
+  "honest": 9,
+  "clear": 8
+ },
+ "council_100": 70,
+ "baseline_100": 80,
+ "judge_prefers": "baseline",
+ "why": "Advice 1 answers the asker's request for reassurance directly: it's a good decision, but calling it 'the best' rests on an assumption nobody has checked. Its numbers are correct, and it separates two possible reasons for the turned-down work: the owner's own time versus a shortage of photographers. Advice 2 has sharper rules for when to continue or stop, but it just goes along with the decision, argues weakly that 'nothing disproves it', and leaves a gap between its 170,000-yen and 350,000-yen thresholds."
+}
