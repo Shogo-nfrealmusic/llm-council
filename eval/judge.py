@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Blind judge v2: normalize both answers, then score them without knowing which is which.
 
-usage: python3 eval/judge.py <results_dir> [--rounds N] [--cases id1,id2]
+usage: python3 eval/judge.py <results_dir> [--rounds N] [--cases id1,id2] [--seed S] [--tag T]
 
 For each case in eval/cases.json:
   1. Normalize. A neutral `claude -p` session (Sonnet, no tools) rewrites each answer
-     (<dir>/<case>/{baseline,council}/visible.txt) into the SAME plain template and the
-     SAME length budget, keeping its substance and removing process artifacts (section
-     headers, advisor names, rankings, file paths). It also classifies the recommendation
-     as GO / CHANGE / NO-GO. Cached in normalized-{baseline,council}.json.
+     (<dir>/<case>/{baseline,council}/visible.txt, or <case>/{baseline,council}.txt) into
+     the SAME plain template and the SAME length budget, keeping its substance and removing
+     process artifacts (section headers, advisor names, rankings, file paths). It also
+     classifies the recommendation as GO / CHANGE / NO-GO. Cached in normalized<T>-*.json.
   2. Judge. A fresh `claude -p` session (no tools) sees the question and the two
      normalized answers as "Advice 1" / "Advice 2" in random order and scores both on
      5 neutral criteria (0-10). N rounds per case (default 3), each with its own order.
@@ -64,6 +64,10 @@ TEMPLATE = {
 }
 BUDGET = {"en": "220 words", "ja": "550 Japanese characters"}
 
+
+def length(text, lang):
+    return len(re.sub(r"\s", "", text)) if lang == "ja" else len(text.split())
+
 JUDGE = """You are a strict evaluator of decision advice. A person asked the question below. Two advisors answered; both answers were rewritten by a neutral editor into the same plain format and length, so judge the content, not the formatting. Score each answer independently, 0 to 10 per criterion (10 = excellent, 5 = mediocre, 0 = absent or wrong). Reserve 9-10 for advice a demanding expert would sign off on without changes.
 
 QUESTION (verbatim, including the asker's framing):
@@ -114,7 +118,10 @@ def claude_json(prompt, model=None, check=lambda r: True, tries=3):
     if model:
         cmd += ["--model", model]
     for _ in range(tries):
-        r = subprocess.run(cmd, cwd=WORK, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=600)
+        try:
+            r = subprocess.run(cmd, cwd=WORK, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=600)
+        except subprocess.TimeoutExpired:
+            continue
         try:
             out = json.loads(r.stdout)
             m = re.search(r"\{.*\}", out.get("result", ""), re.S)
@@ -126,27 +133,38 @@ def claude_json(prompt, model=None, check=lambda r: True, tries=3):
     raise RuntimeError("no valid JSON from claude -p")
 
 
-def normalized(rd, case, kind):
-    path = os.path.join(rd, case["id"], f"normalized-{kind}.json")
+def raw_text(rd, case, kind):
+    """Output of a run: <case>/<kind>/visible.txt (fresh eval) or <case>/<kind>.txt (committed results)."""
+    for p in (os.path.join(rd, case["id"], kind, "visible.txt"), os.path.join(rd, case["id"], f"{kind}.txt")):
+        if os.path.exists(p):
+            return open(p).read().strip()
+    raise FileNotFoundError(f"no output for {case['id']} {kind}")
+
+
+def normalized(rd, case, kind, tag):
+    path = os.path.join(rd, case["id"], f"normalized{tag}-{kind}.json")
     if os.path.exists(path):
         return json.load(open(path))
-    raw = open(os.path.join(rd, case["id"], kind, "visible.txt")).read().strip()
+    ok = lambda r: r.get("class") in ("GO", "CHANGE", "NO-GO") and isinstance(r.get("text"), str) and len(r["text"]) > 40
     res = claude_json(NORMALIZE.format(lang=case["lang"], budget=BUDGET[case["lang"]], question=case["question"],
-                                       advice=raw, template=TEMPLATE[case["lang"]]),
-                      model="sonnet", check=lambda r: r.get("class") in ("GO", "CHANGE", "NO-GO") and len(r.get("text", "")) > 40)
+                                       advice=raw_text(rd, case, kind), template=TEMPLATE[case["lang"]]),
+                      model="sonnet", check=ok)
+    res["length"] = length(res["text"], case["lang"])
     json.dump(res, open(path, "w"), ensure_ascii=False, indent=1)
     return res
 
 
 def council_verdict(rd, case):
-    t = open(os.path.join(rd, case["id"], "council", "visible.txt")).read()
+    t = raw_text(rd, case, "council")
     m = re.search(r"VERDICT:\s*(GO|NO-GO|CHANGE IT)", t)
     return {"CHANGE IT": "CHANGE"}.get(m.group(1), m.group(1)) if m else None
 
 
 def main():
     rd = sys.argv[1]
-    rounds = int(sys.argv[sys.argv.index("--rounds") + 1]) if "--rounds" in sys.argv else 3
+    rounds = max(1, int(sys.argv[sys.argv.index("--rounds") + 1])) if "--rounds" in sys.argv else 3
+    seed = sys.argv[sys.argv.index("--seed") + 1] if "--seed" in sys.argv else "v2"
+    tag = sys.argv[sys.argv.index("--tag") + 1] if "--tag" in sys.argv else "3"
     only = sys.argv[sys.argv.index("--cases") + 1].split(",") if "--cases" in sys.argv else None
     cases = [c for c in json.load(open(os.path.join(HERE, "cases.json"))) if not only or c["id"] in only]
     keys = [k for k, _ in CRITERIA]
@@ -156,22 +174,31 @@ def main():
         isinstance(r.get(a), dict) and all(isinstance(r[a].get(k), (int, float)) for k in keys) for a in ("advice_1", "advice_2"))
     rows, per_case = [], []
     for c in cases:
-        nb, nc = normalized(rd, c, "baseline"), normalized(rd, c, "council")
+        try:
+            nb, nc = normalized(rd, c, "baseline", tag), normalized(rd, c, "council", tag)
+        except (RuntimeError, FileNotFoundError) as err:
+            print(f"{c['id']:18s} skipped: {err}", flush=True)
+            continue
         cv = council_verdict(rd, c)
         ctot, btot = [], []
         for k in range(rounds):
-            council_first = random.Random(f"{c['id']}-v2-{k}").random() < 0.5
+            council_first = random.Random(f"{c['id']}-{seed}-{k}").random() < 0.5
             a1, a2 = (nc["text"], nb["text"]) if council_first else (nb["text"], nc["text"])
-            res = claude_json(JUDGE.format(question=c["question"], a1=a1, a2=a2, criteria=crit_text, keys=kjson), check=ok)
+            try:
+                res = claude_json(JUDGE.format(question=c["question"], a1=a1, a2=a2, criteria=crit_text, keys=kjson), check=ok)
+            except RuntimeError as err:
+                print(f"{c['id']:18s} round {k} skipped: {err}", flush=True)
+                continue
             cs, bs = (res["advice_1"], res["advice_2"]) if council_first else (res["advice_2"], res["advice_1"])
             rec = {"case": c["id"], "round": k, "council_was": 1 if council_first else 2, "council": cs, "baseline": bs,
                    "council_100": sum(cs[x] for x in keys) * 2, "baseline_100": sum(bs[x] for x in keys) * 2,
                    "judge_prefers": "council" if (res["better"] == 1) == council_first else "baseline", "why": res.get("why")}
-            json.dump(rec, open(os.path.join(rd, c["id"], f"judge2-{k}.json"), "w"), ensure_ascii=False, indent=1)
+            json.dump(rec, open(os.path.join(rd, c["id"], f"judge{tag}-{k}.json"), "w"), ensure_ascii=False, indent=1)
             rows.append(rec)
             ctot.append(rec["council_100"]); btot.append(rec["baseline_100"])
-        rawc = open(os.path.join(rd, c["id"], "council", "visible.txt")).read().strip()
-        rawb = open(os.path.join(rd, c["id"], "baseline", "visible.txt")).read().strip()
+        if not ctot:
+            continue
+        rawc, rawb = raw_text(rd, c, "council"), raw_text(rd, c, "baseline")
         cf = random.Random(f"{c['id']}-raw").random() < 0.5
         rr = claude_json(RAWREAD.format(question=c["question"], a1=rawc if cf else rawb, a2=rawb if cf else rawc),
                          check=lambda r: isinstance(r.get("output_1"), (int, float)) and isinstance(r.get("output_2"), (int, float)))
@@ -180,13 +207,17 @@ def main():
               "council_verdict": cv, "council_correct": cv in c["right_call"],
               "council_class_by_normalizer": nc["class"],
               "baseline_class": nb["class"], "baseline_correct": nb["class"] in c["right_call"],
-              "council_100": round(sum(ctot) / rounds, 1), "baseline_100": round(sum(btot) / rounds, 1),
+              "council_100": round(sum(ctot) / len(ctot), 1), "baseline_100": round(sum(btot) / len(btot), 1),
+              "council_rounds": ctot, "baseline_rounds": btot,
+              "normalized_length": {"council": nc.get("length"), "baseline": nb.get("length")},
               "raw_readability_council": raw_c, "raw_readability_baseline": raw_b}
         per_case.append(pc)
         print(f"{c['id']:18s} right={'/'.join(c['right_call']):9s} council={cv or '-':7s}{'ok ' if pc['council_correct'] else 'X  '}"
               f"baseline={nb['class']:7s}{'ok ' if pc['baseline_correct'] else 'X  '}"
               f"score council {pc['council_100']:5.1f} vs {pc['baseline_100']:5.1f}  raw-read {raw_c} vs {raw_b}", flush=True)
     n = len(per_case)
+    if not n:
+        sys.exit("no case was judged")
     summary = {
         "cases": n, "rounds": rounds,
         "council_avg_100": round(sum(p["council_100"] for p in per_case) / n, 1),
@@ -203,8 +234,13 @@ def main():
         "raw_readability_council": round(sum(p["raw_readability_council"] for p in per_case) / n, 2),
         "raw_readability_baseline": round(sum(p["raw_readability_baseline"] for p in per_case) / n, 2),
     }
+    # Sign test on per-case wins (ties dropped), two-sided.
+    from math import comb
+    w = summary["council_higher_cases"]; m = n - summary["ties"]
+    tail = sum(comb(m, i) for i in range(min(w, m - w) + 1)) / 2 ** m if m else 1.0
+    summary["sign_test_p_two_sided"] = round(min(1.0, 2 * tail), 3)
     json.dump({"summary": summary, "cases": per_case, "rows": rows},
-              open(os.path.join(rd, "judge2-summary.json"), "w"), ensure_ascii=False, indent=1)
+              open(os.path.join(rd, f"judge{tag}-summary.json"), "w"), ensure_ascii=False, indent=1)
     print(json.dumps(summary, indent=1))
 
 

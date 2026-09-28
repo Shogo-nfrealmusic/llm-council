@@ -37,7 +37,7 @@ models="$(grep -o '`\(opus\|sonnet\|haiku\)`' "$SK" | sort -u | wc -l | tr -d ' 
 
 grep -q 'run_in_background: false' "$SK" && ok "subagents run in the foreground (one turn keeps pre-approvals)" || bad "subagents run in the foreground (one turn keeps pre-approvals)"
 
-for a in council-advisor council-red-team council-reviewer council-chairman; do
+for a in council-advisor council-red-team council-reviewer council-chairman council-chairman-quick; do
   fm "$P/agents/$a.md" | grep -q "^effort: " && ok "$a sets its own effort (not the clerk's low effort)" || bad "$a sets its own effort"
 done
 grep -q -- '---DETAILS---' "$P/agents/council-chairman.md" && grep -q 'Never print part 2' "$SK" \

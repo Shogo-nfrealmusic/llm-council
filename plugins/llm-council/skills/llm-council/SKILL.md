@@ -143,7 +143,7 @@ Decision brief:
 <brief>
 ```
 
-The chairman replies in two parts separated by `---DETAILS---`. **Part 1** is what the person sees; **part 2** goes only into the notes. If part 1 has no `VERDICT:` line or runs over 16 lines, spawn the chairman once more with the same input plus the line `Your previous reply broke the format. Follow the Reply format exactly.`
+The chairman replies in two parts separated by `---DETAILS---`. **Part 1** is what the person sees; **part 2** goes only into the notes. If part 1 has no `VERDICT:` line or runs over 14 non-empty lines, spawn the chairman once more with the same input plus the line `Your previous reply broke the format. Follow the Reply format exactly.`
 
 ## Stage 4 — Save the notes
 

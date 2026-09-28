@@ -21,10 +21,13 @@ Work through this test before you write anything:
 2. **Can the person absorb it?** Compare that with their cash, income or runway from the brief. If the brief does not show it, the answer is "unknown", not yes.
 3. **Do the facts support the upside?**
 4. If 2 and 3 are yes, the verdict is **GO**, and the checks go into the next steps. If 2 is no, or the plan rests on a claim the facts contradict, it is **NO-GO** or **CHANGE IT**.
+5. If 2 is **unknown**: when the worst case is small next to the money the brief does show (for example under one month of the stated profit or revenue), treat it as absorbable and apply step 4. When it is large or nothing to compare it with is given, do not guess: pick the verdict that stays safe if the answer is no, and make finding it out the first next step.
 
 Definitions:
 - **GO** = go ahead with the plan as proposed. Guardrails (a review date, a stop rule, tracking, a notice period) belong in the next steps and do **not** make it CHANGE IT.
-- **CHANGE IT** is allowed only when you can name a concrete, materially different plan (a different size, target, timing, or method) that changes the expected outcome. "Do it, but carefully" or "do it, but track it" is GO. Cutting a large spend into a smaller first stage whose result decides the rest is a different size, so it is CHANGE IT.
+- **CHANGE IT** is allowed only when you can name a concrete, materially different plan (a different size, target, timing, or method) that changes the expected outcome. "Do it, but carefully" or "do it, but track it" is GO. The line between the two:
+  - CHANGE IT: the person proposed spending or committing X, and you recommend committing only a fraction now, with the rest depending on the result (for example a fifth of a planned budget as a test). The size of the bet changed.
+  - GO: the person does the plan at the proposed size, with tracking, a review date or a stop rule; or starts a cheap, reversible change with the people it is meant for first. The bet is the same.
 - **NO-GO** = do not do it.
 - A change has a cost too: delay, income still being turned away, a weaker version of the plan. Advisors often all prefer a cautious variation; check each against the test above before following them. A majority is not a reason.
 
@@ -41,7 +44,7 @@ Write in the given language. Two parts, separated by a line `---DETAILS---`.
 
 **Part 1 is what the person sees in the terminal: at most 14 lines, no blank lines, each line under 90 columns (Japanese: under 45 characters per line; an item may take two lines).** No markdown headers. Short, plain sentences.
 
-If the task message says `Length: short`, part 2 is at most 3 lines.
+If the task message says `Length: short`, part 2 is at most 4 lines, one per field.
 
 ```
 VERDICT: <GO | NO-GO | CHANGE IT> — <one sentence: what to do>

@@ -13,7 +13,7 @@ Checks:
   - no subagent prompt contains the user's original framing or the "Removed framing" line
   - every subagent is one of the plugin's council agents (they start without CLAUDE.md)
   - anonymize.sh returned a PACKET; save_notes.sh ran and the last line names the file
-  - visible output has BRIEF, CHAIRMAN, COUNCIL in order (exactly 2 messages); final report <= 20 lines; chairman details not printed
+  - visible output has BRIEF, CHAIRMAN, COUNCIL in order (exactly 2 messages); final report <= 24 lines, chairman part 1 <= 14 lines; COUNCIL line matches the advisors' real positions; chairman details not printed
   - --lang ja: brief, advisors and chairman are mostly Japanese; --lang en: no Japanese
 """
 import json, re, sys
@@ -50,6 +50,25 @@ def main():
     lang, out, jout = opt("--lang"), opt("--transcript"), opt("--json")
     no_notes = "--no-notes" in args
     events = load(path)
+    # Real advisor positions, read from the subagents' own results (not the clerk's summary).
+    kind_by_id, result_by_id = {}, {}
+    for e in events:
+        if e.get("type") == "assistant" and not e.get("parent_tool_use_id"):
+            for c in e["message"].get("content", []):
+                if c.get("type") == "tool_use" and c["name"] in ("Agent", "Task"):
+                    kind_by_id[c["id"]] = kind(c)
+        if e.get("type") == "user" and not e.get("parent_tool_use_id"):
+            for c in e["message"].get("content", []) if isinstance(e["message"].get("content"), list) else []:
+                if isinstance(c, dict) and c.get("type") == "tool_result":
+                    t = c.get("content")
+                    result_by_id[c.get("tool_use_id")] = t if isinstance(t, str) else json.dumps(t, ensure_ascii=False)
+    def real_positions(k):
+        out = []
+        for tid, kk in kind_by_id.items():
+            if kk == k:
+                m = re.search(r"POSITION:\s*\**\s*(NO-GO|GO|CHANGE)", result_by_id.get(tid, ""))
+                out.append(m.group(1) if m else None)
+        return out
 
     batches, texts, bash_calls = [], [], []
     for e in events:
@@ -155,7 +174,10 @@ def main():
     pairs = re.findall(PNAME + r"\s*[:：]?\s*(NO-GO|GO|CHANGE)\b", advblock)
     toks = [t for _, t in pairs]
     report["positions"] = toks
-    unanimous = bool(toks) and len(set(toks)) == 1
+    real = real_positions("advisor")
+    report["real_positions"] = real
+    check(sorted(t or "" for t in real) == sorted(toks), f"COUNCIL line matches the advisors' real positions (real {real}, shown {toks})")
+    unanimous = bool(real) and None not in real and len(set(real)) == 1
     report["unanimous"] = unanimous
     report["red_team"] = bool(redteam)
     if adv:
@@ -175,6 +197,9 @@ def main():
               f"red team shown with a different position ({rt_tok} vs {toks[0] if toks else None})")
 
     chairtext = section(alltext, "== CHAIRMAN ==", "== COUNCIL ==")
+    clines = len([l for l in chairtext.splitlines()[1:] if l.strip()])
+    report["chairman_lines"] = clines
+    check(clines <= 14, f"chairman part 1 is at most 14 non-empty lines (got {clines})")
     vm = re.search(r"VERDICT:\s*(GO|NO-GO|CHANGE IT)", chairtext)
     report["verdict"] = vm.group(1) if vm else None
     check(vm is not None, f"chairman gave a verdict ({report['verdict']})")
