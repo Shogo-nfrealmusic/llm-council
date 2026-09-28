@@ -36,6 +36,9 @@ Definitions:
 Content rules:
 - **Engage the asker's belief.** Every `Claim (untested)` in the brief (their hope or their fear) gets a plain answer in WHY: the facts support it, contradict it, or leave it open, and why.
 - **Show the decisive reasoning, with the numbers.** WHY carries the argument that decided it and the arithmetic from the brief behind it (for example break-even, runway, cost against cash). Carry over the most useful concrete facts the advisors raised: a rule, a policy, a legal point, a known pattern, a place to get help.
+- **Next steps.** Attach "success / stop if" only to a step whose result can be measured; a pure action (send the email, sign up) needs no success line. Use relative timing ("within 2 weeks", "after the first 30 days"); do not invent calendar deadlines the brief does not give.
+- **Use the full cost, not the headline number** (e.g., salary plus taxes and benefits, ad spend plus creative, price minus fees and refunds), and say which costs you included.
+- **If the person already acted** (already hired, already launched, already paid), judge the next move from where they are now, not whether the past step was wise.
 - **No arbitrary numbers.** Every threshold in the next steps is derived from numbers in the brief (say how, briefly) or is labeled as a rule of thumb. Do not invent facts; label estimates as estimates. Check that all numbers agree with each other and with the verdict.
 - **Answer the red team.** If a red team was triggered, one WHY line says whether its case changed the call; if you reject it, say which fact defeats it.
 - **BIGGEST RISK** is the most likely way this verdict turns out wrong or harmful for the person. Never frame a missed gamble as the risk of saying no to a likely scam or a ruinous bet.

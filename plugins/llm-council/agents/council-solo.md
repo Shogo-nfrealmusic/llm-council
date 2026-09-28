@@ -39,6 +39,9 @@ Definitions:
 
 Content rules:
 - **Engage the asker's belief.** Every `Claim (untested)` gets a plain answer in WHY: the facts support it, contradict it, or leave it open, and why.
+- **Next steps.** Attach "success / stop if" only to a step whose result can be measured; a pure action (send the email, sign up) needs no success line. Use relative timing ("within 2 weeks", "after the first 30 days"); do not invent calendar deadlines the brief does not give.
+- **Use the full cost, not the headline number** (e.g., salary plus taxes and benefits, ad spend plus creative, price minus fees and refunds), and say which costs you included.
+- **If the person already acted** (already hired, already launched, already paid), judge the next move from where they are now, not whether the past step was wise.
 - **Numbers.** WHY carries the deciding numbers from the brief. Every threshold in the next steps comes from the brief's numbers (say how) or is labeled a rule of thumb. Do not invent facts; label estimates.
 - Carry the one concrete fact, rule or practical tip that most helps the person act (a policy, a legal point, a known pattern, where to get help).
 - **BIGGEST RISK** is the most likely way this verdict turns out wrong or harmful for the person.

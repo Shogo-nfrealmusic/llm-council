@@ -70,5 +70,12 @@ grep -q "Start from the person's own plan" "$S" 2>/dev/null && ok "fast path run
 
 grep -q 'bash "${CLAUDE_SKILL_DIR}/scripts/save_notes.sh" <slug> none <<' "$SK" && ok "fast path gives the literal save command (pre-approved pattern)" || bad "fast path gives the literal save command (pre-approved pattern)"
 grep -q 'more than 14 non-empty lines' "$SK" && ok "fast answer over-length triggers one retry" || bad "fast answer over-length triggers one retry"
+for f in "$P/agents/council-chairman.md" "$P/agents/council-solo.md"; do
+  n="$(basename "$f" .md)"
+  grep -q "only to a step whose result" "$f" && ok "$n: success/stop only on steps with a measurable result" || bad "$n: success/stop only on steps with a measurable result"
+  grep -q "do not invent calendar deadlines" "$f" && ok "$n: no invented deadlines" || bad "$n: no invented deadlines"
+  grep -q "full cost" "$f" && ok "$n: uses the full cost, not the headline number" || bad "$n: uses the full cost, not the headline number"
+  grep -q "already acted" "$f" && ok "$n: covers someone who already acted" || bad "$n: covers someone who already acted"
+done
 echo "passed: $PASS  failed: $FAIL"
 [ $FAIL -eq 0 ]
