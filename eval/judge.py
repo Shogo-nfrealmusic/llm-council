@@ -184,6 +184,11 @@ def main():
         for k in range(rounds):
             council_first = random.Random(f"{c['id']}-{seed}-{k}").random() < 0.5
             a1, a2 = (nc["text"], nb["text"]) if council_first else (nb["text"], nc["text"])
+            cached = os.path.join(rd, c["id"], f"judge{tag}-{k}.json")
+            if os.path.exists(cached):
+                rec = json.load(open(cached))
+                rows.append(rec); ctot.append(rec["council_100"]); btot.append(rec["baseline_100"])
+                continue
             try:
                 res = claude_json(JUDGE.format(question=c["question"], a1=a1, a2=a2, criteria=crit_text, keys=kjson), check=ok)
             except RuntimeError as err:
@@ -200,8 +205,13 @@ def main():
             continue
         rawc, rawb = raw_text(rd, c, "council"), raw_text(rd, c, "baseline")
         cf = random.Random(f"{c['id']}-raw").random() < 0.5
-        rr = claude_json(RAWREAD.format(question=c["question"], a1=rawc if cf else rawb, a2=rawb if cf else rawc),
-                         check=lambda r: isinstance(r.get("output_1"), (int, float)) and isinstance(r.get("output_2"), (int, float)))
+        rpath = os.path.join(rd, c["id"], f"rawread{tag}.json")
+        if os.path.exists(rpath):
+            rr = json.load(open(rpath))
+        else:
+            rr = claude_json(RAWREAD.format(question=c["question"], a1=rawc if cf else rawb, a2=rawb if cf else rawc),
+                             check=lambda r: isinstance(r.get("output_1"), (int, float)) and isinstance(r.get("output_2"), (int, float)))
+            json.dump(rr, open(rpath, "w"), ensure_ascii=False, indent=1)
         raw_c, raw_b = (rr["output_1"], rr["output_2"]) if cf else (rr["output_2"], rr["output_1"])
         pc = {"case": c["id"], "lang": c["lang"], "right_call": c["right_call"],
               "council_verdict": cv, "council_correct": cv in c["right_call"],
@@ -210,7 +220,8 @@ def main():
               "council_100": round(sum(ctot) / len(ctot), 1), "baseline_100": round(sum(btot) / len(btot), 1),
               "council_rounds": ctot, "baseline_rounds": btot,
               "normalized_length": {"council": nc.get("length"), "baseline": nb.get("length")},
-              "raw_readability_council": raw_c, "raw_readability_baseline": raw_b}
+              "raw_readability_council": raw_c, "raw_readability_baseline": raw_b,
+              "kind": c.get("kind"), "route": "fast" if "== ANSWER ==" in rawc else ("escalated" if re.search(r"handed this to the council|評議会に回しました", rawc) else "council")}
         per_case.append(pc)
         print(f"{c['id']:18s} right={'/'.join(c['right_call']):9s} council={cv or '-':7s}{'ok ' if pc['council_correct'] else 'X  '}"
               f"baseline={nb['class']:7s}{'ok ' if pc['baseline_correct'] else 'X  '}"
@@ -234,13 +245,20 @@ def main():
         "raw_readability_council": round(sum(p["raw_readability_council"] for p in per_case) / n, 2),
         "raw_readability_baseline": round(sum(p["raw_readability_baseline"] for p in per_case) / n, 2),
     }
+    for kd in ("simple", "complex"):
+        sub = [p for p in per_case if p.get("kind") == kd]
+        if sub:
+            summary[f"{kd}_cases"] = len(sub)
+            summary[f"{kd}_council_avg_100"] = round(sum(p["council_100"] for p in sub) / len(sub), 1)
+            summary[f"{kd}_baseline_avg_100"] = round(sum(p["baseline_100"] for p in sub) / len(sub), 1)
+    summary["routes"] = {r: sum(1 for p in per_case if p.get("route") == r) for r in ("fast", "council", "escalated")}
     # Sign test on per-case wins (ties dropped), two-sided.
     from math import comb
     w = summary["council_higher_cases"]; m = n - summary["ties"]
     tail = sum(comb(m, i) for i in range(min(w, m - w) + 1)) / 2 ** m if m else 1.0
     summary["sign_test_p_two_sided"] = round(min(1.0, 2 * tail), 3)
     json.dump({"summary": summary, "cases": per_case, "rows": rows},
-              open(os.path.join(rd, f"judge{tag}-summary.json"), "w"), ensure_ascii=False, indent=1)
+              open(os.path.join(rd, f"judge{tag}-summary{'-' + '-'.join(only) if only else ''}.json"), "w"), ensure_ascii=False, indent=1)
     print(json.dumps(summary, indent=1))
 
 
